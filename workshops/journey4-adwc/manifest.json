@@ -1,0 +1,21 @@
+{
+    "workshop": {
+        "title": "ADWC Journey: Hands-on Workshop",
+        "description": "This workshop will show you how to use Oracle Autonomous Data Warehouse Cloud in the Oracle Public Cloud.",
+        "theme": "default",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "README.md",
+                "title": "Read Me First",
+                "description": "Workshop Overview"
+            },
+            {
+                "number": "100",
+                "filename": "LabGuide100StartHere.md",
+                "title": "Lab 100: START HERE - Provisioning",
+                "description": "Instructions to provision Oracle Big Data Cloud Service - Compute Edition (BDCS-CE) in your Oracle Public Cloud identity domain"
+            }
+        ]
+    }
+}
