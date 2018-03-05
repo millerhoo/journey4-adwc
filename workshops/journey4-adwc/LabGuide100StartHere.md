@@ -6,7 +6,9 @@ Updated: August 16, 2017 for BDCS-CE Version 17.3-3-20
 
 ## Introduction
 
-In this lab, you learn how to provision a **Oracle Big Data Cloud Service - Compute Edition (BDCS-CE)** cluster.  
+In this lab, you learn how to provision a **Oracle Autonomous Data Warehouse Cloud**.  
+
+# UPDATE THIS FOR ADWC
 
 The Oracle Big Data Cloud Service - Compute Edition (BDCS-CE) enables you to rapidly, securely, and cost-effectively leverage the power of an elastic, integrated Big Data Infrastructure to unlock the value in Big Data.   In this lab, we will walk you through the steps to quickly configure and create a Big Data Cloud Service instance.  When done you will see how to view the configuration and layout of your instance using the Oracle Big Data Console.  
 
