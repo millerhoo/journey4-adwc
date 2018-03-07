@@ -29,7 +29,7 @@ Provisioning an ADWC Service
 
 ### **STEP 1**: Go to <https://abcd.oracle.com>. Enter &lt;account name&gt; in the **Cloud Account Name** field and click **My Services**.
 
-![](./images/100/media/image1.png)
+![](./images/100/Picture100-1.png)
 
 ### **STEP 2**: Log in with the following account
 
@@ -37,15 +37,15 @@ Provisioning an ADWC Service
 
 **Password**: &lt;password&gt;
 
-![](./images/100/media/image2.png)
+![](./images/100/Picture100-2.png)
 
 ### **STEP 3**: Click the **Menu Action** icon and select **Open Service Console**
 
-![](./images/100/media/image3.png)
+![](./images/100/Picture100-3.png)
 
 ### **STEP 4**: On the Instances page, click **Create Instance**.
 
-![](./images/100/media/image4.png)
+![](./images/100/Picture100-4.png)
 
 ### **STEP 5**: In the first page of the Create New Instance wizard, enter the following information:
 
@@ -64,15 +64,15 @@ Provisioning an ADWC Service
 
 Click **Next**.
 
-![](./images/100/media/image5.png)
+![](./images/100/Picture100-5.png)
 
 ### **STEP 6**: In the second page of the Create New Instance wizard, confirm your entries and click **Create**. The Create New Instance wizard closes.
 
-![](./images/100/media/image6.png)
+![](./images/100/Picture100-6.png)
 
 ### **STEP 7**: On the Instances page, the Status field indicates the service instance is being created. When creation is completed, the Status field disappears. You can click the refresh button to see the latest creation status.
 
-![](./images/100/media/image7.png)
+![](./images/100/Picture100-7.png)
 
 Connecting to ADWC
 ==================
@@ -86,9 +86,9 @@ downloaded from the ADWC service console.
 
 ### **STEP 1**: In the services screen find your database and click “Service Console” in the actions menu.
 
-![](./images/100/media/image8.png)
+![](./images/100/Picture100-8.png)
 
-![](./images/100/media/image9.png)
+![](./images/100/Picture100-9.png)
 
 ### **STEP 2**: Login to the service console with the following information.
 
@@ -97,19 +97,19 @@ downloaded from the ADWC service console.
 **Password:** &lt;password&gt; &lt;&lt;The administrator password you
 specified during provisioning
 
-![](./images/100/media/image10.png)
+![](./images/100/Picture100-10.png)
 
 ### **STEP 3**: The service console opens in the Overview mode. Click the **Administration** tab.
 
-![](./images/100/media/image11.png)
+![](./images/100/Picture100-11.png)
 
 ### **STEP 4**: Click **Download Client Credentials**.
 
-![](./images/100/media/image12.png)
+![](./images/100/Picture100-12.png)
 
 ### **STEP 5**: You are prompted to create a password for the credentials zip file. Enter a password **&lt;password&gt;** and click **Download**.
 
-![](./images/100/media/image13.png)
+![](./images/100/Picture100-13.png)
 
 Store the zip file and make note of the password. You will use the zip
 file and password in the next step to define a SQL Developer connection
@@ -125,27 +125,27 @@ default administrator account, ADMIN, by following these steps.
 
 ### **STEP 2**: Click the **Create Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
-![](./images/100/media/image14.png)
+![](./images/100/Picture100-14.png)
 
 ### **STEP 3**: Fill in the connection details as below:
 
-**Connection Name: **admin
+**Connection Name**: admin
 
-**Username: **admin
+**Username**: admin
 
-**Password: **&lt;password&gt;       &lt;&lt; The password you specified
+**Password**: &lt;password&gt;       &lt;&lt; The password you specified
 during provisioning
 
-**Connection Type: **Cloud PDB
+**Connection Type**: Cloud PDB
 
-**Configuration File: **Enter the full path for the wallet file you
+**Configuration File**: Enter the full path for the wallet file you
 downloaded before, or click the Browse button to point to the location
 of the file.
 
-**Keystore Password: **&lt;password&gt; &lt;&lt;&lt; The password you
+**Keystore Password**: &lt;password&gt; &lt;&lt;&lt; The password you
 specified when downloading the wallet from the ADWC service console
 
-**Service: **There are 3 pre-configured database services for each
+**Service**: There are 3 pre-configured database services for each
 database. Pick &lt;databasename&gt;\_high for this lab. For example, if
 you created a database named JackDW select jackdw\_high as the service.
 As all lab attendees are using the same PSM tenant you will see all
@@ -155,7 +155,7 @@ database.
 **Note**: Earlier versions of SQL Developer may not support this
 feature.
 
-![](./images/100/media/image15.png)
+![](./images/100/Picture100-15.png)
 
 ### **STEP 4**: Click **Test**. 
 
@@ -189,6 +189,6 @@ Note that the database role DWROLE includes the privileges required by a
 typical DW developer. You can grant additional database privileges if
 needed.
 
-![](./images/100/media/image16.png)
+![](./images/100/Picture100-16.png)
 
 **STEP 2**: Click the **Run Scripts** button above.
