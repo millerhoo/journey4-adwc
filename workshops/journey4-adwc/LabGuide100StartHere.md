@@ -1,223 +1,194 @@
-![](images/100/100.JPG)  
+Draft Version. Updated: March 7, 2018
 
-Updated: August 16, 2017 for BDCS-CE Version 17.3-3-20
+Introduction
+============
 
-    
+This lab walks you through the steps to get started using the Oracle
+Autonomous Data Warehouse Cloud. You will provision a new ADWC database,
+connect to the database using Oracle SQL Developer, and create DW users.
 
-## Introduction
+This is an instructor led lab, please follow the instructor before doing
+the exercises. Stop and wait for the instructor led discussion after
+each section before going to the next section.
 
-In this lab, you learn how to provision a **Oracle Autonomous Data Warehouse Cloud**.  
+This lab shows you only the functional aspects of ADWC. It does not have
+exercises to test the performance of ADWC as the lab environment is not
+running on Exadata.
 
-# UPDATE THIS FOR ADWC
+Objectives
+==========
 
-The Oracle Big Data Cloud Service - Compute Edition (BDCS-CE) enables you to rapidly, securely, and cost-effectively leverage the power of an elastic, integrated Big Data Infrastructure to unlock the value in Big Data.   In this lab, we will walk you through the steps to quickly configure and create a Big Data Cloud Service instance.  When done you will see how to view the configuration and layout of your instance using the Oracle Big Data Console.  
+-   Learn how to provision an ADWC service
 
-Please direct comments to: David Bayard (david.bayard@oracle.com)
+-   Learn how to connect to ADWC
 
-## Objectives
+-   Learn how to create users in ADWC
 
-- Get access to the Oracle Public Cloud
-- Learn how to upload a file to the Oracle Storage Cloud Object Store
-- Learn how to provision a BDCS-CE instance
-- Learn how to access your BDCS-CE instance
+Provisioning an ADWC Service
+============================
 
-# Get access to the Oracle Public Cloud
+### **STEP 1**: Go to <https://abcd.oracle.com>. Enter &lt;account name&gt; in the **Cloud Account Name** field and click **My Services**.
 
-Your first step is to get access to the Oracle Public Cloud.  There are a couple of ways:
+![](./images/100/media/image1.png)
 
-+ You may already have access to an the Oracle Public Cloud environment.  Provided that you have the ability to create new instances of Big Data Cloud Service Compute Edition (BDCS-CE) and Oracle Event Hub Cloud Service (OEHCS) as well as the ability to upload files to the Storage Cloud, then you should be able to use your exisitng environment.
-+ If you are a customer or prospect, you can sign-up for the free $300 Trial Account.  Please refer to the instructions here: [$300 Trial](xtra300Trial.md)
-+ If you are an Oracle employee, you can request a temporary environment from the GSE demo.oracle.com website.  Please refer to the instructions here: [Employee GSE request](xtraGSErequest.md)
+### **STEP 2**: Log in with the following account
 
-In any case, follow one of the above approaches to obtain access to an Oracle Public Cloud account with the ability (and quota) to create new instances.
+**Username**: &lt;username&gt;
 
-Write down the name of your Identity Domain in a document as you will need it later: 
-![](images/100/snap0012186.jpg) 
+**Password**: &lt;password&gt;
 
-+ Hint: you should also write down the data center if you have it (for instance, "US Commerical 2")
+![](./images/100/media/image2.png)
 
-# Create a container in the Storage Cloud and upload a file
+### **STEP 3**: Click the **Menu Action** icon and select **Open Service Console**
 
-Next, we will create a container in the Storage Cloud to hold the files and data used by this workshop.  This container will be the "default" container used by the BDCS-CE instance we will create.  And we will upload to this container a special "bootstrap.sh" file that will be used to customize our BDCS-CE instance as it is provisioned.
+![](./images/100/media/image3.png)
 
-## Create a new Storage Cloud Object Store container
+### **STEP 4**: On the Instances page, click **Create Instance**.
 
-### **STEP 1**: Navigate/login to the Oracle Cloud My Services Dashboard  
+![](./images/100/media/image4.png)
 
+### **STEP 5**: In the first page of the Create New Instance wizard, enter the following information:
 
-  + You should already know the URL to login to Oracle Cloud My Services dashboard and should use that to login directly.  But if you don't, navigate to <a href="https://cloud.oracle.com/home" target="_blank">here</a> . Then click Sign In:
-  ![](images/100/snap0012287.jpg) 
-    + Then you will need to specify the data center (hint: if you an internal employee and were given credentials via email, try US-Commericial 2 for the data center).  And then click My Services.
+-   **Database Name** - &lt;yourname&gt;dw. &lt;&lt;Prefix your database
+    name with a unique name (you can use your name, for example), e.g.
+    JackDW. Since all users will be using the same cloud account, it is
+    important that you use a unique database name.
 
+-   **CPU Count** - 2 &lt;&lt; Do not use more than 2 as it may cause
+    other users not being able to provision as the training environment
+    can only host a small number of CPUs.
 
-Once you login with your Public Cloud credentials, you will see the Oracle Cloud My Services Dashboard:
-![](images/300/snap0011988.jpg) 
+-   **Storage Capacity (TB)** - 1
 
+-   **Administrator Password** – &lt;password&gt;
 
+Click **Next**.
 
-### **STEP 2**: Click on Customize Dashboard
+![](./images/100/media/image5.png)
 
-![](images/100/snap0012315.jpg) 
+### **STEP 6**: In the second page of the Create New Instance wizard, confirm your entries and click **Create**. The Create New Instance wizard closes.
 
-### **STEP 3**: Scroll down to the IAAS section and click on Show for the Storage service
+![](./images/100/media/image6.png)
 
-![](images/100/DashboardStorage.gif) 
+### **STEP 7**: On the Instances page, the Status field indicates the service instance is being created. When creation is completed, the Status field disappears. You can click the refresh button to see the latest creation status.
 
-### **STEP 4**: Click on Storage in the dashboard.  Then copy the REST Endpoint value and save it into your document for later use.
+![](./images/100/media/image7.png)
 
-![](images/100/StorageREST.gif) 
+Connecting to ADWC
+==================
 
-### **STEP 5**: Using the upper right popup menu, navigate to Storage page
+Downloading the credentials wallet
+----------------------------------
 
-![](images/100/StorageNavigate.gif) 
+As ADWC only accepts secure connections to the database, you need to
+download a wallet file containing your credentials first. The wallet is
+downloaded from the ADWC service console.
 
+### **STEP 1**: In the services screen find your database and click “Service Console” in the actions menu.
 
-### **STEP 6**: Click on Create Container.  Name the container journeyC.  Write down the container name.
+![](./images/100/media/image8.png)
 
-You are advised to name your container "journeyC" (case-sensitive), but the labs should work if you use your own name.  If you choose your own container name, do not use an underscore in the name.
+![](./images/100/media/image9.png)
 
-![](images/100/StorageContainer.gif) 
+### **STEP 2**: Login to the service console with the following information.
 
-## Upload the bootstrap.sh file to the container
+**Username:** admin
 
-### **STEP 1**: Download the bootstrap.zip file to your computer, unzip it, and save the bootstrap.sh file in a directory you can easily find.
+**Password:** &lt;password&gt; &lt;&lt;The administrator password you
+specified during provisioning
 
-Download the bootstrap.zip file from here: [https://github.com/millerhoo/journey2-new-data-lake/raw/master/workshops/journey2-new-data-lake/files/100/bootstrap.zip](https://github.com/millerhoo/journey2-new-data-lake/raw/master/workshops/journey2-new-data-lake/files/100/bootstrap.zip)
+![](./images/100/media/image10.png)
 
-Be sure to unzip the bootstrap.zip file to extract/save the bootstrap.sh file to a directory on your local computer.
+### **STEP 3**: The service console opens in the Overview mode. Click the **Administration** tab.
 
+![](./images/100/media/image11.png)
 
-### **STEP 2**: Click on your journey container to open it.  Click on Upload Objects.  Select the bootstrap.sh file.  
+### **STEP 4**: Click **Download Client Credentials**.
 
-![](images/100/StorageBootstrap.gif) 
+![](./images/100/media/image12.png)
 
-### **STEP 3**: Click on the Actions menu for bootstrap.sh.  Choose copy.  Enter journeyC/bdcsce/bootstrap for the container.
+### **STEP 5**: You are prompted to create a password for the credentials zip file. Enter a password **&lt;password&gt;** and click **Download**.
 
-This step copies our bootstrap.sh script into the exact location where it is needed.  Be sure you enter the value exactly (case-sensitive):  journeyC/bdcsce/bootstrap
+![](./images/100/media/image13.png)
 
-**If you used a different container name than journeyC, substititute it accordingly.**  
+Store the zip file and make note of the password. You will use the zip
+file and password in the next step to define a SQL Developer connection
+to your Autonomous DW Cloud database.
 
-![](images/100/StorageBootstrap2.gif) 
+Connecting to the database using SQL Developer
+----------------------------------------------
 
-### **STEP 4**: IMPORTANT.  Please double-check that you see a file bdcsce/bootstrap/bootstrap.sh in your journey container
+Start SQL Developer and create a connection for your database using the
+default administrator account, ADMIN, by following these steps.
 
-![](images/100/snap0012188.jpg) 
+### **STEP 1**: Start Oracle SQL Developer 
 
-### **STEP 5**: Click the My Services link in the upper right to return to Cloud My Services Dashboard
+### **STEP 2**: Click the **Create Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
-Note: In some cases, there may not be a My Services link in upper right of the Storage page.  You can return to the Cloud My Services Dashboard by either using the browser's back button or re-logging in.
+![](./images/100/media/image14.png)
 
-# Provision a new BDCS-CE Instance
+### **STEP 3**: Fill in the connection details as below:
 
-## Provision BDCS-CE
+**Connection Name: **admin
 
-### **STEP 1**: Navigate/login to the Oracle Cloud My Services Dashboard  
+**Username: **admin
 
-![](images/300/snap0011988.jpg) 
+**Password: **&lt;password&gt;       &lt;&lt; The password you specified
+during provisioning
 
-### **STEP 2**: Using the upper left menu, navigate to Big Data - Compute Edition
+**Connection Type: **Cloud PDB
 
-![](images/100/snap0012189.jpg) 
+**Configuration File: **Enter the full path for the wallet file you
+downloaded before, or click the Browse button to point to the location
+of the file.
 
-### **STEP 3**: Click Create Service
+**Keystore Password: **&lt;password&gt; &lt;&lt;&lt; The password you
+specified when downloading the wallet from the ADWC service console
 
-![](images/100/snap0012190.jpg)  
+**Service: **There are 3 pre-configured database services for each
+database. Pick &lt;databasename&gt;\_high for this lab. For example, if
+you created a database named JackDW select jackdw\_high as the service.
+As all lab attendees are using the same PSM tenant you will see all
+services for all users in this list, pick the one belonging to your
+database.
 
+**Note**: Earlier versions of SQL Developer may not support this
+feature.
 
-### **STEP 4**: Fill in the Service Name, Description, Email and click Next
-- You can choose whatever you want for Service Name.  It is an identifier to help you in case you create more than one BDCSCE cluster.
-- In some cases, you might see a field labelled Region.  This happens if your OPC Identity Domain is mapped to more than 1 data center.  You should be OK leaving it as No Preference.  Or if you do have a preference, please pick it.
+![](./images/100/media/image15.png)
 
-![](images/100/snap0012191.jpg)  
+### **STEP 4**: Click **Test**. 
 
-### **STEP 5**: In the Cluster Configuration section, choose **Full** for the Deployment Profile, enter **1** for the Number of Nodes, and be sure to choose Spark Version 2.1.
-- For this workshop, be sure to choose Full for the Deployment Profile.  The Full profile includes components like Hive which are not part of the Basic profile.
-- Currently, the examples are built for Spark 2.1 so be sure to select that version.
-- **Optionally**, you can choose OC3M for the Compute Shape.  OC3M will use 4 OCPUs.  This will avoid some potential issues in the labs.  You can use OC2M if you want to or need to, but there may be times when some steps will hang and you will need to follow some extra steps to continue (which we have tried to document).  **Our recommendation is to use OC3M unless you know you will need the extra 2 OCPUs for other services.**
+Status: Success displays at the left-most bottom of the New/Select
+Database Connection dialog.
 
-![](images/100/BDCSCE_Aug_creation1.gif)  
+### **STEP 5**: Click **Connect**. 
 
-### **STEP 6**: In the Credentials section, define your SSH public key and the desired username/password to use for the BDCS-CE cluster administrator.
+An entry for the new connection appears under Connections.
 
-- **SSH Public Key**: There are various approaches you can use.  You can define a value for a VM Public Key, use a file with a VM Public Key or create a new key.
-  - The easiest choice if new to this environment may be to create a new key.
-  - Choose to Create a New Key and hit the Enter button.
-  - Once you hit Enter, a File Folder Window will pop up to allow you to control where on your local computer you wish to store your SSH Key file (ex: sshkeybundle.zip).
-  - Make sure and write down the location of this SSH key file.
-  - The SSH Public Key field will then get filled in automatically.
-- **Administrative User**: Define the user id for the administration user for your instance. (We suggest you leave it at its default: bdcsce_admin)
-- **Password**: Enter a password to set for the administration user.  \"Password must be at least 8 characters long with at least one lower case letter, one upper case letter, one number and one special character. For example, Ach1z0#d\"
-- Confirm Password: Re-enter the password for the administration user.
-![](images/100/BDCScreate2.gif)  
+ 
+=
 
-### **STEP 7**: In the Cloud Storage Credentials section, provide your Cloud Storage information.
+Creating users in ADWC
+======================
 
-- **Cloud Storage Container** – The full name of the Oracle Storage Cloud Service container to be associated with the cluster.
-  - The format is RESTENDPOINT/CONTAINER, where RESTENDPOINT is the REST Endpoint of the Storage Service, and CONTAINER is the name of the container.
-  - If you followed along with the instructions, you should have a document with these 2 pieces of information:
-![](images/100/snap0012192.jpg)  
+Using your existing connection in SQL Developer, create a new user named
+SH using the following commands.
 
-- **Username** – User name of the user who has access to the specified Oracle Storage Cloud Service container.
-- **Password** – The password of the above user.
-- **Create Cloud Storage Container** – you do not need to select this as we created the container earlier in this lab
+**STEP 1**: Copy and paste the following commands to SQL Developer
+worksheet
 
-![](images/100/BDCSCE_Aug_creation2.gif) 
+create user sh identified by "&lt;password&gt;";
 
-### **STEP 8**: In the Block Storage section, leave the defaults for now.
-![](images/200/snap0012140.jpg)  
+grant dwrole to sh;
 
-### **STEP 9**: In the Associations section, leave the checkboxes unchecked for now.
+ADWC uses the password complexity function ora12c\_verify\_function, so
+you need to use a strong password for your users.
 
-- Associations will automatically create the necessary Access Rules between services.  For this workshop, we'll show you how to manually define Access Rules at a later point.
-![](images/200/snap0012141.jpg)  
+Note that the database role DWROLE includes the privileges required by a
+typical DW developer. You can grant additional database privileges if
+needed.
 
-### **STEP 10**: Click Next.  Then, click Create.
+![](./images/100/media/image16.png)
 
-![](images/100/snap0012193.jpg)  
-
-### **STEP 11**: Wait for the BDCS-CE instance to be provisioned.
-
-- While being provisioned, the Status will say "Creating service".  You can click on the status to get more information.
-- As of 17.3.3-20, it can take about 15-20 minutes to finish creating the service.
-![](images/200/snap0012023.jpg)  
-- If you entered a valid email address, you will get an email the instance provisioning is finished:
-![](images/200/snap0012142.jpg)  
-
-### **STEP 12**: When the BDCS-CE instance is provisioned (the status is Ready), click on the name of the instance to go to the Service Overview page.
-![](images/100/snap0012199.jpg)  
-
-### **STEP 13**: Review the details on the Service Overview Page
-Sections include:
-- **Overview** – displays the number of nodes, aggregate OCPU, Memory, and Storage
-- **Administration** – displays if there are any patches available.
-- **Service Overview** – displays summary information of the new Big Data Cloud Service.  This includes the Ambari Server Host whose IP address you can use to access Ambari from a URL in a browser.  As well as highlighting the Administrative user you created as well as the Cloud Storage Container and the Spark Thrift Server (part of the default configuration).  
-  - Ambari is a Hadoop management web UI that can accessed through your Ambari Host Server IP address and port 8080 (ex:  http://xxx.xxx.xxx.xxx:8080).  Ambari is not covered in this Lab, but feel free to explore it on your own.
-  - Note: to use Ambari, you will need to enable a Network Access rule for port 8080.
-  - Your Ambari credentials will be your BDCS-CE username and password you defined when you created this instance. 
-- **Resources** – displays information on the resources associated with your Service.  As you scale out and add more nodes, the new nodes as well as their Public IP address, OCPUs, Memory and Storage will be displayed.
-- **Associations** – displays information on any additional resources associated with your Service.  Associations will automatically setup the necessary network Access Rules between services. 
-
-### **STEP 14**: Record the IP address and host name in your document
-
-![](images/100/BDCSCE_Aug_creation3.gif) 
-
-### **STEP 15**: Review the Access Rules for your cluster
-For now, you don't need to make changes to the default Access Rules.  In a later tutorial, we will use this to allow SSH access.  This is also the place where you can enable Ambari access (port 8080) which is disabled by default.
-![](images/200/AccessRules.gif)  
-
-### **STEP 16**: Access the Big Data Cluster Console
-- Launch the Big Data Cluster Console for your BDCS-CE cluster.  If this is your first time, you will likely need to allow your browser to accept the self-signed certificate for the web console application.
-- You will be asked to provide a username/password.  Use the username and password you defined earlier when you created the BDCS-CE instance (the username defaults to bdcsce_admin).  
-![](images/100/BDCSCE_Aug_creation4.gif) 
-
-### **STEP 17**: Record the web URL of the Big Data Cluster Console in your document
-
-
-# What you Learned
-
-- Learned how to provision a BDCS-CE instance
-- Learned how to access BDCS-CE
-
-# Next Steps
-
-- Proceed to the next Lab to learn how to use BDCS-CE's notebook and services like Hive, Spark, and SparkSQL.
+**STEP 2**: Click the **Run Scripts** button above.
