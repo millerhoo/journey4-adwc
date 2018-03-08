@@ -53,9 +53,9 @@ Required Artifacts
 Provisioning an ADWC Service
 ============================
 
-### **STEP 1: Login to Oracle Autonomous Data Warehouse Cloud**
+### **STEP 1: Log in to Oracle Autonomous Data Warehouse Cloud**
 
--   Go to the URL below From your browser
+-   Go to the URL below from your browser.
 
 <https://abcd1234.oracle.com>.
 
@@ -64,7 +64,7 @@ Provisioning an ADWC Service
 
 ![](./images/100/Picture100-1.png)
 
--   Log in with the following account
+-   Log in with the following account:
 
     -   **Username**: &lt;username&gt;
 
@@ -133,14 +133,14 @@ downloaded from the ADWC service console.
 
 ![](./images/100/Picture100-9.png)
 
--   Login to the service console with the following information.
+-   Log in to the service console with the following information.
 
     -   Username: admin
 
     -   Password: &lt;password&gt;. The administrator password you
         specified during provisioning
 
-The service console opens in the Overview mode.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The service console opens in the Overview mode.
 
 ![](./images/100/Picture100-10.png)
 
@@ -242,3 +242,5 @@ grant dwrole to sh;
 Note that the database role DWROLE includes the privileges required by a
 typical DW developer. You can grant additional database privileges if
 needed.
+
+You are now ready to move to the next lab.
