@@ -1,4 +1,4 @@
-![](./images/100/media/Picture100-1.png)
+![](./images/100/Picture100-1.png)
 
 Draft Version. Updated: March 8, 2018
 
@@ -36,34 +36,34 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 -   Go to [cloud.oracle.com](https://cloud.oracle.com), click **Sign In** to sign in with your Oracle Cloud account.
 
-![](./images/100/media/Picture100-2.png)
+![](./images/100/Picture100-2.png)
 
 -   Enter your **Cloud Account Name** and click **My Services**.
 
-![](./images/100/media/Picture100-3.png)
+![](./images/100/Picture100-3.png)
 
 -   Enter your Cloud **username** and **password**, and click **Sign In**.
 
-![](./images/100/media/Picture100-4.png)
+![](./images/100/Picture100-4.png)
 
 ### **STEP 2: Create an ADWC Instance**
 
 -   By default, if you have not created an Autonomous Data Warehouse Cloud instance before you will not see it in the Dashboard. Click
     **Create Instance** to create new ADWC instance.
 
-![](./images/100/media/Picture100-5.png)
+![](./images/100/Picture100-5.png)
 
 -   From the list of your available services select **Autonomous DW** under Data Management and click **Create**.
 
-![](./images/100/media/Picture100-6.png)
+![](./images/100/Picture100-6.png)
 
 -   In the Welcome page click **Go to Console**.
 
-![](./images/100/media/Picture100-7.png)
+![](./images/100/Picture100-7.png)
 
 -   Click **Create Service** to start creating your ADWC instance.
 
-![](./images/100/media/Picture100-8.png)
+![](./images/100/Picture100-8.png)
 
 -   Enter the required information and click **Next**. For the purposes of this lab, use the information below.
 
@@ -75,19 +75,19 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
     -   **Administrator Password:** Enter any password you choose
 
-![](./images/100/media/Picture100-9.png)
+![](./images/100/Picture100-9.png)
 
 -   Review your information in the confirmation page and click **Create**.
 
-![](./images/100/media/Picture100-10.png)
+![](./images/100/Picture100-10.png)
 
 -   **Refresh** the Instances page after a while to see if your instance is created.
 
-![](./images/100/media/Picture100-11.png)
+![](./images/100/Picture100-11.png)
 
 -   Check if the **Status** for your instance is cleared indicating your instance is ready to use.
 
-![](./images/100/media/Picture100-12.png)
+![](./images/100/Picture100-12.png)
 
 You now have created your first Autonomous Data Warehouse Cloud instance.
 
@@ -103,7 +103,7 @@ As ADWC only accepts secure connections to the database, you need to download a 
 
 -   In the Instances page find your database and click **Service Console** in the actions menu.
 
-![](./images/100/media/Picture100-13.png)
+![](./images/100/Picture100-13.png)
 
 -   This will open a new browser tab for the service console. Sign in to the service console with the following information.
 
@@ -111,17 +111,17 @@ As ADWC only accepts secure connections to the database, you need to download a 
 
     -   **Password:** The administrator password you specified during provisioning
 
-![](./images/100/media/Picture100-14.png)
+![](./images/100/Picture100-14.png)
 
 ### **STEP 4: Download the credentials wallet**
 
 -   Click the “**Administration**” tab and click “**Download Client Credentials**” to download the wallet.
 
-![](./images/100/media/Picture100-15.png)
+![](./images/100/Picture100-15.png)
 
 -   Specify a password of your choice for the wallet, you will need this password when connecting to the database later. Click **Download** to download the wallet file to your client machine.
 
-![](./images/100/media/Picture100-16.png)
+![](./images/100/Picture100-16.png)
 
 Connecting to the database using SQL Developer
 ----------------------------------------------
@@ -132,7 +132,7 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   Click the **Create Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
-![](./images/100/media/Picture100-17.png)
+![](./images/100/Picture100-17.png)
 
 -   Fill in the connection details as below:
 
@@ -152,7 +152,7 @@ Start SQL Developer and create a connection for your database using the default 
     -   **Service: **There are 3 pre-configured database services for each database. Pick &lt;databasename&gt;\_high for this lab. For
         example, if you created a database named testdw select testdw\_high as the service.
 
-![](./images/100/media/Picture100-18.png)
+![](./images/100/Picture100-18.png)
 
 -   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. 
 
