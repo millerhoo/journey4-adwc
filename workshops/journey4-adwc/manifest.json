@@ -14,7 +14,7 @@
                 "number": "100",
                 "filename": "LabGuide100StartHere.md",
                 "title": "Lab 100: START HERE - Provisioning",
-                "description": "Instructions to provision Oracle Big Data Cloud Service - Compute Edition (BDCS-CE) in your Oracle Public Cloud identity domain"
+                "description": "Instructions to provision Oracle Autonomous Data Warehouse Cloud in your Oracle Public Cloud identity domain"
             }
         ]
     }

@@ -1,246 +1,159 @@
+![](./images/100/media/Picture100-1.png)
+
 Draft Version. Updated: March 8, 2018
 
 Introduction
-============
+------------
 
-This lab walks you through the steps to get started using the Oracle
-Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC
-database, connect to the database using Oracle SQL Developer, and create
-DW users.
+This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC database and connect to the database using Oracle SQL Developer.
 
-This is an instructor led lab, please follow the instructor before doing
-the exercises. Stop and wait for the instructor led discussion after
-each section before going to the next section.
-
-This lab shows you only the functional aspects of ADWC. It does not have
-exercises to test the performance of ADWC as the lab environment is not
-running on Exadata.
+This is an instructor led lab, please follow the instructor before doing the exercises. Stop and wait for the instructor led discussion after each section before going to the next section.
 
 Objectives
-==========
+----------
 
 -   Learn how to provision an ADWC service
 
 -   Learn how to connect to ADWC
 
--   Learn how to create users in ADWC
-
 Required Artifacts
-==================
+------------------
 
--   The following lab requires an Oracle Public Cloud account that will
-    be supplied by your instructor.
+-   The following lab requires an Oracle Public Cloud account that will be supplied by your instructor.
 
--   Oracle SQL Developer (see [Oracle Technology Network download
-    site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
-    We recommend that you download version 17.4 or later, because this
-    version contains enhancements for key Autonomous DW Cloud features.
-    SQL Developer 17.3.1 will also work with Autonomous DW Cloud;
-    versions earlier than 17.3.1 will not.\
-    **Note**:\
-    If you are a Windows user on 64-bit platform, download the 'Windows
-    64-bit with JDK 8 included' distribution as it includes both Java 8
-    and the Java Cryptography Extension (JCE) files necessary to run SQL
-    Developer and connect to your Autonomous DW Cloud.\
-    If you are a non-Windows user, download and install the
-    appropriate [Java 8
-    JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for
-    your Operating System. Download and extract the [Java Cryptography
-    Encryption
-    Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to
-    the directory as indicated in the README.txt.
+-   Oracle SQL Developer (see [Oracle Technology Network download site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
+    We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
+    **Note**:
+    If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.
+    If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
 
-Provisioning an ADWC Service
-============================
+Section 1. Provisioning an ADWC Service
+=======================================
 
-### **STEP 1: Log in to Oracle Autonomous Data Warehouse Cloud**
+In this section you will be provisioning an ADWC database using the cloud console.
 
--   Go to the URL below from your browser.
+### **STEP 1: Sign in to Oracle Cloud**
 
-<https://abcd1234.oracle.com>.
+-   Go to [cloud.oracle.com](https://cloud.oracle.com), click **Sign In** to sign in with your Oracle Cloud account.
 
--   Enter &lt;account name&gt; in the **Cloud Account Name** field and
-    click **My Services**.
+![](./images/100/media/Picture100-2.png)
 
-![](./images/100/Picture100-1.png)
+-   Enter your **Cloud Account Name** and click **My Services**.
 
--   Log in with the following account:
+![](./images/100/media/Picture100-3.png)
 
-    -   **Username**: &lt;username&gt;
+-   Enter your Cloud **username** and **password**, and click **Sign In**.
 
-    -   **Password**: &lt;password&gt;
-
-![](./images/100/Picture100-2.png)
-
--   Click the **Menu Action** icon and select **Open Service Console**.
-
-![](./images/100/Picture100-3.png)
+![](./images/100/media/Picture100-4.png)
 
 ### **STEP 2: Create an ADWC Instance**
 
--   On the Instances page, click **Create Instance**.
+-   By default, if you have not created an Autonomous Data Warehouse Cloud instance before you will not see it in the Dashboard. Click
+    **Create Instance** to create new ADWC instance.
 
-![](./images/100/Picture100-4.png)
+![](./images/100/media/Picture100-5.png)
 
--   In the first page of the Create New Instance wizard, enter the
-    following information:
+-   From the list of your available services select **Autonomous DW** under Data Management and click **Create**.
 
-    -   **Database Name** - &lt;yourname&gt;dw. Prefix your database
-        name with a unique name (you can use your name, for example),
-        e.g. JackDW. Since all users will be using the same cloud
-        account, it is important that you use a unique database name.
+![](./images/100/media/Picture100-6.png)
 
-    -   **CPU Count** – 2. Do not use more than 2 as it may cause other
-        users not being able to provision as the training environment
-        can only host a small number of CPUs.
+-   In the Welcome page click **Go to Console**.
 
-    -   **Storage Capacity (TB)** - 1
+![](./images/100/media/Picture100-7.png)
 
-    -   **Administrator Password** – &lt;password&gt;
+-   Click **Create Service** to start creating your ADWC instance.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click **Next**.
+![](./images/100/media/Picture100-8.png)
 
-![](./images/100/Picture100-5.png)
+-   Enter the required information and click **Next**. For the purposes of this lab, use the information below.
 
--   In the second page of the Create New Instance wizard, confirm your
-    entries and click **Create**. The Create New Instance wizard closes.
+    -   **Database Name:** Enter any database name you choose
 
-![](./images/100/Picture100-6.png)
+    -   **CPU Count:** 2
 
--   On the Instances page, the **Status** field indicates the service
-    instance is being created. When creation is completed, the Status
-    field disappears. You can click the **Refresh** button to see the
-    latest creation status.
+    -   **Storage Capacity (TB):** 1
 
-![](./images/100/Picture100-7.png)
+    -   **Administrator Password:** Enter any password you choose
 
-Connecting to ADWC
-==================
+![](./images/100/media/Picture100-9.png)
+
+-   Review your information in the confirmation page and click **Create**.
+
+![](./images/100/media/Picture100-10.png)
+
+-   **Refresh** the Instances page after a while to see if your instance is created.
+
+![](./images/100/media/Picture100-11.png)
+
+-   Check if the **Status** for your instance is cleared indicating your instance is ready to use.
+
+![](./images/100/media/Picture100-12.png)
+
+You now have created your first Autonomous Data Warehouse Cloud instance.
+
+Section 2. Connecting to ADWC
+=============================
 
 Downloading the credentials wallet
 ----------------------------------
 
-As ADWC only accepts secure connections to the database, you need to
-download a wallet file containing your credentials first. The wallet is
-downloaded from the ADWC service console.
+As ADWC only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet is downloaded from the ADWC service console.
 
-### **STEP 3: Log in to the Service Console**
+### **STEP 3: Sign in to the Service Console**
 
--   In the Instances screen find your database and click “Service
-    Console” in the actions menu.
+-   In the Instances page find your database and click **Service Console** in the actions menu.
 
-![](./images/100/Picture100-8.png)
+![](./images/100/media/Picture100-13.png)
 
-![](./images/100/Picture100-9.png)
+-   This will open a new browser tab for the service console. Sign in to the service console with the following information.
 
--   Log in to the service console with the following information.
+    -   **Username:** admin
 
-    -   Username: admin
+    -   **Password:** The administrator password you specified during provisioning
 
-    -   Password: &lt;password&gt;. The administrator password you
-        specified during provisioning
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The service console opens in the Overview mode.
-
-![](./images/100/Picture100-10.png)
+![](./images/100/media/Picture100-14.png)
 
 ### **STEP 4: Download the credentials wallet**
 
--   Click the **Administration** tab in the service console.
+-   Click the “**Administration**” tab and click “**Download Client Credentials**” to download the wallet.
 
-![](./images/100/Picture100-11.png)
+![](./images/100/media/Picture100-15.png)
 
--   Click **Download Client Credentials**.
+-   Specify a password of your choice for the wallet, you will need this password when connecting to the database later. Click **Download** to download the wallet file to your client machine.
 
-![](./images/100/Picture100-12.png)
-
--   You are prompted to create a password for the credentials zip file.
-    Enter a password **&lt;password&gt;** and click **Download**.
-
-![](./images/100/Picture100-13.png)
-
-Store the zip file and make note of the password. You will use the zip
-file and password in the next step to define a SQL Developer connection
-to your Autonomous DW Cloud database.
+![](./images/100/media/Picture100-16.png)
 
 Connecting to the database using SQL Developer
 ----------------------------------------------
 
-Start Oracle SQL Developer and create a connection for your database
-using the default administrator account, ADMIN, by following these
-steps.
+Start SQL Developer and create a connection for your database using the default administrator account, ADMIN, by following these steps.
 
 ### **STEP 5: Connect to the database using SQL Developer**
 
--   Open SQL Developer on your local computer. Click the **Create
-    Connection** icon in the Connections toolbox on the top left of the
-    SQL Developer homepage.
+-   Click the **Create Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
-![](./images/100/Picture100-14.png)
+![](./images/100/media/Picture100-17.png)
 
 -   Fill in the connection details as below:
 
-    -   **Connection Name**:** **admin
+    -   **Connection Name: **admin\_high
 
-    -   **Username**: admin
+    -   **Username: **admin
 
-    -   **Password**:** **&lt;password&gt;. The password you specified
-        during provisioning
+    -   **Password: **The password you specified during provisioning
 
-    -   **Connection Type**: Cloud PDB
+    -   **Connection Type: **Cloud PDB
 
-    -   **Configuration File**: Click the **Browse** button to point to
-        the location of the file.
+    -   **Configuration File: **Enter the full path for the wallet file you downloaded before, 
+    or click the **Browse button** to point to the location of the file.
 
-    -   **Keystore Password**: &lt;password&gt;. The password you
-        specified when downloading the credentials wallet from the ADWC
-        service console
+    -   **Keystore Password: **The password you specified when downloading the wallet from the ADWC service console
 
-    -   **Service**: There are 3 pre-configured database services for
-        each database. Pick &lt;databasename&gt;\_high for this lab. For
-        example, if you created a database named JackDW select
-        jackdw\_high as the service. As all lab attendees are using the
-        same PSM tenant you will see all services for all users in this
-        list, pick the one belonging to your database.
+    -   **Service: **There are 3 pre-configured database services for each database. Pick &lt;databasename&gt;\_high for this lab. For
+        example, if you created a database named testdw select testdw\_high as the service.
 
-        **Note**: Earlier versions of SQL Developer may not support this
-        feature.
+![](./images/100/media/Picture100-18.png)
 
-![](./images/100/Picture100-15.png)
+-   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. 
 
--   Click **Test**.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Success status displays at the left-most bottom of the New/Select
-Database Connection dialog.
-
--   Click **Connect**.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An entry for the new connection appears under Connections.
-
- 
-=
-
-Creating users in ADWC
-======================
-
-Using your existing connection in SQL Developer, create a new user named
-SH.
-
-### **STEP 6: Create a user in your ADWC database** 
-
--   Open a SQL Developer worksheet and run the following SQL statements
-    to create the user adwc\_user, swapping in a password. ADWC uses the
-    password complexity function ora12c\_verify\_function, so you need
-    to use a strong password for your users.
-`````````````
-create user sh identified by "<password>";
-
-grant dwrole to sh;
-`````````````````
-![](./images/100/Picture100-16.png)
-
-Note that the database role DWROLE includes the privileges required by a
-typical DW developer. You can grant additional database privileges if
-needed.
-
-You are now ready to move to the next lab.
+-   You are now ready to move to the next lab.
