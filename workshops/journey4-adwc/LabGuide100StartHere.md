@@ -19,7 +19,7 @@ Objectives
 Required Artifacts
 ------------------
 
--   The following lab requires an Oracle Public Cloud account that will be supplied by your instructor.
+-   The following lab requires an Oracle Public Cloud account.
 
 -   Oracle SQL Developer (see [Oracle Technology Network download site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
     We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
@@ -136,19 +136,19 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   Fill in the connection details as below:
 
-    -   **Connection Name**: admin_high
+    -   **Connection Name:** admin_high
 
-    -   **Username**: admin
+    -   **Username:** admin
 
-    -   **Password**: The password you specified during provisioning
+    -   **Password:** The password you specified during provisioning
 
-    -   **Connection Type**: Cloud PDB
+    -   **Connection Type:** Cloud PDB
 
-    -   **Configuration File**: Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
+    -   **Configuration File:** Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
 
-    -   **Keystore Password**: The password you specified when downloading the wallet from the ADWC service console
+    -   **Keystore Password:** The password you specified when downloading the wallet from the ADWC service console
 
-    -   **Service**: There are 3 pre-configured database services for each database. Pick &lt;databasename&gt;\_high for this lab. For
+    -   **Service:** There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_high** for this lab. For
         example, if you created a database named testdw select testdw_high as the service.
 
 ![](./images/100/Picture100-18.png)
