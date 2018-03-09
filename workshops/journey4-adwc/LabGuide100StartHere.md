@@ -136,20 +136,20 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   Fill in the connection details as below:
 
-    -   **Connection Name: ** admin\_high
+    -   **Connection Name:** admin\_high
 
-    -   **Username: ** admin
+    -   **Username:** admin
 
-    -   **Password: ** The password you specified during provisioning
+    -   **Password:** The password you specified during provisioning
 
-    -   **Connection Type: ** Cloud PDB
+    -   **Connection Type:** Cloud PDB
 
-    -   **Configuration File: ** Enter the full path for the wallet file you downloaded before, 
+    -   **Configuration File:** Enter the full path for the wallet file you downloaded before, 
     or click the **Browse button** to point to the location of the file.
 
-    -   **Keystore Password: ** The password you specified when downloading the wallet from the ADWC service console
+    -   **Keystore Password:** The password you specified when downloading the wallet from the ADWC service console
 
-    -   **Service: ** There are 3 pre-configured database services for each database. Pick &lt;databasename&gt;\_high for this lab. For
+    -   **Service:** There are 3 pre-configured database services for each database. Pick &lt;databasename&gt;\_high for this lab. For
         example, if you created a database named testdw select testdw\_high as the service.
 
 ![](./images/100/Picture100-18.png)
