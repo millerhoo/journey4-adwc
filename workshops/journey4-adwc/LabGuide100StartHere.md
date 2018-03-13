@@ -1,13 +1,11 @@
 ![](./images/100/Picture100-1.png)
 
-Draft Version. Updated: March 8, 2018
+Draft Version. Updated: March 13, 2018
 
 Introduction
 ------------
 
 This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC database and connect to the database using Oracle SQL Developer.
-
-This is an instructor led lab, please follow the instructor before doing the exercises. Stop and wait for the instructor led discussion after each section before going to the next section.
 
 Objectives
 ----------
@@ -19,7 +17,7 @@ Objectives
 Required Artifacts
 ------------------
 
--   The following lab requires an Oracle Public Cloud account.
+-   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 -   Oracle SQL Developer (see [Oracle Technology Network download site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
     We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
