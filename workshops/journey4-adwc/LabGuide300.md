@@ -7,6 +7,8 @@ Introduction
 
 In this lab you will scale up your Oracle Autonomous Data Warehouse Cloud (ADWC) service to have more CPUs. And you will watch a demo that shows the performance and concurrency impacts of scaling your service online.
 
+To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new) to go to the github oracle repository issue submission form.
+
 Objectives
 ----------
 

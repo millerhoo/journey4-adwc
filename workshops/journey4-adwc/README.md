@@ -63,7 +63,7 @@ The Test Drive workshop will leverage sample datasets (SALES HISTORY and SSB) th
 **Objectives**:
 
 - Scale up ....
-## Lab 300: OML SQL Worksheet
+## Lab 400: OML SQL Worksheet
 
 **Documenation**: 
 

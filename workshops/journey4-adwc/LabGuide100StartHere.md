@@ -7,6 +7,8 @@ Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC database and connect to the database using Oracle SQL Developer.
 
+To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new) to go to the github oracle repository issue submission form.
+
 Objectives
 ----------
 
