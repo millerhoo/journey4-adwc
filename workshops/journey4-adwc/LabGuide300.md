@@ -42,7 +42,9 @@ Click **Scale Service** after filling in the form, this will take you the Instan
 
 ![](./images/300/Picture300-3.png)
 
--   The applications can continue running during the scale operation without downtime. **Refresh** the page to see the result of the scale operation.
+> **Note** The applications can continue running during the scale operation without downtime.
+
+-   **Refresh** the page to see the result of the scale operation.
 
 ![](./images/300/Picture300-4.png)
 
@@ -54,7 +56,7 @@ Click **Scale Service** after filling in the form, this will take you the Instan
 
 ### STEP 2: Performance and concurrency benefits of dynamic scaling
 
--   Click **here** (link TBD) to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
+-   Click here (**link TBD**) to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
 
 -   The demo will show a workload that has 10 concurrent users running with the MEDIUM database service. You will see that on a 2 CPU ADWC instance 5 queries are running whereas 5 queries are waiting in the queue for resources.
 

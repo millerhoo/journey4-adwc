@@ -31,7 +31,7 @@ The Test Drive workshop will leverage sample datasets (SALES HISTORY and SSB) th
 
     ![](images/WorkshopMenu.png)  
 
-- To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/tree/master/workshops/journey4-adwc) repository.
+- To **log issues** and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/tree/master/workshops/journey4-adwc) repository.
 
 
 
@@ -48,3 +48,25 @@ The Test Drive workshop will leverage sample datasets (SALES HISTORY and SSB) th
 
 - Provision ....
 
+## Lab 200: Data Loading
+
+**Documenation**: 
+
+**Objectives**:
+
+- Data load ....
+
+## Lab 300: Scaling and Performance in ADWC
+
+**Documenation**:  [LabGuide300.md](LabGuide300.md)
+
+**Objectives**:
+
+- Scale up ....
+## Lab 300: OML SQL Worksheet
+
+**Documenation**: 
+
+**Objectives**:
+
+- Machine learning ....
