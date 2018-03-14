@@ -155,4 +155,6 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. 
 
+-   Create another connection named as admin_low using the same information as above, this time pick <databasename>_low as the service name, for example, testdw_low.
+
 -   You are now ready to move to the next lab.
