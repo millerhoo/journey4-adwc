@@ -2,7 +2,7 @@
     "workshop": {
         "title": "ADWC Journey: Hands-on Workshop",
         "description": "This workshop will show you how to use Oracle Autonomous Data Warehouse Cloud in the Oracle Public Cloud.",
-        "theme": "default",
+        "interactive":"http://www.oracle.com/us/products/database/autonomous-dw-cloud-ipaper-3938921.pdf",
         "labs": [
             {
                 "number": "0",
