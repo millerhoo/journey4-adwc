@@ -20,6 +20,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 # Scaling and Performance in ADWC
 
+## Steps
 
 ### STEP 1: Scaling your ADWC instance
 
