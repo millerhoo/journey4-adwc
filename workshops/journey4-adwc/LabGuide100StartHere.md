@@ -97,6 +97,8 @@ You now have created your first Autonomous Data Warehouse Cloud instance.
 
 As ADWC only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet is downloaded from the ADWC service console.
 
+## Steps
+
 ### **STEP 3: Sign in to the Service Console**
 
 -   In the Instances page find your database and click **Service Console** in the actions menu.
@@ -124,6 +126,8 @@ As ADWC only accepts secure connections to the database, you need to download a 
 ## Connecting to the database using SQL Developer
 
 Start SQL Developer and create a connection for your database using the default administrator account, ADMIN, by following these steps.
+
+## Steps
 
 ### **STEP 5: Connect to the database using SQL Developer**
 
