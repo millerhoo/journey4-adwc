@@ -40,7 +40,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 # Workshop Details
 
-**Reference the following Lab Guides by opening their Documentation Files:**
+** Reference the following Lab Guides by opening their Documentation links **
 
 ## Lab 100: Provisioning
 
