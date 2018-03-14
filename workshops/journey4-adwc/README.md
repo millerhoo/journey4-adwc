@@ -20,7 +20,8 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 
 ## To learn more
- - [Autonomous Data Warehouse Cloud](https://cloud.oracle.com/en_US/datawarehouse)
+ - [Autonomous Data Warehouse Cloud Website](https://cloud.oracle.com/en_US/datawarehouse)
+ - [Autonomous Data Warehouse Cloud Overview](http://www.oracle.com/us/products/database/autonomous-dw-cloud-ipaper-3938921.pdf)
  
       
 ## How to View the Lab Guides
