@@ -2,27 +2,24 @@
 
 Draft Version. Updated: March 13, 2018
 
-Introduction
-------------
+# Introduction
 
 In this lab you will scale up your Oracle Autonomous Data Warehouse Cloud (ADWC) service to have more CPUs. And you will watch a demo that shows the performance and concurrency impacts of scaling your service online.
 
 To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new) to go to the github oracle repository issue submission form.
 
-Objectives
-----------
+# Objectives
 
 -   Learn how to scale up an ADWC service
 
 -   Understand the performance and concurrency impacts of scaling the ADWC service online
 
-Required Artifacts
-------------------
+# Required Artifacts
 
 -   The following lab requires an Oracle Public Cloud account. You may your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-Scaling and Performance in ADWC
-===============================
+# Scaling and Performance in ADWC
+
 
 ### STEP 1: Scaling your ADWC instance
 

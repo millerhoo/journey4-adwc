@@ -42,7 +42,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 **Reference the following Lab Guides by opening their Documentation Files:**
 
-## Lab 100: START HERE
+## Lab 100: Provisioning
 
 **Documenation**: [LabGuide100StartHere.md](LabGuide100StartHere.md)
 
