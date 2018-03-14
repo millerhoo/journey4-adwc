@@ -1,4 +1,4 @@
-![](./images/300/Picture300-1.png)
+![](images/300/TITLE300.JPG)
 
 Draft Version. Updated: March 13, 2018
 

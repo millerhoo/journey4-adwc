@@ -8,12 +8,12 @@
                 "number": "0",
                 "filename": "README.md",
                 "title": "Read Me First",
-                "description": "Workshop Overview"
+                "description": "ADWC Test Drive Workshop Overview"
             },
             {
                 "number": "100",
                 "filename": "LabGuide100StartHere.md",
-                "title": "Lab 100: START HERE - Provisioning",
+                "title": "Lab 100: Provisioning",
                 "description": "Instructions to provision an ADWC service and connect to ADWC"
             },
             {
