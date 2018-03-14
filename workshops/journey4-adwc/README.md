@@ -38,13 +38,13 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 
 
-## Workshop Details
+# Workshop Details
 
 **Reference the following Lab Guides by opening their Documentation Files:**
 
 ## Lab 100: Provisioning
 
-**Documenation**: [LabGuide100StartHere.md](LabGuide100StartHere.md)
+**Documentation**: [LabGuide100StartHere.md](LabGuide100StartHere.md)
 
 **Objectives**:
 
@@ -55,7 +55,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 ## Lab 200: Data Loading
 
-**Documenation**: 
+**Documentation**: 
 
 **Objectives**:
 
@@ -68,7 +68,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 ## Lab 300: Scaling and Performance in ADWC
 
-**Documenation**:  [LabGuide300.md](LabGuide300.md)
+**Documentation**:  [LabGuide300.md](LabGuide300.md)
 
 **Objectives**:
 
@@ -77,7 +77,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 ## Lab 400: OML SQL Worksheet
 
-**Documenation**: 
+**Documentation**: 
 
 **Objectives**:
 
