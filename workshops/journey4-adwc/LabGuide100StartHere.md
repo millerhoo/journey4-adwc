@@ -1,6 +1,6 @@
 ![](./images/100/Picture100-1.png)
 
-Draft Version. Updated: March 13, 2018
+Updated: March 14, 2018
 
 Introduction
 ------------
@@ -153,7 +153,7 @@ Start SQL Developer and create a connection for your database using the default 
 
 ![](./images/100/Picture100-18.png)
 
--   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. 
+-   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. An entry for the new connection appears under Connections.
 
 -   Create another connection named as **admin_high** using the same information as above, this time pick **&lt;databasename&gt;_high** as the service name, for example, testdw_high.
 
