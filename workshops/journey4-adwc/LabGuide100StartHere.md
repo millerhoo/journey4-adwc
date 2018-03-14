@@ -136,7 +136,7 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   Fill in the connection details as below:
 
-    -   **Connection Name:** admin_high
+    -   **Connection Name:** admin_low
 
     -   **Username:** admin
 
@@ -148,13 +148,13 @@ Start SQL Developer and create a connection for your database using the default 
 
     -   **Keystore Password:** The password you specified when downloading the wallet from the ADWC service console
 
-    -   **Service:** There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_high** for this lab. For
-        example, if you created a database named testdw select testdw_high as the service.
+    -   **Service:** There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_low** for this lab. For
+        example, if you created a database named testdw select testdw_low as the service.
 
 ![](./images/100/Picture100-18.png)
 
 -   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. 
 
--   Create another connection named as admin_low using the same information as above, this time pick <databasename>_low as the service name, for example, testdw_low.
+-   Create another connection named as **admin_high** using the same information as above, this time pick **&lt;databasename&gt;_high** as the service name, for example, testdw_high.
 
 -   You are now ready to move to the next lab.
