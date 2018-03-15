@@ -34,17 +34,17 @@ In this section of the lab, you will be creating sample tables, loading data int
     If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
 
 # Create the tables
-
+## Steps
 ### STEP 1: Create Target Tables for Data Loading
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it.
-<a href="theURL" target="_blank"></a>
+
     ![](./images/300/Picture300-2.png)
 
 Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. Also note that all the constraints are created as RELY DISABLE VALIDATE.
 
 # Load data from the Object Store
-
+## Steps
 ### STEP 2: Creating an Object Store Swift Password
 
 To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need a Cloud user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and username/password authentication.
