@@ -28,17 +28,17 @@ In this section of the lab, you will be creating sample tables, loading data int
     -   Upload the data to the OCI Object Storage ([link](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm) of documentation)
 
 -   Oracle SQL Developer (see [Oracle Technology Network download site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
-    We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.\
-    **Note**:\
-    If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.\
+    We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
+    **Note**:
+    If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.
     If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
 
 # Create the tables
 
 ### STEP 1: Create Target Tables for Data Loading
 
--   Connected as your user in SQL Developer, copy and paste [this code snippet](./scripts/300/create_tables.txt) to SQL Developer worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it as your user in SQL Developer.
-
+-   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it.
+<a href="theURL" target="_blank"></a>
     ![](./images/300/Picture300-2.png)
 
 Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. Also note that all the constraints are created as RELY DISABLE VALIDATE.
@@ -52,14 +52,13 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 **Note:** If you are in an Oracle instructor-led workshop, setting up the object store will be demonstrated by the instructor for this
 exercise. A user with the right setup has been pre-created for you to use.
 
--   Sign in to your Oracle Cloud Infrastructure Console with the following credentials provided by your Oracle Cloud: cloud tenant,
-    user name, and password.
+-   Sign in to your Oracle Cloud Infrastructure Console with the following credentials provided by your Oracle Cloud: **cloud tenant**, **user name**, and **password**.
 
 ![](./images/300/Picture300-3.png)
 
 ![](./images/300/Picture300-4.png)
 
--   In the top-right corner of the Console, click the **username**, and then click **User Settings** to view the details. In this example, the user name is **tenant2**.
+-   In the top-right corner of the Console, click the **username**, and then click **User Settings** to view the details. In this example, the user name is **tenant2**. Yours might be different.
 
     **Note:** If you're an administrator creating a Swift password for another user: In the Console, click Identity, and then click Users. Locate the user in the list, and then click the user's name to view the details.
 
@@ -102,8 +101,7 @@ In order to access data in the Object Store you have to enable your database use
 
 ### STEP 4: Loading Data Using the Data Import Wizard in SQL Developer
 
-**Note:** Beginning with SQL Developer 18.1 the data import wizard supports loading from files in the Object Store straight into your Autonomous Data Warehouse. This release of SQL Developer is going to be available soon, so for now this demo will be shown by the Oracle
-instructor. After that demo you can continue with the “Loading data using the new PL/SQL package, DBMS\_CLOUD” section to load data using PL/SQL.
+**Note:** Beginning with SQL Developer 18.1 the data import wizard supports loading from files in the Object Store straight into your Autonomous Data Warehouse. This release of SQL Developer is going to be available soon, so for now this demo will be shown by the Oracle instructor. After that demo you can continue with the “STEP 5: Loading data using the new PL/SQL package, DBMS\_CLOUD” section to load data using PL/SQL.
 
 -   Expand ‘**Tables**’ in your user schema object tree. You will see all the tables you have created previously. Select table **CHANNELS**. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select ‘**Import Data**’:
 
@@ -122,22 +120,21 @@ instructor. After that demo you can continue with the “Loading data using the 
 After entering this information, you can preview the data and select the appropriate file formats. You will see that the data preview is
 interactive and changes according to your selection.
 
-When you are satisfied with the file content view, click NEXT.
+When you are satisfied with the file content view, click **NEXT**.
 
 ![](./images/300/Picture300-15b.png)
 
--   Here you control the import method and parameters. Since we invoked the data import wizard for table CHANNELS the only load method is a direct load into this table. Click NEXT.
+-   Here you control the import method and parameters. Since we invoked the data import wizard for table CHANNELS the only load method is a direct load into this table. Click **NEXT**.
 
 ![](./images/300/Picture300-16b.png)
 
--   The column definition screen shows you whether the sample data violates any of the existing column definitions of table CHANNELS
-    (for a load into a new table you would select the column names and data types for the new table). Click NEXT.
+-   The column definition screen shows you whether the sample data violates any of the existing column definitions of table CHANNELS (for a load into a new table you would select the column names and data types for the new table). Click **NEXT**.
 
 ![](./images/300/Picture300-17b.png)
 
 -   The last screen before the final data load enables you to test a larger row count than the sample data of the beginning of the wizard to see whether the previously made decisions are satisfying for your data load. Note that we are not loading any data when iterating back and forth between this screen and previous ones. Select **TEST RESULTS** and look at the log, the data you would load, any mistakes and how the external table definition looks like based on your inputs.
 
-When done with your investigation, click **NEXT**.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When done with your investigation, click **NEXT**.
 
 ![](./images/300/Picture300-18b.png)
 
