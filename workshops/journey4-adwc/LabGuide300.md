@@ -17,37 +17,23 @@ Create the tables
 Copy and paste the below script to your SQL Developer SQL Worksheet and
 run the script to create the tables.
 
----
-CREATE TABLE sales (
 
-  prod_id NUMBER NOT NULL,
+>CREATE TABLE sales (
+>  prod_id NUMBER NOT NULL,
+>  cust_id NUMBER NOT NULL,
+>  time_id DATE NOT NULL,
+>  channel_id NUMBER(6) NOT NULL,
+>  promo_id NUMBER NOT NULL,
+>  quantity_sold NUMBER(10,2) NOT NULL,
+>  amount_sold NUMBER(10,2) NOT NULL);
 
-  cust_id NUMBER NOT NULL,
-
-  time_id DATE NOT NULL,
-
-  channel_id NUMBER(6) NOT NULL,
-
-  promo_id NUMBER NOT NULL,
-
-  quantity_sold NUMBER(10,2) NOT NULL,
-
-  amount_sold NUMBER(10,2) NOT NULL);
-
-
-CREATE TABLE costs (
-
-  prod_id NUMBER NOT NULL,
-
-  time_id DATE NOT NULL,
-
-  promo_id NUMBER NOT NULL,
-
-  channel_id NUMBER(6) NOT NULL,
-
-  unit_cost NUMBER(10,2) NOT NULL,
-
-  unit_price NUMBER(10,2) NOT NULL);
+>CREATE TABLE costs (
+>  prod_id NUMBER NOT NULL,
+>  time_id DATE NOT NULL,
+>  promo_id NUMBER NOT NULL,
+>  channel_id NUMBER(6) NOT NULL,
+>  unit_cost NUMBER(10,2) NOT NULL,
+>  unit_price NUMBER(10,2) NOT NULL);
 
 
 CREATE TABLE times (
@@ -447,7 +433,7 @@ ALTER TABLE supplementary_demographics
 ADD CONSTRAINT supp_demo_pk
 
 PRIMARY KEY (cust_id)
----
+
 
 RELY DISABLE NOVALIDATE;
 
