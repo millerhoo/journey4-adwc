@@ -23,15 +23,15 @@ In this section of the lab, you will be creating sample tables, loading data int
 -   Sample data files already uploaded to a staging area; otherwise follow the steps below, to upload your data files to the OCI Object
     Storage service:
 
-    -   Click [here](https://github.com/oracle/db-sample-schemas/tree/master/sales_history) to download the sample data files to your laptop
+    -   Click <a href="https://github.com/oracle/db-sample-schemas/tree/master/sales_history" target="_blank">here</a> to download the sample data files to your laptop
 
-    -   Upload the data to the OCI Object Storage ([link](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm) of documentation)
+    -   Upload the data to the OCI Object Storage (<a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="_blank">link</a> of documentation)
 
--   Oracle SQL Developer (see [Oracle Technology Network download site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
+-   Oracle SQL Developer (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html" target="_blank">Oracle Technology Network download site</a>).
     We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
     **Note**:
     If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.
-    If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
+    If you are a non-Windows user, download and install the appropriate <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">Java 8 JDK</a> for your Operating System. Download and extract the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html" target="_blank">Java Cryptography Encryption Archive</a> to the directory as indicated in the README.txt.
 
 # Create the tables
 ## Steps
@@ -86,7 +86,7 @@ exercise. A user with the right setup has been pre-created for you to use.
 
 In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your object store account and Swift password. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
 
--   Connected as your user in SQL Developer, copy and paste [this code snippet](./scripts/300/create_credential.txt) to SQL Developer worksheet.
+-   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_credential.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.
 
     Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The **username** and the object store **Swift password** you generated in the previous step.
     ![](./images/300/Picture300-11.png)
@@ -144,7 +144,7 @@ When you are satisfied with the file content view, click **NEXT**.
 
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
--   Connected as your user in SQL Developer, copy and paste [this code snippet](./scripts/300/load_data.txt) to SQL Developer worksheet.
+-   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.
 
     Specify the parameters: **credential_name** and **file_uri_list**.
 
@@ -160,7 +160,7 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 
 -   Click the **Run Script** button to run the script.
 
--   You have successfully loaded the sample tables. Now, you can run any sample query in the [*relational analytics*](https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493) section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in [this code snippet](./scripts/300/query_tables.txt). ([*link*](https://docs.oracle.com/database/122/DWHSG/sql-analysis-reporting-data-warehouses.htm#GUID-33B4DE75-D7F8-4AE1-9F2E-C2846F72CC1E__GUID-4CB0EE02-AA9F-42D9-8F1B-2CD477496CD9) to documentation).
+-   You have successfully loaded the sample tables. Now, you can run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./scripts/300/query_tables.txt" target="_blank">this code snippet</a>. ( <a href="https://docs.oracle.com/database/122/DWHSG/sql-analysis-reporting-data-warehouses.htm#GUID-33B4DE75-D7F8-4AE1-9F2E-C2846F72CC1E__GUID-4CB0EE02-AA9F-42D9-8F1B-2CD477496CD9" target="_blank">link</a> to documentation).
 
 ![](./images/300/Picture300-20.png)
 
@@ -174,7 +174,7 @@ select * from user_load_operations;
 This table lists the past and current load operations in your schema.Any data copy and data validation operation will be automatically
 tracked by Oracle.
 
--   To look at the log of a load operation, copy and paste [this code snippet](./scripts/300/load_data_with_errors.txt) to a SQL Developer worksheet and run the script as your user in SQL Developer. Note that you are going to load the data with errors this time.
+-   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Note that you are going to load the data with errors this time.
 
 ![](./images/300/Picture300-21.png)
 
