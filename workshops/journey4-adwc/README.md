@@ -43,7 +43,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 ** Reference the following Lab Guides by opening their Documentation links **
 
-## Lab 100: Provisioning
+## Lab 100: Provisioning and Connecting
 
 **Documentation**: [LabGuide100StartHere.md](LabGuide100StartHere.md)
 
@@ -54,32 +54,65 @@ This workshop walks you through all the steps to get started using the **Oracle 
 - Learn how to download the client credentials wallet file
 - Learn how to connect from Oracle SQL Developer
 
-## Lab 200: Data Loading
+## Lab 200: Working with Database Services and Sample Data Sets
 
-**Documentation**: 
+**Documentation**: [LabGuide200.md](LabGuide200.md)
+
+**Objectives**:
+
+- Learn about the different levels of ADWC database service (HIGH, MEDIUM, LOW)
+- Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
+- See how the different levels of database service affect performance and concurrency
+
+
+## Lab 300: Data Loading
+
+**Documentation**: [LabGuide300.md](LabGuide300.md)
 
 **Objectives**:
 
 - Learn how to load data from an object store
-- Learn how to use the SQL Developer Data Import wizard to load data
+- Learn how to use the SQL Developer Data Import Wizard to load data
 - Learn how to troubleshoot data loads
+
+
+## Lab 400: Query External Tables
+
+**Documentation**: [LabGuide400.md](LabGuide400.md)
+
+**Objectives**:
+
+- Learn how to define external tables against Object Store data sets
 - Learn how to query external tables
 
 
+## Lab 500: Managing and Monitoring ADWC using the Cloud Console
 
-## Lab 300: Scaling and Performance in ADWC
+**Documentation**: [LabGuide500.md](LabGuide500.md)
 
-**Documentation**:  [LabGuide300.md](LabGuide300.md)
+**Objectives**:
+
+- Learn how to start/stop your ADWC instance
+- Learn how to recover your ADWC database if needed
+- Learn how to use the service console to monitor the performance of your ADWC instance
+
+
+
+## Lab 600: Scaling and Performance in ADWC
+
+**Documentation**:  [LabGuide600.md](LabGuide600.md)
 
 **Objectives**:
 
 - Learn how to scale up and down the ADWC instance
 - See how scaling affects ADWC concurrency and performance
 
-## Lab 400: OML SQL Worksheet
+## Lab 700: Oracle Machine Learning Notebooks
 
-**Documentation**: 
+**Documentation**: [LabGuide700.md](LabGuide700.md)
 
 **Objectives**:
 
-- Machine learning ....
+- Learn how to create Oracle Machine Learning (OML) users
+- Learn how to run queries and scripts in the web-based OML worksheets
+- Learn how to create notebooks and share them across multiple users

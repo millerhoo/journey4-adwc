@@ -12,14 +12,44 @@
             {
                 "number": "100",
                 "filename": "LabGuide100StartHere.md",
-                "title": "Lab 100: Provisioning",
+                "title": "Lab 100: Provisioning and Connecting",
                 "description": "Instructions to provision an ADWC service and connect to ADWC"
+            },
+            {
+                "number": "200",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200: Working with Database Services and Sample Data Sets",
+                "description": "Understanding the different levels of database services and the sample Star Schema Benchmark (SSB) and Sales History (SH) datasets provided with ADWC"
             },
             {
                 "number": "300",
                 "filename": "LabGuide300.md",
-                "title": "Lab 300: Scaling and Performance in ADWC",
-                "description": "Instructions to scale up your ADWC service"
+                "title": "Lab 300: Data Loading",
+                "description": "Instructions to load data from Object Stores using SQL Developer and/or PL/SQL"
+            },
+            {
+                "number": "400",
+                "filename": "LabGuide400.md",
+                "title": "Lab 400: Querying External Data",
+                "description": "Instructions to define and query external tables based on Object Store datasets"
+            },
+            {
+                "number": "500",
+                "filename": "LabGuide500.md",
+                "title": "Lab 500: Managing and Monitoring ADWC using the Cloud Console",
+                "description": "Understanding how to use the ADWC Console to monitor, start/stop, and recover your ADWC instance"
+            },
+            {
+                "number": "600",
+                "filename": "LabGuide600.md",
+                "title": "Lab 600: Scaling and Performance in ADWC",
+                "description": "Understanding how to scale ADWC and its impact on performance and concurrency"
+            },
+            {
+                "number": "700",
+                "filename": "LabGuide700.md",
+                "title": "Lab 700: Oracle Machine Learning Notebooks",
+                "description": "Instructions to use Oracle Machine Learning Notebooks in ADWC"
             }
         ]
     }
