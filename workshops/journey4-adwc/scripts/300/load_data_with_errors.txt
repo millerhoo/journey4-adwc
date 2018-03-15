@@ -1,0 +1,9 @@
+begin
+ dbms_cloud.copy_data(
+    table_name =>'CHANNELS',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/chan_v3_error.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+ );
+end;
+/
