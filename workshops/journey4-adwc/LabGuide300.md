@@ -22,13 +22,6 @@ In this section of the lab, you will be creating sample tables, loading data int
 
 -   The following lab requires an Oracle Public Cloud account. You may your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
--   Sample data files already uploaded to a staging area; otherwise follow the steps below, to upload your data files to the OCI Object
-    Storage service:
-
-    -   Click <a href="https://github.com/oracle/db-sample-schemas/tree/master/sales_history" target="_blank">here</a> to download the sample data files to your laptop
-
-    -   Upload the data to the OCI Object Storage (<a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="_blank">link</a> of documentation)
-
 -   Oracle SQL Developer (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html" target="_blank">Oracle Technology Network download site</a>).
     We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
     **Note**:
@@ -51,7 +44,7 @@ In this section of the lab, you will be creating sample tables, loading data int
 -   The easiest way to get to the OCI Compute Console is to first navigate to the My Services Dashboard page:
     ![](images/300/snap0014294.jpg)
 
--   From the My Services Dashboard page, open the upper left menu and expand Services.  Under Services, click on the entry titled "Compute".  *Hint: you might want to right-click on Compute and choose "open in new tab" so that you can easily return to the My Services Dashboard if needed*:
+-   From the My Services Dashboard page, open the upper left menu and expand Services.  Under Services, click on the entry titled "Compute".  *Hint: you might want to right-click on Compute and choose "open in new tab" so that you can keep the My Services Dashboard open*:
     ![](images/300/snap0014295.jpg)
 
 -   This should take you to the OCI Compute Console:
@@ -59,6 +52,7 @@ In this section of the lab, you will be creating sample tables, loading data int
 
 
 ### STEP 3: Navigate to the Storage Tab, then Object Storage 
+To learn more about the OCI Object Storage, check out this <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="_blank">documentation</a> .
 
 -   In the OCI Compute Console, click on the Storage tab, then click on Object Storage on the left-hand menu:
     ![](images/300/snap0014297.jpg)
