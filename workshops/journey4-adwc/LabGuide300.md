@@ -10,6 +10,8 @@ In this section of the lab, you will be creating sample tables, loading data int
 
 ## Objectives
 
+-   Learn how to upload files to the OCI Object Store
+
 -   Learn how to create tables in your database
 
 -   Learn how to load data from the Object Store
@@ -32,6 +34,64 @@ In this section of the lab, you will be creating sample tables, loading data int
     **Note**:
     If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.
     If you are a non-Windows user, download and install the appropriate <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">Java 8 JDK</a> for your Operating System. Download and extract the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html" target="_blank">Java Cryptography Encryption Archive</a> to the directory as indicated in the README.txt.
+
+# Upload files to OCI Object Store
+## Steps
+### STEP 1: Download the sample data files to your local computer
+
+-   For this lab, you will need a handful of data files.  Please click on the links and download them to a directory on your local computer:
+
+    -   Sales data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/sale1v3.dat" target="_blank">sale1v3.dat</a>
+    -   Customer data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/cust1v3.dat" target="_blank">cust1v3.dat</a>
+    -   Channel data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/chan_v3.dat" target="_blank">chan_v3.dat</a>
+    -   Channel data (with intentional errors): <a href="files/chan_v3_error.dat" target="_blank">chan_v3_error.dat</a>
+    
+### STEP 2: Navigate to the OCI Compute Console 
+
+-   The easiest way to get to the OCI Compute Console is to first navigate to the My Services Dashboard page:
+    ![](images/300/snap0014294.jpg)
+
+-   From the My Services Dashboard page, open the upper left menu and expand Services.  Under Services, click on the entry titled "Compute".  *Hint: you might want to right-click on Compute and choose "open in new tab" so that you can easily return to the My Services Dashboard if needed*:
+    ![](images/300/snap0014295.jpg)
+
+-   This should take you to the OCI Compute Console:
+    ![](images/300/snap0014296.jpg)
+
+
+### STEP 3: Navigate to the Storage Tab, then Object Storage 
+
+-   In the OCI Compute Console, click on the Storage tab, then click on Object Storage on the left-hand menu:
+    ![](images/300/snap0014297.jpg)
+
+-   Choose the root compartment in the COMPARTMENT drop-down if it is not already choosen:
+    ![](images/300/snap0014298.jpg)
+
+### STEP 4: Create a Bucket for the Object Storage
+In OCI Object Storage, a bucket is the terminology for a container of multiple files. 
+
+-   Click the Create Bucket button:
+    ![](images/300/snap0014299.jpg)
+
+-   Name your bucket and click Create Bucket button.  *Hint: If you name your bucket ADWCLab, you won't need to edit the bucket name in the scripts you run later in the lab*:
+    ![](images/300/snap0014300.jpg)
+
+### STEP 5: Upload files to your OCI Object Store Bucket
+
+-   Click on your bucket name to open it:
+    ![](images/300/snap0014301.jpg)
+
+-   Click on the Upload Object button:
+    ![](images/300/snap0014302.jpg)
+
+-   Using the browse button or drag-and-drop select the **sale1v3.dat** file you downloaded earlier and click Upload Object:
+    ![](images/300/snap0014303.jpg)
+
+-   Repeat this for the **cust1v3.dat**, **chan_v3.dat**, and **chan_v3_error.dat** files.
+
+-   The end result should look like this with all 4 files listed under Objects:
+    ![](images/300/snap0014304.jpg)
+
+    
 
 # Create the tables
 ## Steps
