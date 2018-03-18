@@ -113,11 +113,9 @@ exercise. A user with the right setup has been pre-created for you to use.
 ![](./images/300/Create_Swift_Password_02.png)
 
 -   On the left side of the page, click **Swift Passwords**.
-
 ![](./images/300/Picture300-7.png)
 
 -   Click **Generate Password**.
-
 ![](./images/300/Picture300-8.png)
 
 -   Enter a friendly **description** for the password and click **Generate Password**.

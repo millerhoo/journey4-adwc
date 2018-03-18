@@ -1,48 +1,22 @@
 truncate table channels;
 truncate table sales;
-truncate table countries;
 truncate table customers;
+truncate table countries;
 truncate table products;
 truncate table promotions;
 truncate table supplementary_demographics;
 truncate table times;
 truncate table costs;
 
+/* Replace the <region name>, <tenant name>, <bucket name> with your actual values in the defination of the varaible bucket_uri.*/
+define bucket_uri = 'https://swiftobjectstorage.<region name>.oraclecloud.com/v1/<tenant name>/<bucket name>/';
+
 begin
  dbms_cloud.copy_data(
     table_name =>'CHANNELS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/chan_v3.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
- );
-end;
-/
-
-begin
- dbms_cloud.copy_data(
-    table_name =>'COUNTRIES',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/coun_v3.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
- );
-end;
-/
-
-begin
- dbms_cloud.copy_data(
-    table_name =>'CUSTOMERS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/cust1v3.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
- );
-end;
-/
-
-begin
- dbms_cloud.copy_data(
-    table_name =>'SUPPLEMENTARY_DEMOGRAPHICS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/dem1v3.dat',
+    credential_name =>'OBJ_STORE_CRED_1',
+    /* To construct a complete URI, the variable bucket_uri is concatenated to the name of a data file below.*/
+    file_uri_list => '&bucket_uri' || 'chan_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
  );
 end;
@@ -51,38 +25,8 @@ end;
 begin
  dbms_cloud.copy_data(
     table_name =>'SALES',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/dmsal_v3.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD')
- );
-end;
-/
-
-begin
- dbms_cloud.copy_data(
-    table_name =>'PRODUCTS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/prod1v3.dat',
-    format => json_object('delimiter' value '|', 'quote' value '^', 'ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
- );
-end;
-/
-
-begin
- dbms_cloud.copy_data(
-    table_name =>'PROMOTIONS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/prom1v3.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
- );
-end;
-/
-
-begin
- dbms_cloud.copy_data(
-    table_name =>'SALES',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/sale1v3.dat',
+    credential_name =>'OBJ_STORE_CRED_1',
+    file_uri_list => '&bucket_uri' || 'sale1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
  );
 end;
@@ -90,21 +34,17 @@ end;
 
 begin
  dbms_cloud.copy_data(
-    table_name =>'TIMES',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/time_v3.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+    table_name =>'CUSTOMERS',
+    credential_name =>'OBJ_STORE_CRED_1',
+    file_uri_list => '&bucket_uri' || 'cust1v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
  );
 end;
 /
 
-	
-begin
- dbms_cloud.copy_data(
-    table_name =>'COSTS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/costs.dat',
-    format => json_object('ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
- );
-end;
-/
+insert into countries select * from SH.countries;
+insert into products select * from SH.products;
+insert into promotions select * from SH.promotions;
+insert into supplementary_demographics select * from SH.supplementary_demographics;
+insert into times select * from SH.times;
+insert into costs select * from SH.costs;

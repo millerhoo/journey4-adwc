@@ -1,9 +1,14 @@
+/* Replace the <region name>, <tenant name>, <bucket name> with your actual values in the defination of the varaible bucket_uri.*/
+define bucket_uri = 'https://swiftobjectstorage.<region name>.oraclecloud.com/v1/<tenant name>/<bucket name>/';
+
 begin
  dbms_cloud.copy_data(
     table_name =>'CHANNELS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO_DATA/chan_v3_error.dat',
+    credential_name =>'OBJ_STORE_CRED_1',
+    /* To construct a complete URI, the variable bucket_uri is concatenated to the name of the data file with errors below.*/
+    file_uri_list =>'&bucket_uri' || 'chan_v3_error.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
  );
 end;
 /
+
