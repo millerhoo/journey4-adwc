@@ -95,6 +95,8 @@ In this example, the region name is us-ashburn-1, the tenant name is dbayard00, 
 
     https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/**dbayard00**/**ADWCLab**/**chan_v3.dat**
 
+    ![](images/300/ConstructURLs.png)
+
 -   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
