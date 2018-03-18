@@ -141,7 +141,7 @@ exercise. A user with the right setup has been pre-created for you to use.
 -   The new Swift password is displayed. Click **Copy** to copy the Swift password for your records immediately, because you can't retrieve it again after closing the dialog box.
     ![](./images/300/Picture300-10.png)
 
-### STEP 3: Create a Database Credential for Your User
+### STEP 9: Create a Database Credential for Your User
 
 In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your object store account and Swift password. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
 
@@ -158,7 +158,7 @@ In order to access data in the Object Store you have to enable your database use
 
 -   Now you are ready to load data from the Object Store.
 
-### STEP 4: Loading Data Using the Data Import Wizard in SQL Developer
+### STEP 10: Loading Data Using the Data Import Wizard in SQL Developer
 
 **Note:** Beginning with SQL Developer 18.1 the data import wizard supports loading from files in the Object Store straight into your Autonomous Data Warehouse. **This release of SQL Developer is going to be available soon, so for now this step will be demonstrated by the Oracle instructor if you are in an Oracle instructor-led workshop**. After that demo you can continue with the next step "Loading data using the new PL/SQL package, DBMS\_CLOUD” to load data using PL/SQL.
 
@@ -199,7 +199,7 @@ When you are satisfied with the file content view, click **NEXT**.
 
 -   The final screen reflects all your choices made in the Wizard. Click **FINISH** to load the data into table CHANNELS.
 
-### STEP 5: Loading Data Using the New PL/SQL Package, DBMS_CLOUD
+### STEP 11: Loading Data Using the New PL/SQL Package, DBMS_CLOUD
 
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
@@ -218,7 +218,7 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 
     ![](./images/300/Picture300-20.png)
 
-### STEP 6: Troubleshooting data loads
+### STEP 12: Troubleshooting data loads
 
 -   Connected as your user in SQL Developer, run the following queries
     to look at past and current data loads.
@@ -246,4 +246,4 @@ A load or external table validation that errors out is indicated by status=FAILE
 
     ![](./images/300/Picture300-24.png)
 
--   Keep the your SQL Deveoper openned and move to the next lab.
+-   Keep your SQL Deveoper openned and move to the next lab - Querying External Data.
