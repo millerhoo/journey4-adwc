@@ -89,13 +89,11 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 ### STEP 6: Construct the URLs of the Files on your OCI Object Storage
 -   Construct the URL that points to the location of the chan_v3.dat file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
 
-   https://swiftobjectstorage.<region_name>.oraclecloud.com/v1/<tenant_name>/<bucket_name>/<file_name>
+    https://swiftobjectstorage.<**region_name**>.oraclecloud.com/v1/<**tenant_name**>/<**bucket_name**>/<**file_name**>
 
 In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:
 
     https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/**dbayard00**/**ADWCLab**/**chan_v3.dat**
-    
-    ![](images/300/ConstructURLs.png)
 
 -   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
