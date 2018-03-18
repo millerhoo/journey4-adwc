@@ -38,7 +38,7 @@ In this section of the lab, you will be uploading files to the Oracle Cloud Innf
     -   Customer data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/cust1v3.dat" target="_blank">cust1v3.dat</a>
     -   Channel data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/chan_v3.dat" target="_blank">chan_v3.dat</a>
     -   Channel data (with intentional errors): <a href="files/chan_v3_error.dat" target="_blank">chan_v3_error.dat</a>
-    -   Channel data (with intentional errors): <a href="files/channels.csv" target="_blank">channels.csv</a>
+    -   Channel data (in CSV format): <a href="files/channels.csv" target="_blank">channels.csv</a>
     
 ### STEP 2: Navigate to the OCI Compute Console 
 
@@ -81,19 +81,19 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 -   Using the browse button or drag-and-drop select the **sale1v3.dat** file you downloaded earlier and click Upload Object:
     ![](images/300/snap0014303.jpg)
 
--   Repeat this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, **channels.csv** files.
+-   Repeat this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files.
 
 -   The end result should look like this with all 5 files listed under Objects:
     ![](images/300/snap0014304.jpg)
 
-### STEP 6: Construct the URLs of Uploaded Files.
+### STEP 6: Construct the URLs of the Files on the OCI Object Storage
 -   Construct the URL that points to the location of the chan_v3.dat file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
-https://swiftobjectstorage.<**region name**>.oraclecloud.com/v1/<**tenant name**>/<**bucket name**>/<**file name**>
+>   https://swiftobjectstorage.<**region name**>.oraclecloud.com/v1/<**tenant name**>/<**bucket name**>/<**file name**>
 In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:
-https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/<**dbayard00**>/<**ADWCLab**>/**chan_v3.dat**
-    ![](images/300/ConstructURLs.jpg)
+>   https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/<**dbayard00**>/<**ADWCLab**>/**chan_v3.dat**
+    ![](images/300/ConstructURLs.png)
 
--   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, **channels.csv** files. 
+-   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
 
@@ -197,14 +197,12 @@ When you are satisfied with the file content view, click **NEXT**.
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the copy_data procedure of the DBMS_CLOUD package to copy the data (chan_v3.dat, sale1v3.dat, and cust1v3.dat) staged in your object store.
-    -   For the credential_name parameter, specify the name of the credential you defined in the step of Create a Database Credential for Your User.
+    -   For the **credential_name** parameter, it is the name of the credential you defined in the step of Create a Database Credential for Your User.
+    ![](./images/300/Picture300-19a.png)
+    -   For the **file_uri_list** parameter, specify the URL that points to the **chan\_v3.data file** uploaded to the OCI Object Storage in the definition of **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of Uploaded Files. 
+    ![](./images/300/Picture300-19.png)
 
-    -   For the file_uri_list parameter, specify the URL that points to the chan_v3.data file uploaded to the OCI Object Storage in the definition of chan_v3_dat_URL variable. You have constructed and saved the URL in the step of Construct the URLs of Uploaded Files. Repeat this for the sale1_v3_dat_URL and cust1_v3_dat_URL variables in the script.
-
-        
-
-![](./images/300/Picture300-19.png)
-
+-   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
 -   Click the **Run Script** button to run the script.
 
 -   You have successfully loaded the sample tables. Now, you can run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./scripts/300/query_tables.txt" target="_blank">this code snippet</a>. ( <a href="https://docs.oracle.com/database/122/DWHSG/sql-analysis-reporting-data-warehouses.htm#GUID-33B4DE75-D7F8-4AE1-9F2E-C2846F72CC1E__GUID-4CB0EE02-AA9F-42D9-8F1B-2CD477496CD9" target="_blank">link</a> to documentation).
@@ -221,7 +219,7 @@ select * from user_load_operations;
 This table lists the past and current load operations in your schema.Any data copy and data validation operation will be automatically
 tracked by Oracle.
 
--   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Note that you are going to load the data with errors this time.
+-   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the chan_v3.data file. You have constructed and saved the URL in the step of Construct the URLs of Uploaded Files. Note that you are going to load the data with errors this time.
 
 ![](./images/300/Picture300-21.png)
 
