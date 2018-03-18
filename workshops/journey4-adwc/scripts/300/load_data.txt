@@ -8,15 +8,16 @@ truncate table supplementary_demographics;
 truncate table times;
 truncate table costs;
 
-/* Replace the <region name>, <tenant name>, <bucket name> with your actual values in the defination of the varaible bucket_uri.*/
-define bucket_uri = 'https://swiftobjectstorage.<region name>.oraclecloud.com/v1/<tenant name>/<bucket name>/';
+/* Specify the real URLs that point to the files uploaded to the OCI Object Storage in the following three definitions of variables*/
+define chan_v3_dat_URL = 'the URL of the chan_v3.dat file on OCI Object Stroage';
+define sale1_v3_dat_URL = 'the URL of the sale1v3.dat file on OCI Object Stroage';
+define cust1_v3_dat_URL = 'the URL of the cust1v3.dat file on OCI Object Stroage';
 
 begin
  dbms_cloud.copy_data(
     table_name =>'CHANNELS',
-    credential_name =>'OBJ_STORE_CRED_1',
-    /* To construct a complete URI, the variable bucket_uri is concatenated to the name of a data file below.*/
-    file_uri_list => '&bucket_uri' || 'chan_v3.dat',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list => '&chan_v3_dat_URL',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
  );
 end;
@@ -26,7 +27,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'SALES',
     credential_name =>'OBJ_STORE_CRED_1',
-    file_uri_list => '&bucket_uri' || 'sale1v3.dat',
+    file_uri_list => '&sale1_v3_dat_URL',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
  );
 end;
@@ -36,12 +37,13 @@ begin
  dbms_cloud.copy_data(
     table_name =>'CUSTOMERS',
     credential_name =>'OBJ_STORE_CRED_1',
-    file_uri_list => '&bucket_uri' || 'cust1v3.dat',
+    file_uri_list => '&cust1_v3_dat_URL',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
  );
 end;
 /
 
+/* Copy other tables from the existing SH schema in the database. */
 insert into countries select * from SH.countries;
 insert into products select * from SH.products;
 insert into promotions select * from SH.promotions;
