@@ -6,11 +6,11 @@ Draft Version. Updated: March 14, 2018
 
 ## Introduction
 
-In this section of the lab, you will be creating sample tables, loading data into them from files on the Oracle Cloud Infrastructure (OCI) Object Storage, and troubleshooting data loads with errors.
+In this section of the lab, you will be uploading files to the Oracle Cloud Innfrastructure (OCI) Object Storage, creating sample tables, loading data into them from files on the OCI Object Storage, and troubleshooting data loads with errors.
 
 ## Objectives
 
--   Learn how to upload files to the OCI Object Store
+-   Learn how to upload files to the OCI Object Storage
 
 -   Learn how to create tables in your database
 
@@ -106,19 +106,11 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 **Note:** If you are in an Oracle instructor-led workshop, setting up the object store will be demonstrated by the instructor for this
 exercise. A user with the right setup has been pre-created for you to use.
 
--   Sign in to your Oracle Cloud Infrastructure Console with the following credentials provided by your Oracle Cloud: **cloud tenant**, **user name**, and **password**.
+-   Go back to the OCI Compute Console in your browser. In the top menu, click the **Identity**, and then click **Users**. 
+![](./images/300/Create_Swift_Password_01.png)
 
-![](./images/300/Picture300-3.png)
-
-![](./images/300/Picture300-4.png)
-
--   In the top-right corner of the Console, click the **username**, and then click **User Settings** to view the details. In this example, the user name is **tenant2**. Yours might be different.
-
-    **Note:** If you're an administrator creating a Swift password for another user: In the Console, click Identity, and then click Users. Locate the user in the list, and then click the user's name to view the details.
-
-![](./images/300/Picture300-5.png)
-
-![](./images/300/Picture300-6.png)
+-   Click the **user's name** to view the details.
+![](./images/300/Create_Swift_Password_02.png)
 
 -   On the left side of the page, click **Swift Passwords**.
 
@@ -133,8 +125,6 @@ exercise. A user with the right setup has been pre-created for you to use.
 
 -   The new Swift password is displayed. Click **Copy** to copy the Swift password for your records immediately, because you can't retrieve it again after closing the dialog box.
     ![](./images/300/Picture300-10.png)
-
-**Note:** If you're an administrator creating a Swift password for another user, you need to securely deliver it to the user by providing it verbally, printing it out, or sending it through a secure email service.
 
 ### STEP 3: Create a Database Credential for Your User
 
@@ -208,7 +198,7 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 
     -   For file_uri_list, specify the URL that points to the location of the file staged in the object store. The URL is structured as follows. The values you specify are in bold:
 
-        https://swiftobjectstorage.<**region name**>;.oraclecloud.com/v1/<**tenant name**>/<**bucket name**>/<**file name**>
+        https://swiftobjectstorage.<**region name**>.oraclecloud.com/v1/<**tenant name**>/<**bucket name**>/<**file name**>
 
 ![](./images/300/Picture300-19.png)
 
@@ -238,9 +228,9 @@ select * from user_load_operations where status='FAILED';
 ```
 ![](./images/300/Picture300-22.png)
 
-A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**.
+A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The LOGFILE_TABLE column shows the name of the table you can query to look at the log of a load operation. The column BADFILE_TABLE shows the name of the table you can query to look at the rows that got errors during loading.
 
--   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy\$15\_log and copy\$15\_bad respectively.
+-   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$15_log and copy$15_bad respectively.
 
 ![](./images/300/Picture300-23.png)
 
