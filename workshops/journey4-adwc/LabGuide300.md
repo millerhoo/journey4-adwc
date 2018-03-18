@@ -1,6 +1,6 @@
 ![](./images/300/TITLE300.png)
 
-Draft Version. Updated: March 14, 2018
+Draft Version. Updated: March 18, 2018
 
 # ADWC Lab 300: Data Loading
 
@@ -86,10 +86,12 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 -   The end result should look like this with all 5 files listed under Objects:
     ![](images/300/snap0014304.jpg)
 
-### STEP 6: Construct the URLs of the Files on the OCI Object Storage
+### STEP 6: Construct the URLs of the Files on your OCI Object Storage
 -   Construct the URL that points to the location of the chan_v3.dat file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
 >   https://swiftobjectstorage.<**region name**>.oraclecloud.com/v1/<**tenant name**>/<**bucket name**>/<**file name**>
+
 In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:
+
 >   https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/<**dbayard00**>/<**ADWCLab**>/**chan_v3.dat**
     ![](images/300/ConstructURLs.png)
 
@@ -199,7 +201,7 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the copy_data procedure of the DBMS_CLOUD package to copy the data (chan_v3.dat, sale1v3.dat, and cust1v3.dat) staged in your object store.
     -   For the **credential_name** parameter, it is the name of the credential you defined in the step of Create a Database Credential for Your User.
     ![](./images/300/Picture300-19a.png)
-    -   For the **file_uri_list** parameter, specify the URL that points to the **chan\_v3.data file** uploaded to the OCI Object Storage in the definition of **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of Uploaded Files. 
+    -   For the **file_uri_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. 
     ![](./images/300/Picture300-19.png)
 
 -   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
@@ -219,7 +221,7 @@ select * from user_load_operations;
 This table lists the past and current load operations in your schema.Any data copy and data validation operation will be automatically
 tracked by Oracle.
 
--   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the chan_v3.data file. You have constructed and saved the URL in the step of Construct the URLs of Uploaded Files. Note that you are going to load the data with errors this time.
+-   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the chan_v3.data file. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. Note that you are going to load the data with errors this time.
 
 ![](./images/300/Picture300-21.png)
 
@@ -237,4 +239,4 @@ A load or external table validation that errors out is indicated by status=FAILE
 
 ![](./images/300/Picture300-24.png)
 
--   You are now ready to move to the next lab.
+-   Keep the your SQL Deveoper openned and move to the next lab.
