@@ -89,16 +89,16 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 ### STEP 6: Construct the URLs of the Files on your OCI Object Storage
 -   Construct the URL that points to the location of the chan_v3.dat file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
 
-```
-   https://swiftobjectstorage.<**region** **name**>.oraclecloud.com/v1/<**tenant** **name**>/<**bucket** **name**>/<**file** **name**>
-```
+
+   https://swiftobjectstorage.<region name>.oraclecloud.com/v1/<tenant name>/<bucket name>/<file name>
+
 
 In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:
 
-```
-https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/**dbayard00**/**ADWCLab**/**chan_v3.dat**
+
+    https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/**dbayard00**/**ADWCLab**/**chan_v3.dat**
+
     ![](images/300/ConstructURLs.png)
-```
 
 -   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
@@ -203,7 +203,7 @@ When you are satisfied with the file content view, click **NEXT**.
 
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
--   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the copy_data procedure of the DBMS_CLOUD package to copy the data (chan_v3.dat, sale1v3.dat, and cust1v3.dat) staged in your object store.
+-   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data (**chan\_v3.dat**, **sale1v3.dat**, and **cust1v3.dat**) staged in your object store.
     -   For the **credential_name** parameter, it is the name of the credential you defined in the step of Create a Database Credential for Your User.
     ![](./images/300/Picture300-19a.png)
     -   For the **file_uri_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. 
