@@ -88,12 +88,17 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 ### STEP 6: Construct the URLs of the Files on your OCI Object Storage
 -   Construct the URL that points to the location of the chan_v3.dat file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
->   https://swiftobjectstorage.<**region name**>.oraclecloud.com/v1/<**tenant name**>/<**bucket name**>/<**file name**>
+
+```
+   https://swiftobjectstorage.<**region** **name**>.oraclecloud.com/v1/<**tenant** **name**>/<**bucket** **name**>/<**file** **name**>
+```
 
 In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:
 
->   https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/<**dbayard00**>/<**ADWCLab**>/**chan_v3.dat**
+```
+https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/**dbayard00**/**ADWCLab**/**chan_v3.dat**
     ![](images/300/ConstructURLs.png)
+```
 
 -   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
@@ -119,16 +124,16 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 exercise. A user with the right setup has been pre-created for you to use.
 
 -   Go back to the OCI Compute Console in your browser. In the top menu, click the **Identity**, and then click **Users**. 
-![](./images/300/Create_Swift_Password_01.png)
+    ![](./images/300/Create_Swift_Password_01.png)
 
 -   Click the **user's name** to view the details.
-![](./images/300/Create_Swift_Password_02.png)
+    ![](./images/300/Create_Swift_Password_02.png)
 
 -   On the left side of the page, click **Swift Passwords**.
-![](./images/300/Picture300-7.png)
+    ![](./images/300/Picture300-7.png)
 
 -   Click **Generate Password**.
-![](./images/300/Picture300-8.png)
+    ![](./images/300/Picture300-8.png)
 
 -   Enter a friendly **description** for the password and click **Generate Password**.
     ![](./images/300/Picture300-9.png)
@@ -149,7 +154,7 @@ In order to access data in the Object Store you have to enable your database use
 
 -   Click the **Run Script** button to run the script.
 
-![](./images/300/Picture300-12.png)
+    ![](./images/300/Picture300-12.png)
 
 -   Now you are ready to load data from the Object Store.
 
@@ -159,8 +164,8 @@ In order to access data in the Object Store you have to enable your database use
 
 -   Expand ‘**Tables**’ in your user schema object tree. You will see all the tables you have created previously. Select table **CHANNELS**. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select ‘**Import Data**’:
 
-![](./images/300/Picture300-13b.png)
-![](./images/300/Picture300-14b.png)
+    ![](./images/300/Picture300-13b.png)
+    ![](./images/300/Picture300-14b.png)
 
 -   The Data Import Wizard is started. Enter the following information:
 
@@ -176,21 +181,21 @@ interactive and changes according to your selection.
 
 When you are satisfied with the file content view, click **NEXT**.
 
-![](./images/300/Picture300-15b.png)
+    ![](./images/300/Picture300-15b.png)
 
 -   Here you control the import method and parameters. Since we invoked the data import wizard for table CHANNELS the only load method is a direct load into this table. Click **NEXT**.
 
-![](./images/300/Picture300-16b.png)
+    ![](./images/300/Picture300-16b.png)
 
 -   The column definition screen shows you whether the sample data violates any of the existing column definitions of table CHANNELS (for a load into a new table you would select the column names and data types for the new table). Click **NEXT**.
 
-![](./images/300/Picture300-17b.png)
+    ![](./images/300/Picture300-17b.png)
 
 -   The last screen before the final data load enables you to test a larger row count than the sample data of the beginning of the wizard to see whether the previously made decisions are satisfying for your data load. Note that we are not loading any data when iterating back and forth between this screen and previous ones. Select **TEST RESULTS** and look at the log, the data you would load, any mistakes and how the external table definition looks like based on your inputs.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When done with your investigation, click **NEXT**.
 
-![](./images/300/Picture300-18b.png)
+    ![](./images/300/Picture300-18b.png)
 
 -   The final screen reflects all your choices made in the Wizard. Click **FINISH** to load the data into table CHANNELS.
 
@@ -205,11 +210,13 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
     ![](./images/300/Picture300-19.png)
 
 -   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
+    ![](./images/300/Picture300-19b.png)
+
 -   Click the **Run Script** button to run the script.
 
 -   You have successfully loaded the sample tables. Now, you can run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./scripts/300/query_tables.txt" target="_blank">this code snippet</a>. ( <a href="https://docs.oracle.com/database/122/DWHSG/sql-analysis-reporting-data-warehouses.htm#GUID-33B4DE75-D7F8-4AE1-9F2E-C2846F72CC1E__GUID-4CB0EE02-AA9F-42D9-8F1B-2CD477496CD9" target="_blank">link</a> to documentation).
 
-![](./images/300/Picture300-20.png)
+    ![](./images/300/Picture300-20.png)
 
 ### STEP 6: Troubleshooting data loads
 
@@ -223,20 +230,20 @@ tracked by Oracle.
 
 -   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the chan_v3.data file. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. Note that you are going to load the data with errors this time.
 
-![](./images/300/Picture300-21.png)
+    ![](./images/300/Picture300-21.png)
 
 -   Run the following queries to see the load that errored out.
 ```
 select * from user_load_operations where status='FAILED';
 ```
-![](./images/300/Picture300-22.png)
+    ![](./images/300/Picture300-22.png)
 
 A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The LOGFILE_TABLE column shows the name of the table you can query to look at the log of a load operation. The column BADFILE_TABLE shows the name of the table you can query to look at the rows that got errors during loading.
 
 -   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$15_log and copy$15_bad respectively.
 
-![](./images/300/Picture300-23.png)
+    ![](./images/300/Picture300-23.png)
 
-![](./images/300/Picture300-24.png)
+    ![](./images/300/Picture300-24.png)
 
 -   Keep the your SQL Deveoper openned and move to the next lab.
