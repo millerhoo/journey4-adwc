@@ -91,7 +91,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     https://swiftobjectstorage.<**region_name**>.oraclecloud.com/v1/<**tenant_name**>/<**bucket_name**>/<**file_name**>
 
-In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:  https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dbayard00/ADWCLab/chan_v3.dat
+In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. So the URL of the chan_v3.dat file is:  https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dbayard00/ADWCLab/chan_v3.dat. Yours might be different.
 
 ![](images/300/ConstructURLs.png)
 
@@ -199,10 +199,10 @@ When you are satisfied with the file content view, click **NEXT**.
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data (**chan\_v3.dat**, **sale1v3.dat**, and **cust1v3.dat**) staged in your object store.
-    -   For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step of Create a Database Credential for Your User.
+    -   For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User".
     ![](./images/300/Picture300-19a.png)
 
-    -   For the **file\_uri\_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of the Files on Your OCI Object Storage. 
+    -   For the **file\_uri\_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". 
     ![](./images/300/Picture300-19.png)
 
 -   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
@@ -223,7 +223,7 @@ select * from user_load_operations;
 This table lists the past and current load operations in your schema.Any data copy and data validation operation will be automatically
 tracked by Oracle.
 
--   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have constructed and saved the URL in the step of Construct the URLs of the Files on Your OCI Object Storage. Note that you are going to load the data with errors this time.
+-   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". Note that you are going to load the data with errors this time.
 
     ![](./images/300/Picture300-21.png)
 
@@ -231,7 +231,7 @@ tracked by Oracle.
 ```
 select * from user_load_operations where status='FAILED';
 ```
-
+&nbsp;
     ![](./images/300/Picture300-22.png)
 
 A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
