@@ -1,12 +1,14 @@
 ![](./images/300/TITLE300.png)
 
-Draft Version. Updated: March 18, 2018
+Updated: March 18, 2018
 
 # ADWC Lab 300: Data Loading
 
 ## Introduction
 
 In this lab, you will be uploading files to the Oracle Cloud Innfrastructure (OCI) Object Storage, creating sample tables, loading data into them from files on the OCI Object Storage, and troubleshooting data loads with errors.
+
+To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 

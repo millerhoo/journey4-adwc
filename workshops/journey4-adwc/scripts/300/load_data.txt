@@ -26,7 +26,7 @@ end;
 begin
  dbms_cloud.copy_data(
     table_name =>'SALES',
-    credential_name =>'OBJ_STORE_CRED_1',
+    credential_name =>'OBJ_STORE_CRED',
     file_uri_list => '&sale1_v3_dat_URL',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
  );
@@ -36,7 +36,7 @@ end;
 begin
  dbms_cloud.copy_data(
     table_name =>'CUSTOMERS',
-    credential_name =>'OBJ_STORE_CRED_1',
+    credential_name =>'OBJ_STORE_CRED',
     file_uri_list => '&cust1_v3_dat_URL',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
  );
