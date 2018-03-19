@@ -146,7 +146,7 @@ In order to access data in the Object Store you have to enable your database use
 
 <!-- -->
 
--   Click the **Run Script** button to run the script. 
+-   Run the script. 
 
     ![](./images/300/Picture300-12.png)
 
@@ -210,7 +210,7 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 -   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
     ![](./images/300/Picture300-19b.png)
 
--   Click the **Run Script** button to run the script.
+-   Run the script.
 
 -   You have successfully loaded the sample tables. Now, you can run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./scripts/300/query_tables.txt" target="_blank">this code snippet</a>. ( <a href="https://docs.oracle.com/database/122/DWHSG/sql-analysis-reporting-data-warehouses.htm#GUID-33B4DE75-D7F8-4AE1-9F2E-C2846F72CC1E__GUID-4CB0EE02-AA9F-42D9-8F1B-2CD477496CD9" target="_blank">link</a> to documentation).
 
@@ -230,8 +230,7 @@ tracked by Oracle.
     ![](./images/300/Picture300-21.png)
 
 -   Run the following queries to see the load that errored out.
-```
-select * from user_load_operations where status='FAILED';
+    select * from user_load_operations where status='FAILED';
 
     ![](./images/300/Picture300-22.png)
 
