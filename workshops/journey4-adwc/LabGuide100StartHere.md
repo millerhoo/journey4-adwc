@@ -12,7 +12,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 ## Objectives
 
--   Learn how to provision an ADWC service
+-   Learn how to provision an ADWC instance
 
 -   Learn how to connect to ADWC
 
@@ -22,11 +22,11 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 -   Oracle SQL Developer (see [Oracle Technology Network download site](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html)).
     We recommend that you download version 17.4 or later, because this version contains enhancements for key Autonomous DW Cloud features. SQL Developer 17.3.1 will also work with Autonomous DW Cloud; versions earlier than 17.3.1 will not.
-    **Note**:
-    If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.
+
+    * Note *: If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous DW Cloud.
     If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
 
-# Section 1. Provisioning an ADWC Service
+# Section 1. Provisioning an ADWC Instance
 
 In this section you will be provisioning an ADWC database using the cloud console.
 
@@ -122,6 +122,10 @@ As ADWC only accepts secure connections to the database, you need to download a 
 -   Specify a password of your choice for the wallet, you will need this password when connecting to the database later. Click **Download** to download the wallet file to your client machine.
 
 ![](./images/100/Picture100-16.png)
+
+
+
+
 
 ## Connecting to the database using SQL Developer
 

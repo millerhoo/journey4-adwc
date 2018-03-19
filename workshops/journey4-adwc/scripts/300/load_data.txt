@@ -50,3 +50,5 @@ insert into promotions select * from SH.promotions;
 insert into supplementary_demographics select * from SH.supplementary_demographics;
 insert into times select * from SH.times;
 insert into costs select * from SH.costs;
+
+commit;

@@ -1,5 +1,7 @@
 
 ![](images/ADWC.JPG)  
+
+March 19, 2018
     
 # ADWC Journey: Hands-On Test Drive Workshop
 This workshop walks you through all the steps to get started using the **Oracle Autonomous Data Warehouse Cloud (ADWC)**. You will provision a new ADWC database, load data from the object store and troubleshoot data loads, query external data residing on the object store, manage an ADWC instance, scale an ADWC instance, and use Oracle Machine Learning notebooks.
@@ -19,10 +21,11 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 
 
-## To learn more
- - [Autonomous Data Warehouse Cloud website](https://www.oracle.com/database/data-warehouse/index.html)
- - [Autonomous Data Warehouse Cloud ipaper](http://www.oracle.com/us/products/database/autonomous-dw-cloud-ipaper-3938921.pdf)
- - [Oracle Autonomous Data Warehouse Cloud Documentation](https://cloud.oracle.com/datawarehouse/documentation)
+## To Learn More
+ - [Oracle Autonomous Data Warehouse Cloud website](https://www.oracle.com/database/data-warehouse/index.html)
+ - [Oracle Autonomous Data Warehouse Cloud ipaper](http://www.oracle.com/us/products/database/autonomous-dw-cloud-ipaper-3938921.pdf)
+ - [Oracle Autonomous Data Warehouse Cloud Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
+ - [Additional Autonomous Data Warehouse Cloud Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
  
       
 ## How to View the Lab Guides
@@ -42,7 +45,6 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 # Workshop Details
 
-** Reference the following Lab Guides by opening their Documentation links **
 
 ## Lab 100: Provisioning and Connecting
 

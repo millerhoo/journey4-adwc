@@ -141,7 +141,7 @@ In order to access data in the Object Store you have to enable your database use
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_credential.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.
 
-    Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The **username** and the object store **Swift password** you generated in the previous step.  In this example, the crediential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
+    Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The **OCI username** (which is not the same as your database username) and the OCI object store **Swift password** you generated in the previous step.  In this example, the crediential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
     ![](./images/300/Picture300-11.png)
 
 <!-- -->
@@ -218,14 +218,14 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 
 ### STEP 12: Troubleshooting data loads
 
--   Connected as your user in SQL Developer, run the following queries to look at past and current data loads.
+-   Connected as your user in SQL Developer, run the following query to look at past and current data loads.
 ```
 select * from user_load_operations;
 ```
-This table lists the past and current load operations in your schema.Any data copy and data validation operation will be automatically
+Notice how this table lists the past and current load operations in your schema.  Any data copy and data validation operation will be automatically
 tracked by Oracle.
 
--   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". Note that you are going to load the data with errors this time.
+-   For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan_v3_error.dat).  Specifically, the default separator is the | character, but the chan_v3_error.dat file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". Note that you are going to load the data with errors this time.
 
     ![](./images/300/Picture300-21.png)
 
@@ -242,4 +242,6 @@ A load or external table validation that errors out is indicated by status=FAILE
 
     ![](./images/300/Picture300-24.png)
 
--   Keep your SQL Deveoper openned and move to the next lab - Querying External Data.
+-   To learn more about how to specify file formats, delimiters, and more, you can review DBMS_CLOUD Package Format Options: https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html
+
+-   Keep your SQL Deveoper open and move to the next lab - Querying External Data.
