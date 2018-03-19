@@ -230,8 +230,7 @@ tracked by Oracle.
 -   Run the following queries to see the load that errored out.
 ```
 select * from user_load_operations where status='FAILED';
-```
-&nbsp;
+
     ![](./images/300/Picture300-22.png)
 
 A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
