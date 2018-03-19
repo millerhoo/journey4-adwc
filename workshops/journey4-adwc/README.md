@@ -22,6 +22,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 ## To learn more
  - [Autonomous Data Warehouse Cloud website](https://www.oracle.com/database/data-warehouse/index.html)
  - [Autonomous Data Warehouse Cloud ipaper](http://www.oracle.com/us/products/database/autonomous-dw-cloud-ipaper-3938921.pdf)
+ - [Oracle Autonomous Data Warehouse Cloud Documentation](https://cloud.oracle.com/datawarehouse/documentation)
  
       
 ## How to View the Lab Guides
@@ -34,7 +35,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
     ![](images/WorkshopMenu.png)  
 
-- To **log issues** and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/tree/master/workshops/journey4-adwc) repository.
+- To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new) to go to the github oracle repository issue submission form.
 
 
 
@@ -71,6 +72,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 **Objectives**:
 
+- Learn how to upload files to the Oracle Cloud Innfrastructure (OCI) Object Storage
 - Learn how to load data from an object store
 - Learn how to use the SQL Developer Data Import Wizard to load data
 - Learn how to troubleshoot data loads
