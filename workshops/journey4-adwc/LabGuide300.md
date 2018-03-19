@@ -30,22 +30,22 @@ In this section of the lab, you will be uploading files to the Oracle Cloud Innf
 
 # Upload files to OCI Object Store
 ## Steps
-### STEP 1: Download the sample data files to your local computer
+### STEP 1: Download the Sample Data Files to Your Local Computer
 
--   For this lab, you will need a handful of data files.  Please click on the links and download them to a directory on your local computer:
+-   For this lab, you will need a handful of data files.  Click <a href="./files/datafiles.zip" target="_blank">here</a> to download a zipfile of the 5 sample data files for you to upload to the object store. Unzip it to a directory on your local computer. You will see:-
 
-    -   Sales data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/sale1v3.dat" target="_blank">sale1v3.dat</a>
-    -   Customer data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/cust1v3.dat" target="_blank">cust1v3.dat</a>
-    -   Channel data: <a href="https://raw.githubusercontent.com/oracle/db-sample-schemas/master/sales_history/chan_v3.dat" target="_blank">chan_v3.dat</a>
-    -   Channel data (with intentional errors): <a href="files/chan_v3_error.dat" target="_blank">chan_v3_error.dat</a>
-    -   Channel data (in CSV format): <a href="files/channels.csv" target="_blank">channels.csv</a>
+    -   Sales data: **sale1v3.dat**
+    -   Customer data: **cust1v3.dat**
+    -   Channel data: **chan_v3.dat**
+    -   Channel data (with intentional errors): **chan\_v3\_error.dat**
+    -   Channel data (in CSV format): **channels.csv**
     
 ### STEP 2: Navigate to the OCI Compute Console 
 
 -   The easiest way to get to the OCI Compute Console is to first navigate to the My Services Dashboard page:
     ![](images/300/snap0014294.jpg)
 
--   From the My Services Dashboard page, open the upper left menu and expand Services.  Under Services, click on the entry titled "Compute".  *Hint: you might want to right-click on Compute and choose "open in new tab" so that you can keep the My Services Dashboard open*:
+-   From the My Services Dashboard page, open the **upper left menu** and expand **Services**.  Under Services, click on the entry titled **Compute**.  *Hint: you might want to right-click on Compute and choose "open in new tab" so that you can keep the My Services Dashboard open*:
     ![](images/300/snap0014295.jpg)
 
 -   This should take you to the OCI Compute Console:
@@ -55,27 +55,27 @@ In this section of the lab, you will be uploading files to the Oracle Cloud Innf
 ### STEP 3: Navigate to the Storage Tab, then Object Storage 
 To learn more about the OCI Object Storage, check out this <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="_blank">documentation</a> .
 
--   In the OCI Compute Console, click on the Storage tab, then click on Object Storage on the left-hand menu:
+-   In the OCI Compute Console, click on the **Storage** tab, then click on **Object Storage** on the left-hand menu:
     ![](images/300/snap0014297.jpg)
 
--   Choose the root compartment in the COMPARTMENT drop-down if it is not already choosen:
+-   Choose the root compartment in the **COMPARTMENT** drop-down if it is not already choosen:
     ![](images/300/snap0014298.jpg)
 
 ### STEP 4: Create a Bucket for the Object Storage
 In OCI Object Storage, a bucket is the terminology for a container of multiple files. 
 
--   Click the Create Bucket button:
+-   Click the **Create Bucket** button:
     ![](images/300/snap0014299.jpg)
 
--   Name your bucket and click Create Bucket button.  *Hint: If you name your bucket ADWCLab, you won't need to edit the bucket name in the scripts you run later in the lab*:
+-   **Name your bucket** and click **Create Bucket** button. 
     ![](images/300/snap0014300.jpg)
 
-### STEP 5: Upload files to your OCI Object Store Bucket
+### STEP 5: Upload Files to Your OCI Object Store Bucket
 
--   Click on your bucket name to open it:
+-   Click on your **bucket name** to open it:
     ![](images/300/snap0014301.jpg)
 
--   Click on the Upload Object button:
+-   Click on the **Upload Object** button:
     ![](images/300/snap0014302.jpg)
 
 -   Using the browse button or drag-and-drop select the **sale1v3.dat** file you downloaded earlier and click Upload Object:
@@ -86,17 +86,16 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 -   The end result should look like this with all 5 files listed under Objects:
     ![](images/300/snap0014304.jpg)
 
-### STEP 6: Construct the URLs of the Files on your OCI Object Storage
+### STEP 6: Construct the URLs of the Files on Your OCI Object Storage
 -   Construct the URL that points to the location of the chan_v3.dat file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
 
     https://swiftobjectstorage.<**region_name**>.oraclecloud.com/v1/<**tenant_name**>/<**bucket_name**>/<**file_name**>
 
 In this example, the region name is us-ashburn-1, the tenant name is dbayard00, and the bucket name is ADWCLab. Yours might be different. So the URL of the chan_v3.dat file is:
 
-    https://swiftobjectstorage.**us-ashburn-1**.oraclecloud.com/v1/**dbayard00**/**ADWCLab**/**chan_v3.dat**
+    https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dbayard00/ADWCLab/chan_v3.dat
 
-    ![](images/300/ConstructURLs.png)
-
+![](images/300/ConstructURLs.png)
 -   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
