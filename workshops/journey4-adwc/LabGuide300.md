@@ -6,7 +6,7 @@ Draft Version. Updated: March 18, 2018
 
 ## Introduction
 
-In this section of the lab, you will be uploading files to the Oracle Cloud Innfrastructure (OCI) Object Storage, creating sample tables, loading data into them from files on the OCI Object Storage, and troubleshooting data loads with errors.
+In this lab, you will be uploading files to the Oracle Cloud Innfrastructure (OCI) Object Storage, creating sample tables, loading data into them from files on the OCI Object Storage, and troubleshooting data loads with errors.
 
 ## Objectives
 
@@ -42,7 +42,7 @@ In this section of the lab, you will be uploading files to the Oracle Cloud Innf
     
 ### STEP 2: Navigate to the OCI Compute Console 
 
--   The easiest way to get to the OCI Compute Console is to first navigate to the My Services Dashboard page:
+-   The easiest way to get to the **OCI Compute Console** is to first navigate to the My Services Dashboard page:
     ![](images/300/snap0014294.jpg)
 
 -   From the My Services Dashboard page, open the **upper left menu** and expand **Services**.  Under Services, click on the entry titled **Compute**.  *Hint: you might want to right-click on Compute and choose "open in new tab" so that you can keep the My Services Dashboard open*:
@@ -58,7 +58,7 @@ To learn more about the OCI Object Storage, check out this <a href="https://docs
 -   In the OCI Compute Console, click on the **Storage** tab, then click on **Object Storage** on the left-hand menu:
     ![](images/300/snap0014297.jpg)
 
--   Choose the root compartment in the **COMPARTMENT** drop-down if it is not already choosen:
+-   Choose the root compartment in the **COMPARTMENT** drop-down if it is not already choosen. The name of your root compartment might be different.
     ![](images/300/snap0014298.jpg)
 
 ### STEP 4: Create a Bucket for the Object Storage
@@ -95,7 +95,8 @@ In this example, the region name is us-ashburn-1, the tenant name is dbayard00, 
 
     https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dbayard00/ADWCLab/chan_v3.dat
 
-![](images/300/ConstructURLs.png)
+    ![](images/300/ConstructURLs.png)
+
 -   **Repeat** this for the **cust1v3.dat**, **chan_v3.dat**, **chan_v3_error.dat**, and **channels.csv** files. 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
@@ -116,10 +117,7 @@ Note that you do not need to specify anything other than the list of columns whe
 
 To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need a Cloud user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and username/password authentication.
 
-**Note:** If you are in an Oracle instructor-led workshop, setting up the object store will be demonstrated by the instructor for this
-exercise. A user with the right setup has been pre-created for you to use.
-
--   Go back to the OCI Compute Console in your browser. In the top menu, click the **Identity**, and then click **Users**. 
+-   Go back to the **OCI Compute Console** in your browser. In the top menu, click the **Identity**, and then click **Users**. 
     ![](./images/300/Create_Swift_Password_01.png)
 
 -   Click the **user's name** to view the details.
@@ -143,12 +141,12 @@ In order to access data in the Object Store you have to enable your database use
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_credential.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.
 
-    Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The **username** and the object store **Swift password** you generated in the previous step.
+    Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The **username** and the object store **Swift password** you generated in the previous step.  In this example, the crediential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
     ![](./images/300/Picture300-11.png)
 
 <!-- -->
 
--   Click the **Run Script** button to run the script.
+-   Click the **Run Script** button to run the script. 
 
     ![](./images/300/Picture300-12.png)
 
@@ -156,7 +154,9 @@ In order to access data in the Object Store you have to enable your database use
 
 ### STEP 10: Loading Data Using the Data Import Wizard in SQL Developer
 
-**Note:** Beginning with SQL Developer 18.1 the data import wizard supports loading from files in the Object Store straight into your Autonomous Data Warehouse. **This release of SQL Developer is going to be available soon, so for now this step will be demonstrated by the Oracle instructor if you are in an Oracle instructor-led workshop**. After that demo you can continue with the next step "Loading data using the new PL/SQL package, DBMS\_CLOUD” to load data using PL/SQL.
+**Note:** If you are not in an Oracle instructor-led workshop, please skip this step. 
+
+Beginning with SQL Developer 18.1 the data import wizard supports loading from files in the Object Store straight into your Autonomous Data Warehouse. **This release of SQL Developer is going to be available soon, so for now this step will be demonstrated by the Oracle instructor if you are in an Oracle instructor-led workshop**. After that demo you can continue with the next step "Loading data using the new PL/SQL package, DBMS\_CLOUD” to load data using PL/SQL.
 
 -   Expand ‘**Tables**’ in your user schema object tree. You will see all the tables you have created previously. Select table **CHANNELS**. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select ‘**Import Data**’:
 
@@ -167,7 +167,8 @@ In order to access data in the Object Store you have to enable your database use
 
     -   Select **Oracle Cloud Storage** as source for the data load
 
-    -   Enter the URL of channels.csv as the file to load. You constructed the URL in STEP 6. In this example, it is:
+    -   Enter the URL of **channels.csv** as the file to load. You constructed the URL in STEP 6 Construct the URLs of the Files on Your OCI Object Storage. Your URL might be different from that shown in this example. In this example, the URL is:
+
         https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dwcsdemo/DEMO\_DATA/channels.csv
 
     -   Select the Credential you previously created for authentication with the Object Store, **OBJ\_STORE\_CRED**
@@ -177,21 +178,21 @@ interactive and changes according to your selection.
 
 When you are satisfied with the file content view, click **NEXT**.
 
-    ![](./images/300/Picture300-15b.png)
+![](./images/300/Picture300-15b.png)
 
 -   Here you control the import method and parameters. Since we invoked the data import wizard for table CHANNELS the only load method is a direct load into this table. Click **NEXT**.
 
-    ![](./images/300/Picture300-16b.png)
+![](./images/300/Picture300-16b.png)
 
 -   The column definition screen shows you whether the sample data violates any of the existing column definitions of table CHANNELS (for a load into a new table you would select the column names and data types for the new table). Click **NEXT**.
 
-    ![](./images/300/Picture300-17b.png)
+![](./images/300/Picture300-17b.png)
 
 -   The last screen before the final data load enables you to test a larger row count than the sample data of the beginning of the wizard to see whether the previously made decisions are satisfying for your data load. Note that we are not loading any data when iterating back and forth between this screen and previous ones. Select **TEST RESULTS** and look at the log, the data you would load, any mistakes and how the external table definition looks like based on your inputs.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When done with your investigation, click **NEXT**.
 
-    ![](./images/300/Picture300-18b.png)
+![](./images/300/Picture300-18b.png)
 
 -   The final screen reflects all your choices made in the Wizard. Click **FINISH** to load the data into table CHANNELS.
 
@@ -200,9 +201,10 @@ When you are satisfied with the file content view, click **NEXT**.
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data (**chan\_v3.dat**, **sale1v3.dat**, and **cust1v3.dat**) staged in your object store.
-    -   For the **credential_name** parameter, it is the name of the credential you defined in the step of Create a Database Credential for Your User.
+    -   For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step of Create a Database Credential for Your User.
     ![](./images/300/Picture300-19a.png)
-    -   For the **file_uri_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. 
+
+    -   For the **file\_uri\_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. 
     ![](./images/300/Picture300-19.png)
 
 -   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
@@ -216,15 +218,14 @@ Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS
 
 ### STEP 12: Troubleshooting data loads
 
--   Connected as your user in SQL Developer, run the following queries
-    to look at past and current data loads.
+-   Connected as your user in SQL Developer, run the following queries to look at past and current data loads.
 ```
 select * from user_load_operations;
 ```
 This table lists the past and current load operations in your schema.Any data copy and data validation operation will be automatically
 tracked by Oracle.
 
--   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the chan_v3.data file. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. Note that you are going to load the data with errors this time.
+-   To look at the log of a load operation, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have constructed and saved the URL in the step of Construct the URLs of the Files on your OCI Object Storage. Note that you are going to load the data with errors this time.
 
     ![](./images/300/Picture300-21.png)
 
@@ -234,7 +235,7 @@ select * from user_load_operations where status='FAILED';
 ```
     ![](./images/300/Picture300-22.png)
 
-A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The LOGFILE_TABLE column shows the name of the table you can query to look at the log of a load operation. The column BADFILE_TABLE shows the name of the table you can query to look at the rows that got errors during loading.
+A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
 
 -   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$15_log and copy$15_bad respectively.
 
