@@ -8,7 +8,7 @@ truncate table supplementary_demographics;
 truncate table times;
 truncate table costs;
 
-/* Specify the real URLs that point to the files uploaded to the OCI Object Storage in the following three definitions of variables*/
+/* Specify the real URLs that point to the files on the OCI Object Storage in the following three definitions of variables */
 define chan_v3_dat_URL = 'the URL of the chan_v3.dat file on OCI Object Stroage';
 define sale1_v3_dat_URL = 'the URL of the sale1v3.dat file on OCI Object Stroage';
 define cust1_v3_dat_URL = 'the URL of the cust1v3.dat file on OCI Object Stroage';

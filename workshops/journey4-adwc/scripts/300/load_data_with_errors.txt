@@ -1,4 +1,4 @@
-/* Specify the real URL that points to the chan_v3_error.dat file uploaded to the OCI Object Storage in the following defination of variable*/
+/* Specify the real URL that points to the chan_v3_error.dat file on the OCI Object Storage in the following defination of variable*/
 define chan_v3_ERROR_dat_URL = 'the URL of the chan_v3_error.dat file on OCI Object Stroage';
 
 begin
