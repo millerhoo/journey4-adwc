@@ -117,6 +117,8 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 **Objectives**:
 
-- Learn how to create Oracle Machine Learning (OML) users
-- Learn how to run queries and scripts in the web-based OML worksheets
-- Learn how to create notebooks and share them across multiple users
+- Learn how to create OML Users
+- Learn how to run a SQL Statement
+- Learn how to share notebooks
+- Learn how to create and run SQL scripts
+

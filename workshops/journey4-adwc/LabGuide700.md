@@ -6,14 +6,14 @@ Updated: March 21, 2018
 
 ## Introduction
 
-During this lab you will be using the new Oracle Machine Learning (OML) notebook application provided with ADWC. This browser-based application provides a web interface to run SQL queries a scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports and dashboards. OML provides a simple way to share workbooks with other OML users.
+During this lab you will be using the new Oracle Machine Learning (OML) notebook application provided with ADWC. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and dashboards. OML provides a simple way to share workbooks with other OML users.
 
 ## Objectives
 
 -   Learn how to create OML Users
 -   Learn how to run a SQL Statement
 -   Learn how to share notebooks
--   Learn how to create and running SQL scripts
+-   Learn how to create and run SQL scripts
 
 ## Required Artifacts
 
@@ -46,11 +46,9 @@ This will open a new tab within your browser that asks you for a username and pa
 
 ![](./images/700/Picture700-4.png)
 
-**Note** that you do not have to go to this page using the same steps every time, you can bookmark the URL and access it directly later.
+**Note** that you do not have to go to this page using the same steps every time, you can bookmark this Oracle ML Notebook Admin URL and access it directly later.
 
--   Click **Create** button to create a new OML user. Note that this will create a new database user. This newly created user will be
-    able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user
-    (*for this lab you can use your own personal email address*) when creating the user.
+-   Click **Create** button to create a new OML user. Note that this will also create a new database user with the same name. This newly created user will be able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user (*for this lab you can use your own personal email address*) when creating the user.
 
 ![](./images/700/Picture700-5.png)
 
