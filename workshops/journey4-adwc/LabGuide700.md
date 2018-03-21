@@ -2,7 +2,7 @@
 
 Updated: March 21, 2018
 
-#Using Oracle Machine Learning Notebooks in ADWC
+# Using Oracle Machine Learning Notebooks in ADWC
 
 ## Introduction
 
@@ -19,11 +19,11 @@ During this lab you will be using the new Oracle Machine Learning (OML) notebook
 
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-#Creating OML Users
+# Creating OML Users
 
 The first step is to create two new users.
 
-##Steps
+## Steps
 
 ### Step 1: Creating OML Users
 
@@ -42,7 +42,7 @@ The first step is to create two new users.
 
 This will open a new tab within your browser that asks you for a username and password.
 
--   Enter ***admin*** as the username and use the password you specified when provisioning your ADWC instance.
+-   Enter **admin** as the username and use the password you specified when provisioning your ADWC instance.
 
 ![](./images/700/Picture700-4.png)
 
@@ -50,7 +50,7 @@ Note that you do not have to go to this page using the same steps every time, yo
 
 -   Click **Create** button to create a new OML user. Note that this will create a new database user. This newly created user will be
     able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user
-    (*for this workshop you can use your own personal email address*).
+    (*for this lab you can use your own personal email address*).
 
 ![](./images/700/Picture700-5.png)
 
@@ -73,17 +73,15 @@ Note that you do not have to go to this page using the same steps every time, yo
 
 You will use these two users later in this workshop.
 
-#Exploring the OML Home Page
+# Exploring the OML Home Page
 
-##Steps
+## Steps
 
 ### Step 2: Signing into OML
 
 -   Using the link from your welcome email, from Oracle Global Accounts, you can now sign-in to OML. Copy and paste the **application link** from the email into your browser and sign-in to OML.
 
-> If you have not specified an email address you can click the Home icon
-> on the top right of Oracle Machine Learning User Administration page
-> to go to OML home page.
+**Note:** If you have not specified an email address you can click the Home icon on the top right of Oracle Machine Learning User administration page to go to OML home page.
 
 ![](./images/700/Picture700-11.png)
 
@@ -110,19 +108,19 @@ Once you have successfully signed-in to OML the application home page will be di
 
 -   What is a Workspace?
 
-> A workspace is an area where you can store your projects. Each workspace can be shared with other users so they can collaborate with you. For collaborating with other users, you can provide different levels of permission such as Viewer, Developer and Manager – *these will be covered in more detail later in this workshop*. You can create multiple workspaces.
+    A workspace is an area where you can store your projects. Each workspace can be shared with other users so they can collaborate with you. For collaborating with other users, you can provide different levels of permission such as Viewer, Developer and Manager – these will be covered in more detail later in this lab. You can create multiple workspaces.
 
 -   What is a Project?
 
-> A project is a container for organizing your notebooks. You can create multiple projects.
+    A project is a container for organizing your notebooks. You can create multiple projects.
 
 -   What is a Notebook?
 
-> A notebook is a web-based interface for building reports and dashboards using a series of pre-built data visualizations which can then be shared with other OML users. Each notebook can contain one or SQL queries and/or SQL scripts. Additional non-query information can be displayed using special markdown tags (an example of these tags will be shown later).
+    A notebook is a web-based interface for building reports and dashboards using a series of pre-built data visualizations which can then be shared with other OML users. Each notebook can contain one or SQL queries and/or SQL scripts. Additional non-query information can be displayed using special markdown tags (an example of these tags will be shown later).
 
-#Running a SQL Statement
+# Running a SQL Statement
 
-##Steps
+## Steps
 
 ### Step 5: Opening a new SQL query scratchpad
 
@@ -134,13 +132,11 @@ Once you have successfully signed-in to OML the application home page will be di
 
 ![](./images/700/Picture700-16.png)
 
--   The white panel below the main title (SQL Query Scratchpad – *this name is automatically generated*) is an area known as “paragraph”. Within a scratchpad you can have multiple paragraphs. Each paragraph can contain one SQL statement or a SQL script.
+-   The white panel below the main title (SQL Query Scratchpad – this name is automatically generated) is an area known as “paragraph”. Within a scratchpad you can have multiple paragraphs. Each paragraph can contain one SQL statement or a SQL script.
 
 ![](./images/700/Picture700-17.png)
 
--   In the SQL paragraph area copy and paste <a href="./scripts/700/new_SQL_query_scratchpad.txt" target="_blank">this code snippet</a>.
-
--   Your screen should now look like this:
+-   In the SQL paragraph area copy and paste <a href="./scripts/700/new_SQL_query_scratchpad.txt" target="_blank">this code snippet</a>. Your screen should now look like this:
 
 ![](./images/700/Picture700-18.png)
 
@@ -156,27 +152,27 @@ Once you have successfully signed-in to OML the application home page will be di
 
 ![](./images/700/Picture700-21.png)
 
--   When you change the report type to one of the graphs, then a “**Settings**” link will appear to the right of the menu which
+-   When you change the report type to one of the graphs, then a **Settings** link will appear to the right of the menu which
     allows you to control the layout of columns within the graph.
 
 -   Click on the **bar graph** icon to change the output to a bar graph (see below)
 
 ![](./images/700/Picture700-22.png)
 
--   Click on the “**Settings**” link to unfold the settings panel for the graph.
+-   Click on the **Settings** link to unfold the settings panel for the graph.
 
 ![](./images/700/Picture700-23.png)
 
 -   To add a column to one of the **Keys**, **Groups** of **Values** panels just drag and drop the column name into the required panel.
 
--   To remove a column from the Keys, Groups of Values panel just click on the “**x**” next to the column name displayed in the relevant
+-   To remove a column from the Keys, Groups of Values panel just click on the **x** next to the column name displayed in the relevant
     panel.
 
 ### Step 7: Changing the layout of the graph
 
 -   With the graph settings panel visible:
 
-    -   Remove all columns from the both the Keys and Values panels.
+    -   Remove all columns from the both the **Keys** and **Values** panels.
 
     -   Drag and drop **MONTH** into the Keys panel
 
@@ -190,9 +186,9 @@ The report should now look like the one shown below.
 
 ### Step 8: Tidying up the report
 
--   Click on the “**Settings**” link to hide the layout controls.
+-   Click on the **Settings** link to hide the layout controls.
 
--   Click on the “**Hide editor**” button which is to the right of the “**Run this paragraph**” button.
+-   Click on the **Hide editor** button which is to the right of the "Run this paragraph" button.
 
 ![](./images/700/Picture700-25.png)
 
@@ -208,17 +204,17 @@ The report should now look like the one shown below.
 
 ### Step 9: Saving the Scratchpad as a New Notebook
 
-The SQL Scratchpad in the previous section is simply a default type notebook with a system generated name. But we can change the name of the scratchpad we have just created “**SQL Query Scratchpad**”.
+The SQL Scratchpad in the previous section is simply a default type notebook with a system generated name. But we can change the name of the scratchpad we have just created **SQL Query Scratchpad**.
 
--   Click on the “**Back**” link in the top left corner of the Scratchpad window to return to the OML home page.
+-   Click on the **Back** link in the top left corner of the Scratchpad window to return to the OML home page.
 
 ![](./images/700/Picture700-27.png)
 
--   Notice that in the “**Recent Activities**” panel there is a potted history of what has happened to your SQL scratchpad “notebook”.
+-   Notice that in the **Recent Activities** panel there is a potted history of what has happened to your SQL scratchpad “notebook”.
 
 ![](./images/700/Picture700-28.png)
 
--   Click on “**Go to Notebooks**” in the “**Quick Actions**” panel
+-   Click on **Go to Notebooks** in the **Quick Actions** panel
 
 ![](./images/700/Picture700-29.png)
 
@@ -226,15 +222,15 @@ The SQL Scratchpad in the previous section is simply a default type notebook wit
 
 ![](./images/700/Picture700-30.png)
 
--   Let’s rename our SQL Scratchpad notebook to something more informative. Click on text in the “**comments**” column to select
+-   Let’s rename our SQL Scratchpad notebook to something more informative. Click on text in the **comments** column to select
     the scratchpad so we can rename it. After you click, the “SQL Query Scratchpad” will become selected and the menu buttons above will
-    activate
+    activate.
 
 ![](./images/700/Picture700-31.png)
 
 ![](./images/700/Picture700-32.png)
 
--   Click on the “**Edit**” button to pop-up the settings dialog for this notebook and enter the information as shown in the image below
+-   Click on the **Edit** button to pop-up the settings dialog for this notebook and enter the information as shown in the image below
     (*note that the connection information is read-only because this is managed by Autonomous Data Warehouse Cloud*):
 
 ![](./images/700/Picture700-33.png)
@@ -276,7 +272,7 @@ Notice that you have no activity listed in the **Recent Activities** panel on yo
 
 ### Step 11: Changing Workspace Permissions
 
--   From the OML home page, click on link “**OML Project (OML Workspace)**” link in the top right corner on the OML home page to
+-   From the OML home page, click on link **OML Project (OML Workspace)** link in the top right corner on the OML home page to
     display the workspace-project menu. Then select **Workspace Permissions**.
 
 ![](./images/700/Picture700-39.png)
@@ -287,15 +283,11 @@ Notice that you have no activity listed in the **Recent Activities** panel on yo
 
     -   Set the permission type to **Viewer** (this means read-only access to the workspace, project and notebook).
 
-> **Note:***
+**Note:***
 
--   A “Developer” would have read-only access to the workspace, project
-    but could add new notebooks, update and delete existing notebooks
-    and schedule jobs to refresh a notebook.
+-   A “Developer” would have read-only access to the workspace, project but could add new notebooks, update and delete existing notebooks and schedule jobs to refresh a notebook.
 
--   A “Manager” would have read-only access to the workspace, can create
-    update and delete projects, add new notebooks, update and delete
-    existing notebooks and schedule jobs to refresh a notebook.
+-   A “Manager” would have read-only access to the workspace, can create update and delete projects, add new notebooks, update and delete existing notebooks and schedule jobs to refresh a notebook.
 
 ![](./images/700/Picture700-40.png)
 
@@ -314,8 +306,7 @@ Notice that you have no activity listed in the **Recent Activities** panel on yo
 
 ![](./images/700/Picture700-42.png)
 
--   As user **OMLUSER2** you can now run the **Sales Analysis Over Time** notebook by clicking on **the blue-linked text** in the
-    **Recent Activities** panel (*note that your recent activity will be logged under the banner labelled “Today”*).
+-   As user **OMLUSER2** you can now run the **Sales Analysis Over Time** notebook by clicking on **the blue-linked text** in the **Recent Activities** panel (*note that your recent activity will be logged under the banner labelled “Today”*).
 
 ![](./images/700/Picture700-43.png)
 
@@ -358,6 +349,6 @@ In this section we are going to use a script from a SQL pattern matching tutoria
 
 ![](./images/700/Picture700-48.png)
 
--   You have completed all of the labs.
+-   You have completed all of the steps in this lab.
 
 
