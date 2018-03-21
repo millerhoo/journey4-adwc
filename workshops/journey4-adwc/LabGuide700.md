@@ -35,7 +35,7 @@ The first step is to create two new users.
 
 ![](./images/700/Picture700-2.png)
 
--   Go to the **Administration tab** and click **Manage Oracle ML** Users to go to the OML user management page - this page will allow
+-   Go to the **Administration** tab and click **Manage Oracle ML Users** to go to the OML user management page - this page will allow
     you to manage OML users.
 
 ![](./images/700/Picture700-3.png)
@@ -46,11 +46,11 @@ This will open a new tab within your browser that asks you for a username and pa
 
 ![](./images/700/Picture700-4.png)
 
-Note that you do not have to go to this page using the same steps every time, you can bookmark the URL and access it directly later.
+**Note** that you do not have to go to this page using the same steps every time, you can bookmark the URL and access it directly later.
 
 -   Click **Create** button to create a new OML user. Note that this will create a new database user. This newly created user will be
     able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user
-    (*for this lab you can use your own personal email address*).
+    (*for this lab you can use your own personal email address*) when creating the user.
 
 ![](./images/700/Picture700-5.png)
 
@@ -89,7 +89,7 @@ You will use these two users later in this workshop.
 
 ![](./images/700/Picture700-12.png)
 
-Once you have successfully signed-in to OML the application home page will be displayed.
+Once you have successfully signed in to OML the application home page will be displayed.
 
 ### Step 3: Overview of OML Home Page
 
@@ -277,17 +277,17 @@ Notice that you have no activity listed in the **Recent Activities** panel on yo
 
 ![](./images/700/Picture700-39.png)
 
--   The permissions dialog box will appear – see below.
+-   The permissions dialog box will appear (see below).
 
     -   In the dialog box next to the **Add Permissions** text type **OMLUSER2** (use uppercase).
 
     -   Set the permission type to **Viewer** (this means read-only access to the workspace, project and notebook).
 
-**Note:***
+-   **Note:**
 
--   A “Developer” would have read-only access to the workspace, project but could add new notebooks, update and delete existing notebooks and schedule jobs to refresh a notebook.
+    -   A “Developer” would have read-only access to the workspace, project but could add new notebooks, update and delete existing notebooks and schedule jobs to refresh a notebook.
 
--   A “Manager” would have read-only access to the workspace, can create update and delete projects, add new notebooks, update and delete existing notebooks and schedule jobs to refresh a notebook.
+    -   A “Manager” would have read-only access to the workspace, can create update and delete projects, add new notebooks, update and delete existing notebooks and schedule jobs to refresh a notebook.
 
 ![](./images/700/Picture700-40.png)
 
@@ -316,6 +316,8 @@ Notice that you have no activity listed in the **Recent Activities** panel on yo
 
 # Creating and running SQL scripts
 
+## Steps
+
 ### Step 13: Getting Started with Scripts
 
 -   Log out from user OMLUSER2 and log in as OMLUSER1.
@@ -336,8 +338,7 @@ Notice that the script paragraph does not have any menus to control the display 
 
 In this section we are going to use a script from a SQL pattern matching tutorial, <a href="https://livesql.oracle.com/apex/livesql/file/tutorial_EWB8G5JBSHAGM9FB2GL4V5CAQ.html" target="_blank">Sessionization with MATCH\_RECOGNIZE and JSON</a>, on the free Oracle <a href="http://livesql.oracle.com/" target="_blank">livesql.oracle.com</a> site. This script shows how to use the SQL pattern matching **MATCH\_RECOGNIZE** feature for sessionization analysis based on **JSON** web log files.
 
--   Copy and paste this code snippet into the **%script paragraph**. After pasting the above code into the script paragraph it should
-    look something like this:
+-   Copy and paste <a href="./scripts/700/Sessionization_with_MATCH_RECOGNIZE_and_JSON.txt" target="_blank">this code snippet</a> into the **%script** paragraph. After pasting the above code into the script paragraph it should look something like this:
 
 ![](./images/700/Picture700-47.png)
 
