@@ -58,13 +58,13 @@ Click **Scale Service** after filling in the form, this will take you the Instan
 
 ### STEP 2: Performance and concurrency benefits of dynamic scaling
 
--   Click here (**link TBD**) to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
+-   <a href="https://raw.githubusercontent.com/millerhoo/journey4-adwc/master/workshops/journey4-adwc/images/ADWC%20HOL%20Scaling.mp4" target="_blank">Click here</a> to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
 
 -   The demo will show a workload that has 10 concurrent users running with the MEDIUM database service. You will see that on a 2 CPU ADWC instance 5 queries are running whereas 5 queries are waiting in the queue for resources.
 
 ![](./images/600/Picture300-7.png)
 
--   While the workload is running the database will be scaled up from 2 CPUs to 8 CPUs. You will see that the queries waiting in the queue are now able to start and there are no sessions waiting in the queue anymore.
+-   While the workload is running the database will be scaled up from 2 CPUs to 4 CPUs. You will see that the queries waiting in the queue are now able to start and there are no sessions waiting in the queue anymore.
 
 ![](./images/600/Picture300-8.png)
 
