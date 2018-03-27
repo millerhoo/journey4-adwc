@@ -122,3 +122,11 @@ This workshop walks you through all the steps to get started using the **Oracle 
 - Learn how to share notebooks
 - Learn how to create and run SQL scripts
 
+## Lab 800: Basic Machine Learning (DBMS_PREDICTIVE_ANALYTICS)
+
+**Documentation**: [LabGuide800.md](LabGuide800.md)
+
+**Objectives**:
+
+- Learn how to import notebooks into Oracle ML Notebook
+- Learn how to use DBMS_PREDICTIVE_ANALYTICS routines
