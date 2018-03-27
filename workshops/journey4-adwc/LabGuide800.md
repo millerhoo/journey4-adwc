@@ -25,7 +25,9 @@ The first step is to download the sample notebook and then import it into the Or
 
 ### Step 1: Download the sample notebook for this lab
 
--   Download the sample notebook for this lab to a folder on your local computer from <a href="./files/Basic%20Machine%20Learning.json" target="_blank" download>here</a>.
+-   Download the sample notebook for this lab to a folder on your local computer from <a href="./files/Basic%20Machine%20Learning.zip" target="_blank">here</a>.
+
+-   Note: the download is zipped and you will want to unzip it.  After unzipping, you should have a file called "Basic Machine Learning.json".
 
 ### Step 2: Login to the Oracle ML Notebook as one of your ML notebook users
 
