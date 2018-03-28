@@ -1,6 +1,14 @@
-/* Specify the real URLs that point to the files on the OCI Object Storage in the following two definitions of variables */
-define sale1_v3_dat_URL = 'the URL of the sale1v3.dat file on OCI Object Stroage';
-define cust1_v3_dat_URL = 'the URL of the cust1v3.dat file on OCI Object Stroage';
+/* Specify the real base_URL for your OCI Object Storage in the define base_URL line below*/
+/* change tenancy00 to your real tenancy name. The name is case-sensitive. */
+/* change ADWClab to your real bucket name. The name is case-sensitive. */
+/* change us-ashburn-1 to your real region name. The name is case-sensitive. */
+/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+define base_URL='https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/tenancy00/ADWClab'
+
+define chan_v3_dat_URL = '&base_URL/chan_v3.dat';
+define sale1_v3_dat_URL = '&base_URL/sale1v3.dat';
+define cust1_v3_dat_URL = '&base_URL/cust1v3.dat';
+
 
 begin
  dbms_cloud.create_external_table(
