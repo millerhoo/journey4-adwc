@@ -1,3 +1,13 @@
+DROP TABLE sales;
+DROP TABLE customers;
+DROP TABLE countries;
+DROP TABLE supplementary_demographics;
+DROP TABLE costs;
+DROP TABLE times;
+DROP TABLE promotions;
+DROP TABLE products;
+DROP TABLE channels;
+
 CREATE TABLE sales (
     prod_id             NUMBER          NOT NULL,
     cust_id             NUMBER          NOT NULL,
@@ -156,85 +166,85 @@ CREATE TABLE supplementary_demographics
 
 ALTER TABLE promotions
   ADD CONSTRAINT promo_pk
-  PRIMARY KEY (promo_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (promo_id);
+
 
 ALTER TABLE sales
   ADD CONSTRAINT sales_promo_fk
-  FOREIGN KEY (promo_id) REFERENCES promotions (promo_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (promo_id) REFERENCES promotions (promo_id);
+
 
 ALTER TABLE costs
   ADD CONSTRAINT costs_promo_fk
-  FOREIGN KEY (promo_id) REFERENCES promotions (promo_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (promo_id) REFERENCES promotions (promo_id);
+
 
 ALTER TABLE customers
   ADD CONSTRAINT customers_pk
-  PRIMARY KEY (cust_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (cust_id);
+
 
 ALTER TABLE sales
   ADD CONSTRAINT sales_customer_fk
-  FOREIGN KEY (cust_id) REFERENCES customers (cust_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (cust_id) REFERENCES customers (cust_id);
+
 
 ALTER TABLE products
   ADD CONSTRAINT products_pk
-  PRIMARY KEY (prod_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (prod_id);
+
 
 ALTER TABLE sales
   ADD CONSTRAINT sales_product_fk
-  FOREIGN KEY (prod_id) REFERENCES products (prod_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (prod_id) REFERENCES products (prod_id);
+
 
 ALTER TABLE costs
   ADD CONSTRAINT costs_product_fk
-  FOREIGN KEY (prod_id) REFERENCES products (prod_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (prod_id) REFERENCES products (prod_id);
+
 
 ALTER TABLE times
   ADD CONSTRAINT times_pk
-  PRIMARY KEY (time_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (time_id);
+
 
 ALTER TABLE sales
   ADD CONSTRAINT sales_time_fk
-  FOREIGN KEY (time_id) REFERENCES times (time_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (time_id) REFERENCES times (time_id);
+
 
 ALTER TABLE costs
   ADD CONSTRAINT costs_time_fk
-  FOREIGN KEY (time_id) REFERENCES times (time_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (time_id) REFERENCES times (time_id);
+
 
 ALTER TABLE channels
   ADD CONSTRAINT channels_pk
-  PRIMARY KEY (channel_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (channel_id);
+
 
 ALTER TABLE sales
   ADD CONSTRAINT sales_channel_fk
-  FOREIGN KEY (channel_id) REFERENCES channels (channel_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (channel_id) REFERENCES channels (channel_id);
+
 
 ALTER TABLE costs
   ADD CONSTRAINT costs_channel_fk
-  FOREIGN KEY (channel_id) REFERENCES channels (channel_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (channel_id) REFERENCES channels (channel_id);
+
 
 ALTER TABLE countries
   ADD CONSTRAINT countries_pk
-  PRIMARY KEY (country_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (country_id);
+
 
 ALTER TABLE customers
   ADD CONSTRAINT customers_country_fk
-  FOREIGN KEY (country_id) REFERENCES countries (country_id)
-  RELY DISABLE NOVALIDATE;
+  FOREIGN KEY (country_id) REFERENCES countries (country_id);
+
 
 ALTER TABLE supplementary_demographics
   ADD CONSTRAINT supp_demo_pk
-  PRIMARY KEY (cust_id)
-  RELY DISABLE NOVALIDATE;
+  PRIMARY KEY (cust_id);
+

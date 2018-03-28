@@ -101,19 +101,7 @@ In this example, the region name is us-ashburn-1, the tenant name is dbayard00, 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
 
-# Create the tables
-## Steps
-### STEP 7: Create Target Tables for Data Loading
-
--   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it.
-
-    ![](./images/300/Picture300-2.png)
-
-Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. Also note that all the constraints are created as RELY DISABLE VALIDATE.
-
-# Load data from the Object Store
-## Steps
-### STEP 8: Creating an Object Store Swift Password
+### STEP 7: Creating an Object Store Swift Password
 
 To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need a Cloud user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and username/password authentication.
 
@@ -135,7 +123,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 -   The new Swift password is displayed. Click **Copy** to copy the Swift password for your records immediately, because you can't retrieve it again after closing the dialog box.
     ![](./images/300/Picture300-10.png)
 
-### STEP 9: Create a Database Credential for Your User
+### STEP 8: Create a Database Credential for Your User
 
 In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your object store account and Swift password. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
 
@@ -151,6 +139,20 @@ In order to access data in the Object Store you have to enable your database use
     ![](./images/300/Picture300-12.png)
 
 -   Now you are ready to load data from the Object Store.
+
+
+# Create the tables
+## Steps
+### STEP 9: Create Target Tables for Data Loading
+
+-   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it.
+
+    ![](./images/300/Picture300-2.png)
+
+Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can continue to use primary keys and foreign keys if you want, but they are not required.
+
+# Load data from the Object Store
+## Steps
 
 ### STEP 10: Loading Data Using the Data Import Wizard in SQL Developer
 
@@ -227,12 +229,13 @@ tracked by Oracle.
 
 -   For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan_v3_error.dat).  Specifically, the default separator is the | character, but the chan_v3_error.dat file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". Note that you are going to load the data with errors this time.
 
-    ![](./images/300/Picture300-21.png)
+![](./images/300/Picture300-21.png)
 
 -   Run the following queries to see the load that errored out.
-    select * from user_load_operations where status='FAILED';
-
-    ![](./images/300/Picture300-22.png)
+```
+select * from user_load_operations where status='FAILED';
+```
+![](./images/300/Picture300-22.png)
 
 A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
 

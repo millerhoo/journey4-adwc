@@ -1,3 +1,14 @@
+/* Specify the real base_URL for your OCI Object Storage in the define base_URL line below*/
+/* change tenancy00 to your real tenancy name. The name is case-sensitive. */
+/* change ADWClab to your real bucket name. The name is case-sensitive. */
+/* change us-ashburn-1 to your real region name. The name is case-sensitive. */
+/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+define base_URL='https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/tenancy00/ADWClab'
+
+define chan_v3_dat_URL = '&base_URL/chan_v3.dat';
+define sale1_v3_dat_URL = '&base_URL/sale1v3.dat';
+define cust1_v3_dat_URL = '&base_URL/cust1v3.dat';
+
 truncate table channels;
 truncate table sales;
 truncate table customers;
@@ -8,10 +19,14 @@ truncate table supplementary_demographics;
 truncate table times;
 truncate table costs;
 
-/* Specify the real URLs that point to the files on the OCI Object Storage in the following three definitions of variables */
-define chan_v3_dat_URL = 'the URL of the chan_v3.dat file on OCI Object Stroage';
-define sale1_v3_dat_URL = 'the URL of the sale1v3.dat file on OCI Object Stroage';
-define cust1_v3_dat_URL = 'the URL of the cust1v3.dat file on OCI Object Stroage';
+/* Copy other tables from the existing SH schema in the database. */
+insert into countries select * from SH.countries;
+insert into products select * from SH.products;
+insert into promotions select * from SH.promotions;
+insert into supplementary_demographics select * from SH.supplementary_demographics;
+insert into times select * from SH.times;
+
+commit;
 
 begin
  dbms_cloud.copy_data(
@@ -19,6 +34,18 @@ begin
     credential_name =>'OBJ_STORE_CRED',
     file_uri_list => '&chan_v3_dat_URL',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+ );
+end;
+/
+
+
+
+begin
+ dbms_cloud.copy_data(
+    table_name =>'CUSTOMERS',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list => '&cust1_v3_dat_URL',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
  );
 end;
 /
@@ -33,22 +60,6 @@ begin
 end;
 /
 
-begin
- dbms_cloud.copy_data(
-    table_name =>'CUSTOMERS',
-    credential_name =>'OBJ_STORE_CRED',
-    file_uri_list => '&cust1_v3_dat_URL',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
- );
-end;
-/
-
-/* Copy other tables from the existing SH schema in the database. */
-insert into countries select * from SH.countries;
-insert into products select * from SH.products;
-insert into promotions select * from SH.promotions;
-insert into supplementary_demographics select * from SH.supplementary_demographics;
-insert into times select * from SH.times;
 insert into costs select * from SH.costs;
 
 commit;
