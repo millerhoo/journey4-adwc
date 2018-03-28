@@ -203,14 +203,13 @@ When you are satisfied with the file content view, click **NEXT**.
 Alternative to the wizard-guided data load you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data (**chan\_v3.dat**, **sale1v3.dat**, and **cust1v3.dat**) staged in your object store.
-    -   For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User".
+
+    -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". 
+    ![](./images/300/snap0014550.jpg)
+
+    -   For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User".  You probably don't need to change this.
     ![](./images/300/Picture300-19a.png)
 
-    -   For the **file\_uri\_list** parameter, it is assigned the value of the **chan\_v3\_dat\_URL** variable. Specify the URL that points to the **chan\_v3.data file** on your OCI Object Storage in the definition of the **chan\_v3\_dat\_URL** variable. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage". 
-    ![](./images/300/Picture300-19.png)
-
--   Repeat this for the **sale1\_v3\_dat\_URL** and **cust1\_v3\_dat\_URL** variables in the script.
-    ![](./images/300/Picture300-19b.png)
 
 -   Run the script.
 

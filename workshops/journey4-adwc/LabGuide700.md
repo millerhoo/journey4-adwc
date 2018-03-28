@@ -2,7 +2,7 @@
 
 Updated: March 21, 2018
 
-# Using Oracle Machine Learning Notebooks in ADWC
+# Lab 700: Using Oracle Machine Learning Notebooks
 
 ## Introduction
 

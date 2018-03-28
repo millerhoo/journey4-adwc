@@ -36,7 +36,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
     Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create two external tables on the files (**sale1v3.dat** and **cust1v3.dat**) staged in your object store. Note that you are still using the same credential and the URLs of flies on OCI Object Storage you used when loading data in the previous lab.
 
-    -   For the **file\_uri\_list** parameter, it is assigned the value of the **sale1\_v3\_dat\_URL** variable. At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
+    -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
     ![](./images/400/snap0014527.jpg)
 
 
