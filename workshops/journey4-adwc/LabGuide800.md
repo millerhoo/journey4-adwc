@@ -27,11 +27,11 @@ The first step is to download the sample notebook and then import it into the Or
 
 -   Download the sample notebook for this lab to a folder on your local computer from <a href="./files/Basic%20Machine%20Learning.zip" target="_blank">here</a>.
 
--   Note: the download is zipped and you will want to unzip it.  After unzipping, you should have a file called "Basic Machine Learning.json".
+-   Note: the download is zipped and you will want to unzip it and copy the file in the zip to a known location on your computer.  After unzipping, you should have a file called "Basic Machine Learning.json".  Remember the location of where you have saved this file.
 
 ### Step 2: Login to the Oracle ML Notebook as one of your ML notebook users
 
--   In the previous lab, you created 2 users for the Oracle ML Notebook (omluser1 and omluser2).  Login to Oracle ML Notebook as one of those users.  Hint: the url to login to Oracle ML Notebook was sent to the email address you provided when you created the new users.
+-   In the previous lab, you created 2 users for the Oracle ML Notebook (omluser1 and omluser2).  Login to Oracle ML Notebook as one of those users.  Hint: the link to sign in to Oracle ML Notebook was sent to the email address you provided when you created the new users.
 
     ![](./images/700/Picture700-8.png)
 
@@ -45,15 +45,15 @@ The first step is to download the sample notebook and then import it into the Or
 
    ![](./images/800/snap0014522.jpg)
 
-### Step 5: Select the lab notebook file you downloaded earlier
+### Step 5: Select the unzip lab notebook .json file you downloaded earlier
 
    ![](./images/800/snap0014523.jpg)
 
-### Step 6: Click on Basic Machine Learning notebook to open it
+### Step 6: Click on the Basic Machine Learning link to open it
 
    ![](./images/800/snap0014524.jpg)
 
-### Step 7: Read and run the Basic Machine Learning notebook, paragraph by paragraph to learn about using DBMS_PREDICTIVE_ANALYTICS
+### Step 7: Read and Run the Basic Machine Learning notebook, paragraph by paragraph, to learn about using DBMS_PREDICTIVE_ANALYTICS
 
    ![](./images/800/snap0014525.jpg)
 
