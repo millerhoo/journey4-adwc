@@ -54,6 +54,7 @@ The first step is to download the sample notebook and then import it into the Or
    ![](./images/800/snap0014524.jpg)
 
 ### Step 7: Read and Run the Basic Machine Learning notebook, paragraph by paragraph, to learn about using DBMS_PREDICTIVE_ANALYTICS
+The notebook will provide some live examples of DBMS_PREDICTIVE_ANALYTICS in action against the sample SALES HISTORY tables.  There are additional instructions and steps in the notebook itself.
 
    ![](./images/800/snap0014525.jpg)
 
