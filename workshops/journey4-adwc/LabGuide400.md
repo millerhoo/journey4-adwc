@@ -35,14 +35,11 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/400/create_external_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.  
 
     Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create two external tables on the files (**sale1v3.dat** and **cust1v3.dat**) staged in your object store. Note that you are still using the same credential and the URLs of flies on OCI Object Storage you used when loading data in the previous lab.
-    -   For the **credential_name** parameter in the **create\_external\_table** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User" in the previous lab.
-    ![](./images/400/Picture400-1.png)
 
-    -   For the **file\_uri\_list** parameter, it is assigned the value of the **sale1\_v3\_dat\_URL** variable. Specify the URL that points to the **sale1v3.data file** on your OCI Object Storage in the definition of the **sale1\_v3\_dat\_URL** variable.
-    ![](./images/400/Picture400-2.png)
+    -   For the **file\_uri\_list** parameter, it is assigned the value of the **sale1\_v3\_dat\_URL** variable. At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
+    ![](./images/400/snap0014527.jpg)
 
--   Repeat this for the **cust1\_v3\_dat\_URL** variable in the script.
-    ![](images/400/Picture400-3.png)
+
 
 -   **Run the script**.
 
