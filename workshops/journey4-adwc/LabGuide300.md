@@ -1,6 +1,6 @@
 ![](./images/300/TITLE300.png)
 
-Updated: March 18, 2018
+Updated: April 6, 2018
 
 # ADWC Lab 300: Data Loading
 
@@ -172,7 +172,7 @@ In this example, the region name is us-ashburn-1, the tenant name is dbayard00, 
 
 ![](images/300/ConstructURLs.png)
 
--   **Repeat** this for the **sales.csv.gz**, **product.txt**, and **channels\_error.csv** files. 
+-   **Repeat** this for the **sales.csv.gz**, **products.txt**, and **channels\_error.csv** files. 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
 

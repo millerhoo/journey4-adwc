@@ -69,7 +69,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
     -   Select **Oracle Cloud Storage** as source for the data load
 
-    -   Enter the URL of **channels_error.csv** as the file to load. You constructed the URL in STEP 8 Construct the URLs of the Files on Your OCI Object Storage. For example, the URL might look something like:
+    -   Enter the URL of **channels_error.csv** as the file to load. You constructed the URL in data loading lab. For example, the URL might look something like:
 
         https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dbayard00/ADWCLab/channels_error.csv
 
