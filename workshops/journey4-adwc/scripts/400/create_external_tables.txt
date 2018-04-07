@@ -5,9 +5,9 @@
 /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
 define base_URL='https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/tenancy00/ADWClab'
 
-define chan_v3_dat_URL = '&base_URL/chan_v3.dat';
-define sale1_v3_dat_URL = '&base_URL/sale1v3.dat';
-define cust1_v3_dat_URL = '&base_URL/cust1v3.dat';
+define products_dat_URL = '&base_URL/products.txt';
+define sale1_v3_dat_URL = '&base_URL/sales.csv.gz';
+define cust1_v3_dat_URL = '&base_URL/customers.csv';
 
 
 begin
@@ -15,7 +15,7 @@ begin
     table_name =>'SALES_EXT',
     credential_name =>'OBJ_STORE_CRED',
     file_uri_list =>'&sale1_v3_dat_URL',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true'),
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true', 'compression' value 'gzip'),
     column_list => 'PROD_ID NUMBER , 
 	CUST_ID NUMBER , 
 	TIME_ID DATE , 
@@ -56,6 +56,17 @@ begin
 	CUST_EFF_FROM DATE, 
 	CUST_EFF_TO DATE, 
 	CUST_VALID VARCHAR2(1)'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'PRODUCTS_JSON_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'&products_dat_URL',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
+    column_list => 'DOC VARCHAR2(4000)'
  );
 end;
 /
