@@ -6,7 +6,7 @@
 /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
 define base_URL='https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/tenancy00/ADWClab'
 
-define chan_v3_error_dat_URL = '&base_URL/chan_v3_error.dat';
+define chan_v3_error_dat_URL = '&base_URL/channels_error.csv';
 
 begin
  dbms_cloud.copy_data(

@@ -164,6 +164,16 @@ CREATE TABLE supplementary_demographics
     os_doc_set_kanji NUMBER(10),
     COMMENTS         VARCHAR2(4000));
 
+
+/* Copy data from the existing SH schema in the database. */
+insert into countries select * from SH.countries;
+insert into products select * from SH.products;
+insert into promotions select * from SH.promotions;
+insert into supplementary_demographics select * from SH.supplementary_demographics;
+insert into times select * from SH.times;
+insert into costs select * from SH.costs;
+commit;
+
 ALTER TABLE promotions
   ADD CONSTRAINT promo_pk
   PRIMARY KEY (promo_id);
@@ -229,9 +239,11 @@ ALTER TABLE sales
   FOREIGN KEY (channel_id) REFERENCES channels (channel_id);
 
 
-ALTER TABLE costs
-  ADD CONSTRAINT costs_channel_fk
-  FOREIGN KEY (channel_id) REFERENCES channels (channel_id);
+--Comment out this FK for our lab because we havent loaded channels data yet
+--ALTER TABLE costs
+--  ADD CONSTRAINT costs_channel_fk
+--  FOREIGN KEY (channel_id) REFERENCES channels (channel_id);
+
 
 
 ALTER TABLE countries

@@ -103,3 +103,10 @@ ADWC also caches the results of a query for you. If you run the same queries aga
 -   This time you will see that the query finishes in less than a second.
 
 
+# Explore additional queries with the Sample Schemas 
+
+## Steps
+
+### STEP 4: Experiment with running other sample queries
+
+-   You can find more sample queries to run in the ADWC documentation.  Try some of the queries from <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sample-queries.html">here</a>.
