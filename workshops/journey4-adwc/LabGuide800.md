@@ -58,6 +58,23 @@ The notebook will provide some live examples of DBMS_PREDICTIVE_ANALYTICS in act
 
    ![](./images/800/snap0014525.jpg)
 
+## Create machine learning notebook using OML Gallery template
+
+### Step 8: Create a machine learning notebook
+
+- Go back to OML dashboard and click on **Go to Gallery**. The Gallery page lists pre-populated Oracle Machine Learning notebook templates which you can view, like, and use it to create new templates. 
+
+    ![](./images/800/25.png)
+
+- In the Gallery page, select the template based on which you want to create a notebook. 
+
+    ![](./images/800/26.png)
+
+- Click **New Notebook**, and in the Create Notebook window, the name of the selected template appears. Enter information for notebook name and description and click on **OK**. For Association Rules example, it performs analysis based on SH schema. The results of the paragraphs have been shown. You can rerun each paragraph if you would like. You can go through this notebook at your own pace.
+
+    ![](./images/800/27.png)
+
+- One of the interesting things from this notebook is that it uses ``DBMS_DATA_MINING`` PL/SQL package which is an analytical technology that derives actionable information from data in an Oracle Database or Oracle Data Warehouse. This is a out-of-box function in ADWC that you can utilize to perform machine learning just using SQL scripts. Please refer to this for more information: `https://docs.oracle.com/cd/E18283_01/appdev.112/e16760/d_datmin.htm`
 
 # Next Steps
 

@@ -132,4 +132,32 @@ When you are satisfied with the data preview, click **NEXT**.
 ![](./images/400/snap0014678.jpg)
 
 
+### BONUS STEP: Create Data Warehouse User
+
+-   Using your existing connection in SQL Developer, create a new user named **dwuser** using the following commands.
+```
+CREATE USER dwuser IDENTIFIED BY "Welcome_123!";
+GRANT DWROLE to dwuser;
+```
+- Note that the database role DWROLE includes the privileges required by a typical DW developer. The privileges in DWROLE are the following. You can grant additional database privileges if needed.
+```
+CREATE ANALYTIC VIEW
+CREATE ATTRIBUTE DIMENSION
+ALTER SESSION
+CREATE HIERARCHY
+CREATE JOB
+CREATE MINING MODEL
+CREATE PROCEDURE
+CREATE SEQUENCE
+CREATE SESSION
+CREATE SYNONYM
+CREATE TABLE
+CREATE TRIGGER
+CREATE TYPE
+CREATE VIEW
+READ,WRITE ON directory DATA_PUMP_DIR
+EXECUTE privilege on the PL/SQL package DBMS_CLOUD 
+```
+
 -   You are now ready to move to the next lab.
+
