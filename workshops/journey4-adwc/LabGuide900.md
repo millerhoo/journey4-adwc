@@ -1,4 +1,4 @@
-![](./images/900/title900.JPG)
+![](./images/900/title900.jpg)
 
 # Lab 900: Creating Visualization from ADWC
 
@@ -32,7 +32,7 @@ At this point, you should have performed the following:
 - Go to the directory that you saved your credentials wallet file from the previous lab. Open up the .ZIP file.
 - Copy the cwallet.sso from unzipped folder to **C:\\%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS**. Note: Change **%HOMEPATH%** to your PC home path. 
 
-    ![](./images/900/Picture300-08.PNG)
+    ![](./images/900/Picture300-08.png)
 
 ## Create New Data Visualization Desktop Connection 
 
@@ -80,4 +80,4 @@ At this point, you should have performed the following:
 
 - You can save the data set to create a new visualization project.
 
-  ![](./images/900/Picture300-05.PNG)
+- You are now done with this lab.
