@@ -88,6 +88,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 - Learn how to define external tables against Object Store data sets
 - Learn how to query external tables
+- Learn how to create data warehouse user 
 
 
 ## Lab 500: Managing and Monitoring ADWC using the Cloud Console
@@ -130,3 +131,14 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 - Learn how to import notebooks into Oracle ML Notebook
 - Learn how to use DBMS_PREDICTIVE_ANALYTICS routines
+- Learn how to use Oracle ML Gallery
+
+## Lab 900: Creating Visualization from ADWC
+
+**Documentation**: [LabGuide900.md](LabGuide900.md)
+
+**Objectives**:
+
+- Set Up Local Environment
+- Create New Data Visualization Desktop Connection
+- Prepare Data Set and Create Visualization

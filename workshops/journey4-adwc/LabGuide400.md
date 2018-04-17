@@ -18,6 +18,8 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 -   Learn how to query external data by the external tables
 
+-   Learn how to create data warehouse user 
+
 ## Required Artifacts
 
 -   The following lab requires an Oracle Public Cloud account. You may your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.

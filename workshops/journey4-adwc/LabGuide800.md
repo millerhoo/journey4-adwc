@@ -12,6 +12,7 @@ During this lab you will be using the Oracle Machine Learning (OML) notebook app
 
 -   Learn how to import notebooks into Oracle ML Notebook
 -   Learn how to use DBMS_PREDICTIVE_ANALYTICS routines
+-   Learn how to use Oracle ML Gallery
 
 ## Required Artifacts
 
