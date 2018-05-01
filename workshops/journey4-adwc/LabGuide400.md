@@ -32,7 +32,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/400/create_external_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.  
 
-    Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files (**sales.gz.csv**, **customers.csv**, and **products.txt**) staged in your object store. Note that you are still using the same credential and the URLs of flies on OCI Object Storage you used when loading data in the previous lab.
+    Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files (**sales.csv.gz**, **customers.csv**, and **products.txt**) staged in your object store. Note that you are still using the same credential and the URLs of flies on OCI Object Storage you used when loading data in the previous lab.
 
     -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
     ![](./images/400/snap0014527.jpg)
