@@ -56,6 +56,12 @@
                 "filename": "LabGuide800.md",
                 "title": "Lab 800: Basic Machine Learning (DBMS_PREDICTIVE_ANALYTICS)",
                 "description": "Learn to use DBMS_PREDICTIVE_ANALYTICS using a sample Oracle ML Notebook"
+            },
+            {
+                "number": "900",
+                "filename": "LabGuide900.md",
+                "title": "Lab 900: Creating Visualization from ADWC",
+                "description": "Learn to use Data Visualization Desktop to Connect to ADWC"
             }
         ]
     }
