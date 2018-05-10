@@ -176,36 +176,42 @@ In this example, the region name is us-ashburn-1, the tenant name is dbayard00, 
 
 -   **Save** the URLs you constructed to a note. We will use the URLs in the following steps.
 
-### STEP 9: Creating an Object Store Swift Password
+### STEP 9: Creating an Object Store Auth Token
 
-To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need a Cloud user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and username/password authentication.
+To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
 
 -   Go back to the **OCI Compute Console** in your browser. In the top menu, click the **Identity**, and then click **Users**. 
     ![](./images/300/Create_Swift_Password_01.png)
 
--   Click the **user's name** to view the details.
+-   Click the **user's name** to view the details.  Also, remember the username as you will need that in the next step.
+
     ![](./images/300/Create_Swift_Password_02.png)
 
--   On the left side of the page, click **Swift Passwords**.
-    ![](./images/300/Picture300-7.png)
+-   On the left side of the page, click **Auth Tokens**.
 
--   Click **Generate Password**.
-    ![](./images/300/Picture300-8.png)
+    ![](./images/300/snap0015308.jpg)
 
--   Enter a friendly **description** for the password and click **Generate Password**.
-    ![](./images/300/Picture300-9.png)
+-   Click **Generate Token**.
 
--   The new Swift password is displayed. Click **Copy** to copy the Swift password for your records immediately, because you can't retrieve it again after closing the dialog box.
-    ![](./images/300/Picture300-10.png)
+    ![](./images/300/snap0015309.jpg)
+
+-   Enter a friendly **description** for the token and click **Generate Token**.
+
+    ![](./images/300/snap0015310.jpg)
+
+-   The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard.  You probably want to save this in a temporary notepad document for the next few minutes (you'll use it in the next step).  You can't retrieve the Auth Token again after closing the dialog box.
+
+    ![](./images/300/snap0015311.jpg)
 
 ### STEP 10: Create a Database Credential for Your User
 
-In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your object store account and Swift password. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
+In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
 
 -   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_credential.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.
 
-    Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The **OCI username** (which is not the same as your database username) and the OCI object store **Swift password** you generated in the previous step.  In this example, the crediential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
-    ![](./images/300/Picture300-11.png)
+    Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The username will be the **OCI username** (which is not the same as your database username) and the OCI object store **Auth Token** you generated in the previous step.  In this example, the crediential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
+
+    ![](./images/300/snap0015312.jpg)
 
 <!-- -->
 
