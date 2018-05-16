@@ -1,12 +1,12 @@
-![](./images/300/TITLE300.png)
+![](./images/900/title900.jpg)
 
-Updated: May 10, 2018
+Updated: May 15, 2018
 
 # ADWC Lab DIPC: Using Oracle Data Integration Platform Cloud (DIPC) with ADWC
 
 ## Introduction
 
-In this lab, you will configure and use Using Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typcial enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).
+In this lab, you will configure and use Using Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typical enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).
 
 Oracle Data Integration Platform Cloud is a cloud-based platform for data transformation, integration, replication, analysis, and governance.
 
@@ -51,7 +51,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 # Provision services and copy wallet and sample files
 # Steps
 ### STEP 1: Provision DBCS and DIPC services.
-- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Goverance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab.
+- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet.
 
 ### STEP 2: Connect to your DIPC service via ssh.
 - Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/accessing-virtual-machine-secure-shell.html) to connect to your DIPC service using your SSH key.  Connect using the opc user.
@@ -90,7 +90,7 @@ ALTER USER GGADMIN IDENTIFIED BY WelcomeDIPCADWC1;
 # Configure DIPC and DBCS
 # Steps
 ### STEP 1: Configure the DBCS source DIPC DB
-- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/connect-db-using-sql-developer.html) to create a new SQL Developer connection using sys as sysdba to the DIPC PDB provisioned at the begining of this lab.  
+- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/connect-db-using-sql-developer.html) to create a new SQL Developer connection using sys as sysdba to the DIPC PDB provisioned at the beginning of this lab.  
 
 - If you did not select 'Enable Golden Gate' when provisioning the DBCS service you can manually enable it using dbaascli by following these [instructions](https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/use-goldengate-service-this-service.html#GUID-3DF283C1-366D-40B0-8550-1E6003CBC751).
 
@@ -147,7 +147,7 @@ $ su - oracle
 $ cd /u01/app/oracle/suite/oci/network/admin
 ```
 - Edit the tnsnames.ora file and add entries for your CDB, PDB, and ADWC.  Copy the value for low, medium, and high services from /tmp/dipcadw/tnsnames.ora into /u01/app/oracle/suite/oci/network/admin/tnsnames.ora.  
-- Create an entry for your CDB by copying the existing DIPC entry 'target' and modifiying the name and service_name to the CDB.
+- Create an entry for your CDB by copying the existing DIPC entry 'target' and modifiying the name and service_name to the CDB.  It should look similar to this but have your specific information.
 ```
 target =
       (DESCRIPTION =
@@ -232,7 +232,7 @@ $ vi jvm.properties
 oracle.net.tns_admin=/u01/app/oracle/suite/oci/network/admin
 oracle.net.ssl_server_dn_match=true
 oracle.net.ssl_version=1.2
-oracle.net.wallet_location=(SOURCE=(METHOD=file)(METHOD_DATA=(DIRECTORY=/temp/dipcadw)))
+oracle.net.wallet_location=(SOURCE=(METHOD=file)(METHOD_DATA=(DIRECTORY=/tmp/dipcadw)))
 ```
 
 ### STEP 4:  Restart the DIPC Service
@@ -316,7 +316,7 @@ exit
 $ ./ggsci
 edit param dipcext
 ```
-- add the follwing lines that extracts data from the table adwc_repl.channels in PDB1 and save the file
+- add the following lines that extracts data from the table adwc_repl.channels in PDB1 and save the file
 ```
 extract dipcext
 setenv (ORACLE_SID=ORCL)
@@ -351,6 +351,17 @@ insertallrecords
 ```
 add replicat adwcrep, exttrail ./dirdat/ad, nodbcheckpoint
 start adwcrep
+
+info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+JAGENT      STOPPED
+PMSRVR      RUNNING
+EXTRACT     RUNNING     DIPCEXT     00:00:06      00:00:01
+REPLICAT    RUNNING     ADWCREP     00:00:00      00:00:06
+
 ```
 - Test the replication by inserting a row on the source dipc pdb
 ```
@@ -370,12 +381,75 @@ CHANNEL_ID CHANNEL_DESC         CHANNEL_CLASS        CHANNEL_CLASS_ID CHANNEL_TO
 
 6 rows selected. 
 ```
-- You are now replicating the channels table to ADWC
+- You are now replicating the channels table to ADWC and can modify the extract and replicat parameters to include other schemas and tables.
 
 # Use ODI with ADWCS
 # Steps
 ### STEP 1: Configure and connect the VNC service on your DIPC server.  
-- Follow these [intructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time.
+- You will use ODI Studio through a VNC connection.  Follow these [intructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
+
+- To start ODI run this command in a terminal window.  Click 'No' for importing preferences.
+```
+/u01/app/oracle/suite/odi_studio/odi/studio/odi.sh
+```
+- Click on 'Open Repository Connection' and modify the connection information.
+```
+For ODI Connection enter your cloud user id and password.
+For Database Password enetr the admin password used when you provisioned DIPC.
+Select the work repository WORKREP.
+Connect to the repository.
+```
+![](./images/DIPC/dipcodi1.gif)
+
+### STEP 2: Create a New Data Server for ADWC
+- Navigate to the Toplogy tab in ODI, find the the Oracle technology, right click, create a 'New Data Server'
+```
+Name: ADWC_DIPC_MED
+Connection
+Name: ODI_USER
+Password: WelcomeDIPCADWC1
+```
+- Click on the JDBC tab of the Data Server to copy and paste the medium connection string from the tnsnames file to the jdbc url and remove any carrige returns and add the following properties by clicking on the green plus sign 3 times
+```
+oracle.net.ssl_server_dn_match = True
+oracle.net.ssl_version = 1.2
+oracle.net.wallet_location = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/tmp/dipcadw")))
+```
+![](./images/DIPC/dipcodi2.gif)
+- Click 'Test Connection' and test both the local and OracleDIAgent agents for success and Ok.
+
+### STEP 3: Create a New Physical Schema for ADWC
+- Right click on the ADWC_DIPC_MED data server and add a new physical schema
+```
+Schema: ADMIN
+Work Schema: ODI_USER
+```
+- Click on the Context tab of the physical schema and add a Global Context
+```
+Logical Schema: ADWC_ODI
+```
+- Click the save icon to save the physical schema
+### STEP 4: Add a new model for ADWC
+- Click on the 'Designer' tab and expand the 'Models' ribbon then click on the folder to select 'New Model'
+- Enter the following details
+```
+Name: ADWC_ODI
+Technology: Oracle
+Logical Schema: ADWC_ODI
+```
+- Click Reverse Engineer to import the tables in the schema and you will now see the ADWC tables in the Models ribbon
+
+![](./images/DIPC/dipcodi3.gif)
+
+
+### STEP 5: Repeat Steps 2, 3 and 4 for DIPCPDB
+- Repeat steps 2, 3 and 4 for the DIPCPDB using adwc_repl as the user and the connection string for your pdb.  When you run the reverse engineering it will create the channels table from the pdb.
+
+### STEP 6: Import the sample project
+
+
+
+
 
 # Use EDQ with ADWCS
 # Steps
