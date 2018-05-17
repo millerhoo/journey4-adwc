@@ -390,7 +390,8 @@ REPLICAT    RUNNING     ADWCREP     00:00:00      00:00:06
 ```
 - Test the replication by inserting a row on the source dipc pdb
 ```
-INSERT INTO "ADWC_REPL"."CHANNELS" (CHANNEL_ID, CHANNEL_DESC, CHANNEL_CLASS, CHANNEL_CLASS_ID, CHANNEL_TOTAL, CHANNEL_TOTAL_ID) VALUES ('11', 'test', 'Others', '11', 'Channel total', '1')
+INSERT INTO "ADWC_REPL"."CHANNELS" (CHANNEL_ID, CHANNEL_DESC, CHANNEL_CLASS, CHANNEL_CLASS_ID, CHANNEL_TOTAL, CHANNEL_TOTAL_ID) VALUES ('11', 'test', 'Others', '11', 'Channel total', '1');
+commit;
 ```
 - Check the target ADWC table for the new data
 ```
