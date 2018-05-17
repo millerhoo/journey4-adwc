@@ -1,12 +1,12 @@
-![](./images/900/title900.jpg)
+![](./images/DIPC/titleDIPC.jpg)
 
-Updated: May 15, 2018
+Updated: May 17, 2018
 
 # ADWC Lab DIPC: Using Oracle Data Integration Platform Cloud (DIPC) with ADWC
 
 ## Introduction
 
-In this lab, you will configure and use Using Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typical enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).
+In this lab, you will configure and use Using Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typical enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).  There are several configuration steps in this lab that will be removed in a soon to be released DIPC version.
 
 ![](./images/DIPC/dipcarch.gif)
 
@@ -53,7 +53,11 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 # Provision services and copy wallet and sample files
 # Steps
 ### STEP 1: Provision DBCS and DIPC services.  (Requires ~1 Hour)
-- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet.
+- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab. The lab uses the default CDB name or ORCL and the default PDB name of PDB1.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet. You will first build a database service as a prerequiste for DIPC and then you will build a DIPC service as below.  If there are multiple users following the lab you will need to create unique names for your services.
+
+![](./images/DIPC/dbconsole.gif)
+![](./images/DIPC/dipcservice.gif)
+
 
 ### STEP 2: Connect to your DIPC service via ssh.
 - Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/accessing-virtual-machine-secure-shell.html) to connect to your DIPC service using your SSH key.  Connect using the opc user.
@@ -72,7 +76,7 @@ $ wget https://oracle.github.io/learning-library/workshops/journey4-adwc/files/d
 $ wget https://oracle.github.io/learning-library/workshops/journey4-adwc/files/SmartExport.xml -O /tmp/dipcadw/SmartExport.xml
 $unzip /tmp/dipadw/wallet_DIPC.zip -d /tmp/dipcadw/
 $unzip /tmp/dipcadw/datafiles.zip -d /tmp/dipcadw/
-$gunzip /tmp/dipcadw/datafiles/sales.csv.gz
+$gunzip -- keep /tmp/dipcadw/datafiles/sales.csv.gz
 ```
 
 # Configure the ADWC target for ODI, OGG, and EDQ
@@ -459,7 +463,7 @@ Logical Schema: ADWC_ODI
 ![](./images/DIPC/dipcodi3.gif)
 
 
-### STEP 5: Import the sample project
+### STEP 5: Import the sample project and run mappings
 - A sample project has been provided with file and table mappings to ADWC or you can build your own.  Open the Designer tab and import the sample project from /tmp/dipcadw/sampleproject.xml
 
 ![](./images/DIPC/dipcodi4.gif)
@@ -484,10 +488,10 @@ Logical Schema: ADWC_ODI
 ![](./images/DIPC/dipcodi10.gif)
 
 
+### Bonus STEP : Use DBMS_CLOUD in ODI
+- A soon to be released version of DIPC ODI will provide direct integration with cloud object storage technologies.  If you want to build ETL processes using the dbms_cloud features you can embed the pl/sql blocks from lab 300 into an ODI procedure as below.  This procedure can then be used in ODI workflows.
 
-
-
-
+![](./images/DIPC/dipcodi12.gif)
 
 
 # Use EDQ with ADWCS
