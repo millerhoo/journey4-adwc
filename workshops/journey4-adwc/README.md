@@ -17,6 +17,8 @@ This workshop walks you through all the steps to get started using the **Oracle 
  - Manage and Monitor an ADWC instance
  - Scale an ADWC instance
  - Use Oracle Machine Learning notebooks
+ - Use Oracle Data Visualization Desktop (DVD) with ADWC
+ - Use Oracle Data Integration Platform Cloud (DIPC) with ADWC
  
 
 
@@ -142,3 +144,13 @@ This workshop walks you through all the steps to get started using the **Oracle 
 - Set Up Local Environment
 - Create New Data Visualization Desktop Connection
 - Prepare Data Set and Create Visualization
+
+## Lab 1000: Integrating with ADWC
+
+**Documentation**: [LabGuideDIPC.md](LabGuideDIPC.md)
+
+**Objectives**:
+
+- Learn how to load data to ADWCS with Oracle Data Integrator (ODI)
+- Learn how to replicate data to ADWCS with Oracle GoldenGate (OGG)
+- Learn how to review data quality in ADWCS with Oracle Enterprise Data Quality (EDQ)

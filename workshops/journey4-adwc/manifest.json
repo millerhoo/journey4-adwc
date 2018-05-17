@@ -62,6 +62,12 @@
                 "filename": "LabGuide900.md",
                 "title": "Lab 900: Creating Visualization from ADWC",
                 "description": "Learn to use Data Visualization Desktop to Connect to ADWC"
+            },
+            {
+                "number": "1000",
+                "filename": "LabGuideDIPC.md",
+                "title": "Lab 1000: Data Integration Platform Cloud with ADWC",
+                "description": "Learn to use Oracle Data Integration Platform Cloud (DIPC) with ADWC"
             }
         ]
     }
