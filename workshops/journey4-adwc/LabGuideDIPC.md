@@ -268,7 +268,9 @@ $ cd /u01/data/domains/jlsData/dipcagent001/bin
 $ ./startAgentInstance.sh &
 ```
 # Use OGG with ADWCS
+
     Oracle GoldenGate enables the exchange and manipulation of data at the transaction level among multiple, heterogeneous platforms across the enterprise. It moves committed transactions with transaction integrity and minimal overhead on your existing infrastructure. Its modular architecture gives you the flexibility to extract and replicate selected data records, transactional changes, and changes to DDL (data definition language) across a variety of topologies.
+
 # Steps
 ### STEP 1:  Configure OGG 
 - Connect as opc to your DIPC server via ssh and run the following commands to start ggsci.
@@ -406,7 +408,9 @@ CHANNEL_ID CHANNEL_DESC         CHANNEL_CLASS        CHANNEL_CLASS_ID CHANNEL_TO
 - You are now replicating the channels table to ADWC and can modify the extract and replicat parameters to include other schemas and tables.
 
 # Use ODI with ADWCS
+
     Oracle Data Integrator provides a fully unified solution for building, deploying, and managing complex data warehouses or as part of data-centric architectures in a SOA or business intelligence environment. In addition, it combines all the elements of data integration—data movement, data synchronization, data quality, data management, and data services—to ensure that information is timely, accurate, and consistent across complex systems.
+
 # Steps
 ### STEP 1: Configure and connect the VNC service on your DIPC server.  
 - You will use ODI Studio through a VNC connection.  Follow these [intructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
@@ -497,7 +501,9 @@ Logical Schema: ADWC_ODI
 
 
 # Use EDQ with ADWCS
-    EDQ provides a comprehensive data quality management environment that is used to understand, improve, protect and govern data quality. EDQ facilitates best practice master data management, data integration, business intelligence, and data migration initiatives. EDQ provides integrated data quality in customer relationship management and other applications.
+
+    Oracle EDQ provides a comprehensive data quality management environment that is used to understand, improve, protect and govern data quality. EDQ facilitates best practice master data management, data integration, business intelligence, and data migration initiatives. EDQ provides integrated data quality in customer relationship management and other applications.
+
 # Steps
 ### STEP 1: Connect to EDQ
 - Open the DIPC Console by clicking on the user image
