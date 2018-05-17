@@ -1,4 +1,4 @@
-![](./images/DIPC/titleDIPC.jpg)
+![](./images/DIPC/titledipc.jpg)
 
 Updated: May 17, 2018
 
