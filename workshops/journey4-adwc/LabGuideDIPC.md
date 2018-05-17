@@ -6,7 +6,7 @@ Updated: May 17, 2018
 
 ## Introduction
 
-In this lab, you will configure and use Using Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typical enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).  There are several configuration steps in this lab that will be removed in a soon to be released DIPC version.
+In this lab, you will configure and use Oracle Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typical enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).  There are several configuration steps in this lab that will be removed in a soon to be released DIPC version.
 
 ![](./images/DIPC/dipcarch.gif)
 
