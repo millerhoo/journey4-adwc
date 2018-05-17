@@ -8,6 +8,8 @@ Updated: May 15, 2018
 
 In this lab, you will configure and use Using Data Integration Platform Cloud (DIPC) with ADWCS.  The labs follow a typical enterprise data warehouse reference implementation with ETL/ELT batch processing, real time data replication, and data quality review.  You will load data from a flat file and a database table using Oracle Data Integrator (ODI) to your ADWC database.  You will replicate data from a database table to ADWCS using Oracle Golden Gate (OGG).  You will review data quality in ADWCS using Oracle Enterprise Data Quality (EDQ).
 
+![](./images/DIPC/dipcarch.gif)
+
 Oracle Data Integration Platform Cloud is a cloud-based platform for data transformation, integration, replication, analysis, and governance.
 
 Data Integration Platform Cloud provides seamless batch and real-time data movement among cloud and on-premises data sources, maintaining data consistency with fault tolerance and resiliency. With Oracle Data Integration Platform Cloud, you can:
@@ -50,7 +52,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 # Provision services and copy wallet and sample files
 # Steps
-### STEP 1: Provision DBCS and DIPC services.
+### STEP 1: Provision DBCS and DIPC services.  (Requires ~1 Hour)
 - Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet.
 
 ### STEP 2: Connect to your DIPC service via ssh.
@@ -84,6 +86,19 @@ GRANT INSERT ANY TABLE to ODI_USER;
 GRANT UPDATE ANY TABLE to ODI_USER;
 
 ALTER USER GGADMIN IDENTIFIED BY WelcomeDIPCADWC1;
+
+CREATE TABLE admin.channelsodi (
+    channel_id                  NUMBER(6)          NOT NULL,
+    channel_desc                VARCHAR2(20)    NOT NULL,
+    channel_class               VARCHAR2(20)    NOT NULL,
+    channel_class_id            NUMBER(6)          NOT NULL,
+    channel_total               VARCHAR2(13)    NOT NULL,
+    channel_total_id            NUMBER(6)          NOT NULL)
+    tablespace users;
+
+ALTER TABLE admin.channelsodi
+  ADD CONSTRAINT channels_pk
+  PRIMARY KEY (channel_id);
 
 ```
 
@@ -437,15 +452,37 @@ Name: ADWC_ODI
 Technology: Oracle
 Logical Schema: ADWC_ODI
 ```
-- Click Reverse Engineer to import the tables in the schema and you will now see the ADWC tables in the Models ribbon
+- Click Reverse Engineer to import the tables in the schema and you will now see the ADWC tables in the Models ribbon.
 
 ![](./images/DIPC/dipcodi3.gif)
 
 
-### STEP 5: Repeat Steps 2, 3 and 4 for DIPCPDB
-- Repeat steps 2, 3 and 4 for the DIPCPDB using adwc_repl as the user and the connection string for your pdb.  When you run the reverse engineering it will create the channels table from the pdb.
+### STEP 5: Import the sample project
+- A sample project has been provided with file and table mappings to ADWC or you can build your own.  Open the Designer tab and import the sample project from /tmp/dipcadw/sampleproject.xml
 
-### STEP 6: Import the sample project
+![](./images/DIPC/dipcodi4.gif)
+- You will need to update the password and connection information for your databases in the Topology tab.
+- Review the mappings and you run the mapping individually or the load plan RunMappings. 
+
+![](./images/DIPC/dipcodi11.gif)
+
+![](./images/DIPC/dipcodi5.gif)
+
+![](./images/DIPC/dipcodi6.gif)
+- DIPC provides the DIPC Console to run ODI jobs with ODI Console.  Open the DIPC Console.
+
+![](./images/DIPC/dipcodi7.gif)
+- Click on the user image and open the ODI Console.
+
+![](./images/DIPC/dipcodi8.gif)
+- You can review the Design Time or Topology information and run the Load Plan imported earlier.
+
+![](./images/DIPC/dipcodi9.gif)
+
+![](./images/DIPC/dipcodi10.gif)
+
+
+
 
 
 
