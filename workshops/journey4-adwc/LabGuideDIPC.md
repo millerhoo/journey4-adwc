@@ -69,8 +69,10 @@ $mkdir /tmp/dipcadw
 - Run these commands to download the sample files and unzip the files.
 ```
 $ wget https://oracle.github.io/learning-library/workshops/journey4-adwc/files/datafiles.zip -O /tmp/dipcadw/datafiles.zip
+$ wget https://oracle.github.io/learning-library/workshops/journey4-adwc/files/SmartExport.xml -O /tmp/dipcadw/SmartExport.xml
 $unzip /tmp/dipadw/wallet_DIPC.zip -d /tmp/dipcadw/
 $unzip /tmp/dipcadw/datafiles.zip -d /tmp/dipcadw/
+$gunzip /tmp/dipcadw/datafiles/sales.csv.gz
 ```
 
 # Configure the ADWC target for ODI, OGG, and EDQ
