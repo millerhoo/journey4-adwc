@@ -53,7 +53,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 # Provision services and copy wallet and sample files
 # Steps
 ### STEP 1: Provision DBCS and DIPC services.  (Requires ~1 Hour)
-- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab. The lab uses the default CDB name or ORCL and the default PDB name of PDB1.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet. You will first build a database service as a prerequiste for DIPC and then you will build a DIPC service as below.  If there are multiple users following the lab you will need to create unique names for your services.
+- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab. The lab uses the default CDB name or ORCL and the default PDB name of PDB1.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet. You will first build a database service as a prerequisite for DIPC and then you will build a DIPC service as below.  If there are multiple users following the lab you will need to create unique names for your services.
 
 ![](./images/DIPC/dbconsole.gif)
 ![](./images/DIPC/dipcservice.gif)
@@ -168,7 +168,7 @@ $ su - oracle
 $ cd /u01/app/oracle/suite/oci/network/admin
 ```
 - Edit the tnsnames.ora file and add entries for your CDB, PDB, and ADWC.  Copy the value for low, medium, and high services from /tmp/dipcadw/tnsnames.ora into /u01/app/oracle/suite/oci/network/admin/tnsnames.ora.  
-- Create an entry for your CDB by copying the existing DIPC entry 'target' and modifiying the name and service_name to the CDB.  It should look similar to this but have your specific information.
+- Create an entry for your CDB by copying the existing DIPC entry 'target' and modify the name and service_name to the CDB.  It should look similar to this but have your specific information.
 ```
 target =
       (DESCRIPTION =
@@ -268,6 +268,7 @@ $ cd /u01/data/domains/jlsData/dipcagent001/bin
 $ ./startAgentInstance.sh &
 ```
 # Use OGG with ADWCS
+    Oracle GoldenGate enables the exchange and manipulation of data at the transaction level among multiple, heterogeneous platforms across the enterprise. It moves committed transactions with transaction integrity and minimal overhead on your existing infrastructure. Its modular architecture gives you the flexibility to extract and replicate selected data records, transactional changes, and changes to DDL (data definition language) across a variety of topologies.
 # Steps
 ### STEP 1:  Configure OGG 
 - Connect as opc to your DIPC server via ssh and run the following commands to start ggsci.
@@ -405,6 +406,7 @@ CHANNEL_ID CHANNEL_DESC         CHANNEL_CLASS        CHANNEL_CLASS_ID CHANNEL_TO
 - You are now replicating the channels table to ADWC and can modify the extract and replicat parameters to include other schemas and tables.
 
 # Use ODI with ADWCS
+    Oracle Data Integrator provides a fully unified solution for building, deploying, and managing complex data warehouses or as part of data-centric architectures in a SOA or business intelligence environment. In addition, it combines all the elements of data integration—data movement, data synchronization, data quality, data management, and data services—to ensure that information is timely, accurate, and consistent across complex systems.
 # Steps
 ### STEP 1: Configure and connect the VNC service on your DIPC server.  
 - You will use ODI Studio through a VNC connection.  Follow these [intructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
@@ -416,21 +418,21 @@ CHANNEL_ID CHANNEL_DESC         CHANNEL_CLASS        CHANNEL_CLASS_ID CHANNEL_TO
 - Click on 'Open Repository Connection' and modify the connection information.
 ```
 For ODI Connection enter your cloud user id and password.
-For Database Password enetr the admin password used when you provisioned DIPC.
+For Database Password enter the admin password used when you provisioned DIPC.
 Select the work repository WORKREP.
 Connect to the repository.
 ```
 ![](./images/DIPC/dipcodi1.gif)
 
 ### STEP 2: Create a New Data Server for ADWC
-- Navigate to the Toplogy tab in ODI, find the the Oracle technology, right click, create a 'New Data Server'
+- Navigate to the Topology tab in ODI, find the Oracle technology, right click, create a 'New Data Server'
 ```
 Name: ADWC_DIPC_MED
 Connection
 Name: ODI_USER
 Password: WelcomeDIPCADWC1
 ```
-- Click on the JDBC tab of the Data Server to copy and paste the medium connection string from the tnsnames file to the jdbc url and remove any carrige returns and add the following properties by clicking on the green plus sign 3 times
+- Click on the JDBC tab of the Data Server to copy and paste the medium connection string from the tnsnames file to the jdbc url and remove any carriage returns and add the following properties by clicking on the green plus sign 3 times
 ```
 oracle.net.ssl_server_dn_match = True
 oracle.net.ssl_version = 1.2
@@ -495,5 +497,70 @@ Logical Schema: ADWC_ODI
 
 
 # Use EDQ with ADWCS
+    EDQ provides a comprehensive data quality management environment that is used to understand, improve, protect and govern data quality. EDQ facilitates best practice master data management, data integration, business intelligence, and data migration initiatives. EDQ provides integrated data quality in customer relationship management and other applications.
 # Steps
-### STEP 1:
+### STEP 1: Connect to EDQ
+- Open the DIPC Console by clicking on the user image
+
+![](./images/DIPC/dipcedq1.gif)
+
+- Click on the Director Icon.  This will download a java web start file with an .jnlp extension.  Select to open the file or click on the file in the browser download to start the application.  Accept the security and run the application.
+
+![](./images/DIPC/dipcedq2.gif)
+
+![](./images/DIPC/dipcedq3.gif)
+
+- Right click on projects to create a new project
+
+![](./images/DIPC/dipcedq4.gif)
+
+### STEP 2: Create a data store for ADWC
+- Create a Data Store for ADWC by right clicking on Data Store
+
+![](./images/DIPC/dipcedq5.gif)
+
+- Make the following entries in the wizard
+
+```
+Type: Oracle using TNSNAMES
+TNSNAME: your ADWC connection name
+User Name: ODI_USER
+Password: WelcomeDIPCADWC1
+Schema: admin or SSB or any schema
+```
+
+### STEP 3:  Create a snapshot of data
+
+- Right Click Staged Data and select your datastore and tables.  You may want to limit the rows.
+
+![](./images/DIPC/dipcedq6.gif)
+
+![](./images/DIPC/dipcedq7.gif)
+
+- A task will run to load the snapshot of data.
+
+### STEP 4:  Create a Profile Process
+
+- Right Click on Processes and select New Process.  Select the data source from the previous step.
+
+![](./images/DIPC/dipcedq8.gif)
+
+- Click next and select Add Profiling check box and uncheck Data Types and Patterns Profiles as they are invalid for this data.  Click Finish
+
+![](./images/DIPC/dipcedq9.gif)
+
+- Run the process by clicking on the green run arrow.
+
+![](./images/DIPC/dipcedq10.gif)
+
+- Review the output of the profilers.
+
+![](./images/DIPC/dipcedq11.gif)
+
+- You can now use profiling and other EDQ features with ADWCS.  Try using tables in the SSB schema on ADWCS.
+
+
+
+
+
+
