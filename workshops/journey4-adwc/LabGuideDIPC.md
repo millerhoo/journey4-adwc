@@ -55,7 +55,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 ## Steps
 
 ### STEP 1: Provision DBCS and DIPC services.  (Requires ~1 Hour)
-- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab. The lab uses the default CDB name or ORCL and the default PDB name of PDB1.  All network access from your pc will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet. You will first build a database service as a prerequisite for DIPC and then you will build a DIPC service as below.  If there are multiple users following the lab you will need to create unique names for your services.
+- Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab. The lab uses the default CDB name of ORCL and the default PDB name of PDB1.  All network access from your PC will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet. You will first build a database service as a prerequisite for DIPC and then you will build a DIPC service as below.  If there are multiple users following the lab you will need to create unique names for your services.
 
 ![](./images/DIPC/dbconsole.gif)
 ![](./images/DIPC/dipcservice.gif)
@@ -65,28 +65,28 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 - Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/accessing-virtual-machine-secure-shell.html) to connect to your DIPC service using your SSH key.  Connect using the opc user.
 
 ### STEP 3: Copy the ADWCS wallet and sample files to your DIPC server.
-- Create the directory /tmp/dipcadw and place the files in /tmp/dipcadw/.  Copy the ADWCS wallet files from Lab 100 to your DIPC server using WinSCP or FileZilla.  Download the sample data files to your DIPC server using wget.  Unzip the files.
+- Create the directory /tmp/dipcadw on your DIPC server
 ```
-$sudo -s
-$su - oracle
-$mkdir /tmp/dipcadw
+$ sudo -s
+$ su - oracle
+$ mkdir /tmp/dipcadw
 ```
 - Copy the ADWC wallet zip file to /tmp/dipcadw/ using WinSCP or Filezilla.
 - Run these commands to download the sample files and unzip the files.
 ```
 $ wget https://oracle.github.io/learning-library/workshops/journey4-adwc/files/datafiles.zip -O /tmp/dipcadw/datafiles.zip
 $ wget https://oracle.github.io/learning-library/workshops/journey4-adwc/files/SmartExport.xml -O /tmp/dipcadw/SmartExport.xml
-$unzip /tmp/dipadw/wallet_DIPC.zip -d /tmp/dipcadw/
-$unzip /tmp/dipcadw/datafiles.zip -d /tmp/dipcadw/
-$gunzip -- keep /tmp/dipcadw/datafiles/sales.csv.gz
+$ unzip /tmp/dipadw/wallet_DIPC.zip -d /tmp/dipcadw/
+$ unzip /tmp/dipcadw/datafiles.zip -d /tmp/dipcadw/
+$ gunzip -- keep /tmp/dipcadw/datafiles/sales.csv.gz
 ```
 
 # Configure the ADWC target for ODI, OGG, and EDQ
 
 ## Steps
 
-### STEP 1: 
-- Run these commands to configure ODI, OGG, and EDQ in the ADWC target using your SQL Developer Connection from lab 200 to connect to your ADWC instance.
+### STEP 1: Configure your ADWC database instance
+- Run these commands to configure ODI, OGG, and EDQ in the ADWC target using your SQL Developer Connection for the ADWC admin user from lab 200 to connect to your ADWC instance.
 ```
 CREATE USER ODI_USER IDENTIFIED BY WelcomeDIPCADWC1;
 GRANT CREATE SESSION TO ODI_USER;
@@ -121,7 +121,7 @@ ALTER TABLE admin.channelsodi
 
 - If you did not select 'Enable Golden Gate' when provisioning the DBCS service you can manually enable it using dbaascli by following these [instructions](https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/use-goldengate-service-this-service.html#GUID-3DF283C1-366D-40B0-8550-1E6003CBC751).
 
-- If you did not select 'Enable Golden Gate' when provisioning the DBCS service you can also manually enable it by running these commands from the SQL Developer DIPC PDB connection to configure the OGG source database.  
+- If you did not select 'Enable Golden Gate' when provisioning the DBCS service, an alternate method to running the dbaascli tool is to run these commands from the SQL Developer DIPC PDB connection to configure the OGG source database.  
 
 ```
 ALTER SESSION SET CONTAINER="CDB$ROOT";
@@ -300,7 +300,7 @@ Copyright (C) 1995, 2017, Oracle and/or its affiliates. All rights reserved.
 
 GGSCI (dipcadw-wls-1) 1>
 ```
-- Use ggsci to modify mgr and globals parameters
+- Use ggsci to modify mgr parameters
 ```
 edit param mgr
 ```
@@ -310,6 +310,7 @@ Dynamicportlist 7704-7760
 ACCESSRULE, PROG COLLECTOR, IPADDR dipc_ip_address, ALLOW
 PURGEOLDEXTRACTS ./dirdat/*, USECHECKPOINTS, MINKEEPHOURS 2
 ```
+- next, use ggsci to modify the globals parameters
 ```
 edit param ./GLOBALS
 ```
