@@ -424,7 +424,7 @@ Oracle Data Integrator provides a fully unified solution for building, deploying
 ## Steps
 
 ### STEP 1: Configure and connect the VNC service on your DIPC server.  
-- You will use ODI Studio through a VNC connection.  Follow these [intructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
+- You will use ODI Studio through a VNC connection.  Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
 
 - To start ODI run this command in a terminal window.  Click 'No' for importing preferences.
 ```
@@ -481,7 +481,7 @@ Logical Schema: ADWC_ODI
 
 
 ### STEP 5: Import the sample project and run mappings
-- A sample project has been provided with file and table mappings to ADWC or you can build your own.  Open the Designer tab and import the sample project from /tmp/dipcadw/sampleproject.xml
+- A sample project has been provided with file and table mappings to ADWC or you can build your own.  Open the Designer tab and import the sample project from /tmp/dipcadw/SmartExport.xml
 
 ![](./images/DIPC/dipcodi4.gif)
 - You will need to update the password and connection information for your databases in the Topology tab.
