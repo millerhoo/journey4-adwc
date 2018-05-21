@@ -485,7 +485,8 @@ Logical Schema: ADWC_ODI
 
 ![](./images/DIPC/dipcodi4.gif)
 - You will need to update the password and connection information for your databases in the Topology tab.
-- Review the mappings and you run the mapping individually or the load plan RunMappings. 
+
+- Review the mappings and you run the mapping individually or the load plan RunMappings. The table mapping uses the SQL to SQL Loading Knowledge Model, you can also create a db link to ADWC and use a DB Link (Push) KDM.
 
 ![](./images/DIPC/dipcodi11.gif)
 
