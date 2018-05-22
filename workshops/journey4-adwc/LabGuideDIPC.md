@@ -58,6 +58,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 - Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/oci-classic.html) to provision the DIPC and DBCS services used in this lab.  You must use DIPC Governance Edition to include ODI, OGG, and EDQ in the deployment.  You must use version 12.1.0.2 and EE, HP, or EP edition in OCI-Classic DBCS for the DIPC database.  Be sure to select 'Configure Golden Gate' when provisioning the database as this database will also serve as the source database for OGG in the lab. The lab uses the default CDB name of ORCL and the default PDB name of PDB1.  All network access from your PC will be over ssh and we recommend using a SQL Developer ssh connection type to the database over the internet. You will first build a database service as a prerequisite for DIPC and then you will build a DIPC service as below.  If there are multiple users following the lab you will need to create unique names for your services.
 
 ![](./images/DIPC/dbconsole.gif)
+
 ![](./images/DIPC/dipcservice.gif)
 
 
@@ -174,7 +175,10 @@ $ su - oracle
 $ cd /u01/app/oracle/suite/oci/network/admin
 ```
 - Edit the tnsnames.ora file and add entries for your CDB, PDB, and ADWC.  Copy the value for low, medium, and high services from /tmp/dipcadw/tnsnames.ora into /u01/app/oracle/suite/oci/network/admin/tnsnames.ora.  
+
 - Create an entry for your CDB by copying the existing DIPC entry 'target' and modify the name and service_name to the CDB.  It should look similar to this but have your specific information.
+
+- Save the tnsnames.ora file.
 ```
 target =
       (DESCRIPTION =
@@ -206,21 +210,26 @@ CDB =
     )
  )
 
-dipc_high = (description= (address=(protocol=tcps)(port=1522)(host=adwc.uscom-east-1.oraclecloud.com))(connect_data=(service_name=yk2ddvkx2pyiekt_dipc_high.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
+dipc_high = (description= (address=(protocol=tcps)(port=1522)(host=adwc.uscom-east-1.oraclecloud.com))(connect_data=(service_name=xxxxxxx_dipc_high.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
         "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
 
-dipc_low = (description= (address=(protocol=tcps)(port=1522)(host=adwc.uscom-east-1.oraclecloud.com))(connect_data=(service_name=yk2ddvkx2pyiekt_dipc_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
+dipc_low = (description= (address=(protocol=tcps)(port=1522)(host=adwc.uscom-east-1.oraclecloud.com))(connect_data=(service_name=xxxxxxxx_dipc_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
         "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
 
-dipc_medium = (description= (address=(protocol=tcps)(port=1522)(host=adwc.uscom-east-1.oraclecloud.com))(connect_data=(service_name=yk2ddvkx2pyiekt_dipc_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
+dipc_medium = (description= (address=(protocol=tcps)(port=1522)(host=adwc.uscom-east-1.oraclecloud.com))(connect_data=(service_name=xxxxxxx_dipc_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
         "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+        
 ```
-- Create a sqlnet.ora file in /u01/app/oracle/suite/oci/network/admin/ and add these lines.
+
+- Create a sqlnet.ora file in /u01/app/oracle/suite/oci/network/admin/ and add these lines.  Save the file.
+
 ```
 WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/tmp/dipcadw")))
 SSL_SERVER_DN_MATCH=yes
 ```
+
 - Test your sqlnet connections to the CDB and ADWC.
+
 ```
 $ export TNS_ADMIN=/u01/app/oracle/suite/oci/network/admin/
 $ export LD_LIBRARY_PATH=/u01/app/oracle/suite/oci
@@ -232,10 +241,13 @@ $ ./sqlplus admin@dipc_low
 
 ### STEP 3: Configure ODI and EDQ JAVA parameters for ADWCS
 -  To create the required JAVA paramters for ODI you need to add parameters as below.
+
 ```
 $ vi /u01/jdk/jre/lib/security/java.security
 ```
-- Line 1-9 should already exist.  Add lines 10 and 11 and save the java.security file.
+
+- Line 1-9 should already exist.  Add lines 10 and 11 and save the java.security file and save the file.
+
 ```
 security.provider.1=sun.security.provider.Sun
 security.provider.2=sun.security.rsa.SunRsaSign
@@ -249,12 +261,16 @@ security.provider.9=sun.security.smartcardio.SunPCSC
 security.provider.10=sun.security.mscapi.SunMSCAPI
 security.provider.11=oracle.security.pki.OraclePKIProvider
 ```
+
 - To create the required JAVA paramters for EDQ you need to add parameters as below.  Your DIPC server name will be in the path.
+
 ```
 $ cd /u01/data/domains/DIPCADW_domain/config/fmwconfig/edq/oedq.local.home
 $ vi jvm.properties
 ```
-- Enter the following into that file and save the file
+
+- Enter the following into that file and save the file.
+
 ```
 oracle.net.tns_admin=/u01/app/oracle/suite/oci/network/admin
 oracle.net.ssl_server_dn_match=true
@@ -263,16 +279,25 @@ oracle.net.wallet_location=(SOURCE=(METHOD=file)(METHOD_DATA=(DIRECTORY=/tmp/dip
 ```
 
 ### STEP 4:  Restart the DIPC Service
+
 -  Use the cloud console to stop and start the DIPC service for the JAVA settings to take effect.
+
 ![](./images/DIPC/dipcconsole.gif)
-- Check the DIPC agent to ensure it is running.
+
+- Check the DIPC agent to ensure it is running.  Open the DIPC Console and check the status of the agent.
+
+![](./images/DIPC/dipcodi7.gif)
+
 ![](./images/DIPC/dipcagent.gif)
+
 - If the agent is not running you can try to start it manually.
+
 ```
 $ sudo su - oracle
 $ cd /u01/data/domains/jlsData/dipcagent001/bin
 $ ./startAgentInstance.sh &
 ```
+
 # Use OGG with ADWCS
 
 Oracle GoldenGate enables the exchange and manipulation of data at the transaction level among multiple, heterogeneous platforms across the enterprise. It moves committed transactions with transaction integrity and minimal overhead on your existing infrastructure. Its modular architecture gives you the flexibility to extract and replicate selected data records, transactional changes, and changes to DDL (data definition language) across a variety of topologies.
@@ -304,7 +329,7 @@ GGSCI (dipcadw-wls-1) 1>
 ```
 edit param mgr
 ```
-- add these lines
+- add these lines, the value for dipc_ip_address is the public ip for your dipc server
 ```
 Dynamicportlist 7704-7760
 ACCESSRULE, PROG COLLECTOR, IPADDR dipc_ip_address, ALLOW
@@ -484,7 +509,8 @@ Logical Schema: ADWC_ODI
 - A sample project has been provided with file and table mappings to ADWC or you can build your own.  Open the Designer tab and import the sample project from /tmp/dipcadw/SmartExport.xml
 
 ![](./images/DIPC/dipcodi4.gif)
-- You will need to update the password and connection information for your databases in the Topology tab.
+
+- You will need to update the password and connection information for both databases after importing the project in the Topology tab.  Edit the connections similar to step 2 of this section and test the connections.
 
 - Review the mappings and you run the mapping individually or the load plan RunMappings. The table mapping uses the SQL to SQL Loading Knowledge Model, you can also create a db link to ADWC and use a DB Link (Push) KDM.
 
@@ -493,12 +519,15 @@ Logical Schema: ADWC_ODI
 ![](./images/DIPC/dipcodi5.gif)
 
 ![](./images/DIPC/dipcodi6.gif)
+
 - DIPC provides the DIPC Console to run ODI jobs with ODI Console.  Open the DIPC Console.
 
 ![](./images/DIPC/dipcodi7.gif)
+
 - Click on the user image and open the ODI Console.
 
 ![](./images/DIPC/dipcodi8.gif)
+
 - You can review the Design Time or Topology information and run the Load Plan imported earlier.
 
 ![](./images/DIPC/dipcodi9.gif)
