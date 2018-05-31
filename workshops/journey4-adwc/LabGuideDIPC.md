@@ -403,7 +403,7 @@ edit param adwcrep
 replicat adwcrep
 useridalias ggadmin_tgt
 map pdb1.adwc_repl.channels, target admin.channels, colmap(usedefaults), keycols(channel_id);
-insertallrecords
+batchsql
 ```
 - Create the replicat
 ```
