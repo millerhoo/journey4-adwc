@@ -51,52 +51,68 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ### **STEP 2: Create an ADWC Instance**
 
--   By default, if you have not created an Autonomous Data Warehouse Cloud instance before you will not see it in the Dashboard. Click
-    **Create Instance** to create new ADWC instance.
+-   TODO: Need direction to access OCI from cloud dashboard
 
-![](./images/100/Picture100-5.png)
+![](./images/100/Picture100-19.jpeg)
 
--   From the list of your available services select **Autonomous DW** under Data Management and click **Create**.
+-  Click on the hamburger menu icon on the top left of the screen
 
-![](./images/100/Picture100-6.png)
+![](./images/100/Picture100-20.jpeg)
 
--   In the Welcome page click **Go to Console**.
+-  Click on Autonomous Data Warehouse from the menu
 
-![](./images/100/Picture100-7.png)
+![](./images/100/Picture100-21.jpeg)
 
--   Click **Create Service** to start creating your ADWC instance.
 
-![](./images/100/Picture100-8.png)
+-  Click on Create Autonomous Date Warehouse button
 
--   Enter the required information and click **Next**. For the purposes of this lab, use the information below.
+![](./images/100/Picture100-23.jpeg)
 
-    -   **Database Name:** Enter any database name you choose
+-  This will bring up Create Autonomous Data Warehouse screen
 
-    -   **CPU Count:** 2
+![](./images/100/Picture100-24.jpeg)
 
-    -   **Storage Capacity (TB):** 1
+-  Click on "Click here" to enable compartment selection so that you ADWC instance is in a specific compartment
 
-    -   **Administrator Password:** Enter any password you choose
+![](./images/100/Picture100-25.jpeg)
 
-![](./images/100/Picture100-9.png)
+-  Select a compartment of your choice
 
--   Review your information in the confirmation page and click **Create**.
+![](./images/100/Picture100-26.jpeg)
 
-![](./images/100/Picture100-10.png)
+-  Specify a name for the instance
 
--   **Refresh** the Instances page after a while to see if your instance is created.
+![](./images/100/Picture100-27.jpeg)
 
-![](./images/100/Picture100-11.png)
+-  You can update the storage size if needed
 
--   Check if the **Status** for your instance is cleared indicating your instance is ready to use.
+![](./images/100/Picture100-28.jpeg)
 
-![](./images/100/Picture100-12.png)
+-  And then specify the password for your instance
+
+![](./images/100/Picture100-29.jpeg)
+
+-  Make sure you have everything fill out
+
+![](./images/100/Picture100-30.jpeg)
+
+-  Click on Create Autonomous Data Warehouse to start provisioning the instance
+
+![](./images/100/Picture100-31.jpeg)
+
+![](./images/100/Picture100-32.jpeg)
+
+-  Once it finishes provisioning, you can click on the instance name to see details of it
+
+![](./images/100/Picture100-33.jpeg)
 
 You now have created your first Autonomous Data Warehouse Cloud instance.
 
 # Section 2. Connecting to ADWC
 
 ## Downloading the credentials wallet
+
+TODO: Need information on connecting to OCI ADWC
 
 As ADWC only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet is downloaded from the ADWC service console.
 
