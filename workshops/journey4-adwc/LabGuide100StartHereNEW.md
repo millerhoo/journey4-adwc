@@ -6,7 +6,7 @@ Updated: April 6, 2018
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC database and connect to the database using Oracle SQL Developer.
+This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC) on Oracle Infrastructure Cloud (OCI). You will provision a new ADWC database and connect to the database using Oracle SQL Developer.
 
 <a href="https://raw.githubusercontent.com/millerhoo/journey4-adwc/master/workshops/journey4-adwc/images/ADWC%20HOL%20-%20Provision%20and%20Connect.mp4" target="_blank">**Click here**</a> to watch a video demonstration of provisioning and connecting to a new ADWC database.
 
@@ -51,11 +51,25 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ### **STEP 2: Create an ADWC Instance**
 
--   TODO: Need direction to access OCI from cloud dashboard
+-   Once you are logged in, you are taken to the cloud dashboard where you can see all the services available to you. To access Oracle Cloud Infrastructure (OCI) dashboard, click on **Customize Dashboard**.
+
+![](./images/100/Picture100-36.jpg)
+
+-  Find **Compute** under Infrastructure and click on **Show**
+
+![](./images/100/Picture100-37.jpg)
+
+-  Now you should see Compute service under your dashboard. Go ahead and click on **Compute**
+
+![](./images/100/Picture100-38.jpg)
+
+-  This will bring you to the service details page. Click on **Open Service Console** on top right of your screen to bring you to OCI dashboard.
+
+![](./images/100/Picture100-39.jpg)
 
 ![](./images/100/Picture100-19.jpeg)
 
--  Click on the hamburger menu icon on the top left of the screen
+-  Once you are on OCI dashboard page, click on the hamburger menu icon on the top left of the screen
 
 ![](./images/100/Picture100-20.jpeg)
 
@@ -64,15 +78,15 @@ In this section you will be provisioning an ADWC database using the cloud consol
 ![](./images/100/Picture100-21.jpeg)
 
 
--  Click on **Create Autonomous Date Warehouse** button
+-  Click on **Create Autonomous Date Warehouse** button to start the instance creation process
 
 ![](./images/100/Picture100-23.jpeg)
 
--  This will bring up Create Autonomous Data Warehouse screen
+-  This will bring up Create Autonomous Data Warehouse screen where you specify the configurations of the instance
 
 ![](./images/100/Picture100-24.jpeg)
 
--  Click on **Click here** to enable compartment selection so that you ADWC instance is in a specific compartment
+-  Click on **Click here** to enable compartment selection so that the ADWC instance is in a specific compartment
 
 ![](./images/100/Picture100-25.jpeg)
 
@@ -88,7 +102,7 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ![](./images/100/Picture100-28.jpeg)
 
--  Then specify the password for your instance
+-  Then specify the password for the instance
 
 ![](./images/100/Picture100-29.jpeg)
 
