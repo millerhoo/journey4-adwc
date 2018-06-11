@@ -59,12 +59,12 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ![](./images/100/Picture100-20.jpeg)
 
--  Click on Autonomous Data Warehouse from the menu
+-  Click on **Autonomous Data Warehouse** from the menu
 
 ![](./images/100/Picture100-21.jpeg)
 
 
--  Click on Create Autonomous Date Warehouse button
+-  Click on **Create Autonomous Date Warehouse** button
 
 ![](./images/100/Picture100-23.jpeg)
 
@@ -72,7 +72,7 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ![](./images/100/Picture100-24.jpeg)
 
--  Click on "Click here" to enable compartment selection so that you ADWC instance is in a specific compartment
+-  Click on **Click here** to enable compartment selection so that you ADWC instance is in a specific compartment
 
 ![](./images/100/Picture100-25.jpeg)
 
@@ -88,7 +88,7 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ![](./images/100/Picture100-28.jpeg)
 
--  And then specify the password for your instance
+-  Then specify the password for your instance
 
 ![](./images/100/Picture100-29.jpeg)
 
@@ -96,7 +96,7 @@ In this section you will be provisioning an ADWC database using the cloud consol
 
 ![](./images/100/Picture100-30.jpeg)
 
--  Click on Create Autonomous Data Warehouse to start provisioning the instance
+-  Click on **Create Autonomous Data Warehouse** to start provisioning the instance
 
 ![](./images/100/Picture100-31.jpeg)
 
@@ -112,7 +112,6 @@ You now have created your first Autonomous Data Warehouse Cloud instance.
 
 ## Downloading the credentials wallet
 
-TODO: Need information on connecting to OCI ADWC
 
 As ADWC only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet is downloaded from the ADWC service console.
 
@@ -120,9 +119,9 @@ As ADWC only accepts secure connections to the database, you need to download a 
 
 ### **STEP 3: Sign in to the Service Console**
 
--   In the Instances page find your database and click **Service Console** in the actions menu.
+-   In the instance details page find your database and click **Service Console** 
 
-![](./images/100/Picture100-13.png)
+![](./images/100/Picture100-34.jpeg)
 
 -   This will open a new browser tab for the service console. Sign in to the service console with the following information.
 
@@ -130,7 +129,7 @@ As ADWC only accepts secure connections to the database, you need to download a 
 
     -   **Password:** The administrator password you specified during provisioning
 
-![](./images/100/Picture100-14.png)
+![](./images/100/Picture100-35.jpeg)
 
 ### **STEP 4: Download the credentials wallet**
 
