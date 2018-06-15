@@ -246,7 +246,7 @@ $ ./sqlplus admin@dipc_low
 $ vi /u01/jdk/jre/lib/security/java.security
 ```
 
-- Line 1-9 should already exist.  Add lines 10 and 11 and save the java.security file and save the file.
+- Line 1-9 should already exist.  Add lines 10 and 11 and save the file.
 
 ```
 security.provider.1=sun.security.provider.Sun
@@ -449,7 +449,7 @@ Oracle Data Integrator provides a fully unified solution for building, deploying
 ## Steps
 
 ### STEP 1: Configure and connect the VNC service on your DIPC server.  
-- You will use ODI Studio through a VNC connection.  Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  Be sure to use the oracle user when creating the VNC service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
+- You will use ODI Studio through a VNC connection and ssh tunnel with putty.  Follow these [instructions](https://docs.oracle.com/en/cloud/paas/data-integration-platform-cloud/using/connecting-odi-studio-vnc-server.html#GUID-7210212B-C58C-48AC-B581-DBFD7F58B552) to create a ssh tunnel and connect to your DIPC server using VNC.  VNCServer is installed on the DIPC server and must be started first.  Be sure to use the oracle user when starting the VNCServer service and disable screen lock and screen saver after connecting the first time or you will be locked out and need to restart VNC on the server.  Be sure that you made the changes to /u01/jdk/jre/lib/security/java.security earlier in this lab to allow ODI to work with ADWC.
 
 - To start ODI run this command in a terminal window.  Click 'No' for importing preferences.
 ```
@@ -458,7 +458,7 @@ Oracle Data Integrator provides a fully unified solution for building, deploying
 - Click on 'Open Repository Connection' and modify the connection information.
 ```
 For ODI Connection enter your cloud user id and password.
-For Database Password enter the admin password used when you provisioned DIPC.
+For Database Password enter the admin password used when you provisioned DIPC.  The connection information should already be populated but if you need to find the repository username you can use your dipc pdb sqldev connection to find the username (SPXXXX_ODI_REPO).  The password is the same password you entered when you provisioned DIPC.
 Select the work repository WORKREP.
 Connect to the repository.
 ```
