@@ -50,7 +50,7 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 ## Lab 100: Provisioning and Connecting
 
-**Documentation**: [LabGuide100StartHere.md](LabGuide100StartHere.md)
+**Documentation**: [LabGuide100StartHereNEW.md](LabGuide100StartHereNEW.md)
 
 **Objectives**:
 
