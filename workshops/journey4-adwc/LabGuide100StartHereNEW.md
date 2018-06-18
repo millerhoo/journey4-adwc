@@ -1,6 +1,6 @@
 ![](images/100/TITLE100.JPG)
 
-Updated: April 6, 2018
+Updated: June 18, 2018
 
 # ADWC Lab 100: Provisioning and Getting Started
 
