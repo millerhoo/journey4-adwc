@@ -34,7 +34,6 @@ This workshop walks you through all the steps to get started using the **Oracle 
 
 - The Labguides are best viewed using the Workshop's [GitHub Pages Website URL](https://oracle.github.io/learning-library/workshops/journey4-adwc/) 
 
-** for the very latest content (which may include pre-review and pre-release content), use this link: https://millerhoo.github.io/journey4-adwc/workshops/journey4-adwc/ **
 
 - Once you are viewing the Workshop's GitHub Pages website, you can see a list of Lab Guides at any time by clicking on the **Menu Icon**
 
