@@ -4,22 +4,22 @@
 
 ## Introduction
 
-This lab will walk you through the connection of ADWC to Oracle Data Visualization Desktop. This lab will elaborate on how you can connect your already created ADWC instance (which has data already loaded into data warehouse) to Oracle Data Visualization Desktop and create beautiful data visualizations.
+This lab will walk you through the steps to connect Oracle Data Visualization Desktop to an instance of ADWC.  Unlimited Data Visualization Desktop licenses are included when connecting to an ADWC data source.  Instructions will be provided to connect your previously created ADWC instance (using sample data loaded into data warehouse) to Oracle Data Visualization Desktop.  We will demonstrate how you can immediately gain insights and create beautiful data visualizations.
 
 At this point, you should have performed the following:
-1. You have downloaded the latest version of Data Visualization Desktop (DVD) from [here](http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html).
+1. Downloaded the latest version of Oracle Data Visualization Desktop (DVD) from [here](http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html).
 
-2. Existing ADWCS instance: You should create and launch the ADWCS instance. Note down the details such as host, service name and port number of your instance. These details will be required when connecting to DVD, more on this later.
+2. Created an ADWC instance and downloaded the credentials wallet.  
 
 ## Objectives
-- Set Up Local Environment
-- Create New Data Visualization Desktop Connection
-- Prepare Data Set and Create Visualization
+- Learn how to connect a desktop analytics tool to the powerful Autonomous Data Warehouse 
+- Learn how to secure a desktop client connection to Autonomous Data Warehouse
+- Learn how to create a simple data visualization project with Oracle Data Visualization Desktop
+- Learn how to access and gain insights from data in the Autonomous Data Warehouse
 
 
 ## Required Artifacts
-
-- Data Visualization Desktop
+- Installation of Oracle Data Visualization Desktop
 - An ADWC environment that you have access to
 - This lab works only with Windows at this time.
 
