@@ -241,6 +241,12 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
 
 ### Create a New Data Visualization project
 
+In this part of the lab, we will create 3 basic interactive canvases within a single project.  You will see how easy and powerful you can gain insights and visualize your data in just a few clicks.
+
+While this will provide specific instructions to replicate the intended visualizations, don’t feel that you must be constrained.  Try other visualization types and layouts.  Modify filters and colors as you like.  If you run into trouble you can always undo the previous step with Ctrl-Z or the back arrow at the top right of the screen.
+
+   ![](./images/900/image053.png)
+   
 ### Canvas 1 - Sales Summary
 
 Questions Answered with Data:
