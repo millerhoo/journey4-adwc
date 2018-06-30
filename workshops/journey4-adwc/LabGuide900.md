@@ -237,7 +237,7 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
    
  At this point with a very few steps, you now have something that can further bring your data to life and begin to make some data-driven decisions.  And of course, as you share this with others, more and more people will want to gain access to the data.  But, don’t forget how easy, fast and elastic the Autonomous Data Warehouse is and will be able to quickly scale to meet your growing data and end users.
  
-## Create a Another Project with Multiple Canvas in Oracle Data Visualization Desktop
+## Create a Another Project with Multiple Canvases in Oracle Data Visualization Desktop
 
 ### Create a new Data Visualization project
 
