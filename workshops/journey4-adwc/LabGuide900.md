@@ -208,13 +208,13 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 
 ## Create a New Project in Oracle Data Visualization Desktop
 
-### Project Introduction
+### Introduction
 
 No matter what your role is in the organization, access to timely data can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or data mart for yourself or others, Autonomous Data Warehouse Cloud is making it far simpler than ever before.  Easy, fast and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
 
 SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at an electronics reseller company.  The founder started his business by selling camera and photography equipment.  He’s already diversified his business portfolio as he already owns many 1-hour photo processing and video rental stores.  Over the last few years, his computer reselling business has grown, but he’s not convinced that the PC/server business will last.  His instincts tell him to continue to focus on growing his photography equipment and supplies business rather than PCs.  If you had access to this technology and solution, what would this data tell him?  What insights could you share?  How could this data help him focus on the right investments, grow his business and better target his existing and potential customers?
 
-### Browse Data Tiles
+### Browse and Explore the Data With Data Tiles
 
 - We will first start by browsing the data that’s available in our Data Set. Click on the highlighted Prepare button and then click to select the menu option Data Tiles.  
 
@@ -224,7 +224,7 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
 
    ![](./images/900/image049.png)
    
-### Create Your First Visualization
+### Create Your First Data Visualization
 
 - We will now create a very simple visualization project to finish this lab.  Multi-select (ctrl+click) the 5 Data Elements within SALES_HISTORY including PROD_NAME, AMOUNT_SOLD, CALENDAR_YEAR, PROD_CATEGORY, and QUANTITY_SOLD.  
 
