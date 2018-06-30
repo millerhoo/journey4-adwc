@@ -80,9 +80,9 @@ You want to secure your data from the desktop all the way from the client applic
 
 ## Create the Data View in SQL Developer 
 
-For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
-
 ### Execute the Following Script in SQL Developer to Create a Data View 
+
+For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
 
 - Go back to SQL Developer as you did in the previous exercises and connect to the ‘admin’ user.   Cut and paste and execute the following script.  
 
@@ -206,6 +206,8 @@ For the sake of this test drive exercises, we are helping make it as simple as p
    ![](./images/900/image045.png)
    
 ## Create a New Project in Oracle Data Visualization Desktop
+
+### Introduction to the Project
 
 No matter what your role is in the organization, access to timely data can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or data mart for yourself or others, Autonomous Data Warehouse Cloud is making it far simpler than ever before.  Easy, fast and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
 
