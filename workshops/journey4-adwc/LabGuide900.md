@@ -50,15 +50,15 @@ You want to secure your data from the desktop all the way from the client applic
    - cwallet.sso
    - tnsnames.ora
 
-- To secure the client communications between Oracle Data Visualization Desktop, we will copy the wallet to a location that Data Visualization Desktop expects.  In Windows, click on the Start menu and select Run….   
+- To secure the client communications between Oracle Data Visualization Desktop, we will copy the wallet to a location that Data Visualization Desktop expects.  In Windows, click on the __Start menu__ and select __Run….__   
 
    ![](./images/900/image010.png)
 
-- Type ‘CMD’.  At the DOS prompt, navigate to the location where you extracted the files (cwallet.sso and tnsnames.ora).  I suggest that you cut the file location from an explorer window to the desktop.  It will save you typing in future steps.  The directions from here will show the steps as if you stored the wallet in the location c:\adw-wallet
+- Type __‘CMD’__.  At the DOS prompt, navigate to the location where you extracted the files (cwallet.sso and tnsnames.ora).  I suggest that you cut the file location from an explorer window to the desktop.  It will save you typing in future steps.  The directions from here will show the steps as if you stored the wallet in the location c:\adw-wallet
 
-- In the DOS window, type the command ‘cd c:\wallet’ and hit return to execute.  As a shortcut, type ‘cd ‘ and then do a right click to paste the text on the clipboard.  
+- In the DOS window, type the command __‘cd c:\wallet’__ and hit return to execute.  As a shortcut, type __‘cd ‘__ and then do a right click to paste the text on the clipboard.  
 
-- We will now copy the file cwallet.sso to the proper location for DV Desktop (%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS) to find.  Execute the command, 
+- We will now copy the file cwallet.sso to the proper location for DV Desktop (__%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS__) to find.  Execute the command, 
 
    ```
    COPY cwallet.sso C:\%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS\
@@ -84,7 +84,7 @@ You want to secure your data from the desktop all the way from the client applic
 
 For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
 
-- Go back to SQL Developer as you did in the previous exercises and connect to the ‘admin’ user.   Cut and paste and execute the following script.  
+- Go back to SQL Developer as you did in the previous exercises and connect to the __‘admin’__ user.   Cut and paste and execute the following script.  
 
    ```
    drop view DV_SH_VIEW;
@@ -132,15 +132,15 @@ For the sake of this test drive exercises, we are helping make it as simple as p
    
    ![](./images/900/image016.png)
 
-- When Oracle Data Visualization Desktop opens, click on the ‘Create’ button and ‘Connection’ selection highlighted.
+- When Oracle Data Visualization Desktop opens, click on the __‘Create’__ button and __‘Connection’__ selection highlighted.
 
    ![](./images/900/image018.png)
 
-- In the Create Connection Dialog, select the highlighted option for ‘Oracle Autonomous Data Warehouse’ and start moving through the wizard.
+- In the Create Connection Dialog, select the highlighted option for __‘Oracle Autonomous Data Warehouse’__ and start moving through the wizard.
 
    ![](./images/900/image021.png)
 
-- Go back to the directory where you saved your wallet file and extracted the file, ‘tnsnames.ora’.  Open the file and search for information that you will use to connect with.  I have provided an entry from the file as an example.
+- Go back to the directory where you saved your wallet file and extracted the file, __‘tnsnames.ora’__.  Open the file and search for information that you will use to connect with.  I have provided an entry from the file as an example.
 
    ```
    kzengdw1_high = (description= (address=(protocol=tcps)(port=1522)(host=adwc.us-e1-1.oraclecloud.com))
@@ -160,27 +160,27 @@ For the sake of this test drive exercises, we are helping make it as simple as p
      | Password              | <your password> Insert username created in previous labs.  Same as SQL Developer credentials. | 
      | Service Name:         | e.g. tuak89quycc88vqkzengdw1high.adwc.oraclecloud.com (This information is also found in the ‘tnsnames.ora’ file. Example highlighted above.) |
 
-- After completing the fields, click on ‘Save’ button.
+- After completing the fields, click on __‘Save’__ button.
 
    ![](./images/900/image023.png)
 
-- Upon success of creating a new connection to the Autonomous Data Warehouse, select the Create button and select Data Set.  
+- Upon success of creating a new connection to the Autonomous Data Warehouse, select the __Create__ button and select __Data Set__.  
 
    ![](./images/900/image025.png)
    
-- We will now choose to select the sales data we want to analyze and visualize in our first project.  Select the connection we just created named SALES_HISTORY.
+- We will now choose to select the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
 
    ![](./images/900/image027.png)
    
-- Click on the ADMIN schema in the data warehouse.
+- Click on the __ADMIN__ schema in the data warehouse.
 
    ![](./images/900/image029.png)
 
-- Select (Click) on DB_SH_VIEW.
+- Select (Click) on __DB_SH_VIEW__.
 
    ![](./images/900/image031.png)
    
-- First click on the Add All Label in the left column, type a new Name for the Data Set called, ‘SALES_HISTORY’ and then Click on the Add button.  NOTE:  It is important to use the new name of ‘SALES_HISTORY’ as the rest of the lab exercises will reference that name.  Optionally, you can click on the “Get Preview” to see some example records.
+- First click on the __Add All__ Label in the left column, type a new Name for the Data Set called, __‘SALES_HISTORY’__ and then Click on the __Add__ button.  __NOTE:__  It is important to use the new name of __‘SALES_HISTORY’__ as the rest of the lab exercises will reference that name.  Optionally, you can click on the __'Get Preview'__ to see some example records.
 
    ![](./images/900/image033.png)
    
@@ -188,21 +188,21 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 
    ![](./images/900/image035.png)
    
-- Select the Data menu option on the left.  This should reveal your new SALES_HISTORY Data Set you created.  Right click on SALES_HISTORY label and choose the “Inspect” sub-menu item.
+- Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Right click on __SALES_HISTORY__ label and choose the __'Inspect__ sub-menu item.
 
    ![](./images/900/image037.png)
    
- - We are going to override the data types for two columns recognized as numeric and correctly set them as attributes-- CALENDAR_YEAR and CUST_YEAR_OF_BIRTH.  Hover the mouse over the names column looking for the fields, CALENDAR_YEAR.  Change the ‘Treat As’ field as an ‘Attribute’.  Repeat for the field, CUST_YEAR_OF_BIRTH.  When both field have been set to Attribute, click OK when done.  You will be promoted to confirm that you want to change the Data Set.  Confirm, ‘Yes’.
+ - We are going to override the data types for two columns recognized as numeric and correctly set them as attributes-- __CALENDAR_YEAR__ and __CUST_YEAR_OF_BIRTH__.  Hover the mouse over the names column looking for the fields, __CALENDAR_YEAR__.  Change the __‘Treat As’__ field as an __‘Attribute’__.  Repeat for the field, __CUST_YEAR_OF_BIRTH__.  When both field have been set to Attribute, click __OK__ when done.  You will be promoted to confirm that you want to change the Data Set.  Confirm, __‘Yes’__.
 
    ![](./images/900/image039.png)
    
    ![](./images/900/image041.png)  
    
-- Once the Data Set has been updated successfully, we are ready to create our first project.  Click on the Create Project button.
+- Once the Data Set has been updated successfully, we are ready to create our first project.  Click on the __Create Project__ button.
 
    ![](./images/900/image043.png)
    
-- Click on the SALES_HISTORY Data (highlight) and click on the ‘Add to Project’ button.
+- Click on the __SALES_HISTORY__ Data (highlight) and click on the __‘Add to Project’__ button.
 
    ![](./images/900/image045.png)
 
@@ -216,22 +216,22 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
 
 ### Browse and Explore the Data With Data Tiles
 
-- We will first start by browsing the data that’s available in our Data Set. Click on the highlighted Prepare button and then click to select the menu option Data Tiles.  
+- We will first start by browsing the data that’s available in our Data Set. Click on the highlighted __Prepare__ button and then click to select the menu option __Data Tiles__.  
 
    ![](./images/900/image047.png)
    
-   Notice how easy it is to browse the data elements to see what is available for you to further explore.  After scrolling through the data, click back on the highlighted Visualize option to bring up the blank canvas.  
+   Notice how easy it is to browse the data elements to see what is available for you to further explore.  After scrolling through the data, click back on the highlighted __Visualize__ option to bring up the blank canvas.  
 
    ![](./images/900/image049.png)
    
 ### Create Your First Data Visualization
 
-- We will now create a very simple visualization project to finish this lab.  Multi-select (ctrl+click) the 5 Data Elements within SALES_HISTORY including PROD_NAME, AMOUNT_SOLD, CALENDAR_YEAR, PROD_CATEGORY, and QUANTITY_SOLD.  
+- We will now create a very simple visualization project to finish this lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES_HISTORY__ including __PROD_NAME__, __AMOUNT_SOLD__, __CALENDAR_YEAR__, __PROD_CATEGORY__, and __QUANTITY_SOLD__.  
 
 - Drag the five selected columns to the middle of the screen.
    ![](./images/900/image051.png)
    
-- Based upon this data, Oracle Data Visualization Desktop will choose a default visualization.  If not, choose the Scatter chart so it matches the view below.   
+- Based upon this data, Oracle Data Visualization Desktop will choose a default visualization.  If not, choose the __Scatter__ chart so it matches the view below.   
 
    ![](./images/900/image053.png)
    
