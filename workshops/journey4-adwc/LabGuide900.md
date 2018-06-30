@@ -121,6 +121,7 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 
    ![](./images/900/image012.png)
 
+
 ## Create a Connection to ADWC from Data Visualization Desktop
 
 ### Create Connection
