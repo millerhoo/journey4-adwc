@@ -249,10 +249,10 @@ While this will provide specific instructions to replicate the intended visualiz
    
 - Create a new Data Visualization project
 
-   You will create a basic interactive dashboard with 3 canvases the summarizes:
-    - Sales history by revenue
-    - Product mix
-    - Customer demographics
+   You will create a basic interactive dashboard with 3 canvases that summarizes:
+    - __Sales Summary__
+    - __Product Summary__
+    - __Customer Demographics Summary__
 
 - Select the __“Data”__ menu option on the right to reveal the available Data Sets.  Your newly created __SALES_HISTORY__ should be visible with a red icon indicating a live ADWC connection.
 
@@ -290,7 +290,7 @@ We will create Sales Summary using a Combo Chart to show the Amount Sold, Quanti
    
    ![](./images/900/imageE021.png)
 
-- Select the Advanced Analytics option from the left icon.  Then double click on __Trend Line__.
+- Select the __Advanced Analytics__ option from the left icon.  Then double click on __Trend Line__.
 
    ![](./images/900/imageE025.png)
    
@@ -341,9 +341,9 @@ We will create the Product Summary using a Sunburst Chart to show the Quantity S
 
 - Rename the current canvas by click on the down triangle on the canvas name and choosing __‘Rename’__.  Change the canvas name to __‘Sales Summary’__.  
 
-- Save your project as __SALES_HISTORY__.
+- Save your project as __'SALES_HISTORY'__.
 
-- Add a new blank canvas using the __+__ icon at the bottom of the screen beside the current __Sales Summary__ canvas name.  
+- Add a new blank canvas using the __+__ icon at the bottom of the screen beside the current __'Sales Summary'__ canvas name.  
 
 - On the new blank canvas, choose the __Visualizations__ menu option from the left-hand navigator pane.  Then drag the __Sunburst__ chart onto the canvas.
 
@@ -391,13 +391,13 @@ Questions Answered with Data:
     ‘Of all my customers, which customer income level segment drives my sales?’
     ‘Do Male or Females buy more from us? And what are the ages of our customers who purchase the most?’
     ‘What products and product subcategories sell the best to our male or female customers?’
-````
+```
 
 #### Create Demographics Summary using a Tree Map
 
 We will create the __Demographics Summary__ using 3 different charts.  We will start by creating a Tree Map to show the Amount Sold segmented by Customer Income Level.  This will help answer the question such as, *‘Of all my customers, which customer income level segment drives my sales?’*
 
-- Create a new blank canvas.  This is the 3rd canvas.  Rename the canvas to __Demographics__.
+- Create a new blank canvas.  This is the 3rd canvas.  Rename the canvas to __'Demographics'__.
 
 - Hit the __CTRL__ key and multi-select __AMOUNT_SOLD__ and __CUST_INCOME_LEVEL__ in the Data Elements section and drag them onto the canvas.
 
@@ -482,4 +482,4 @@ This step enables you to share your project file with colleges.
  
    ![](./images/900/imageE088.png)  
    
-Great job!!  You have completed the Lab.  Now that you have connected the Oracle Data Visualization Desktop to your Autonomous Data Warehouse, you can find more insights to unleash the power of your data.  
+__Great job!!  You have completed the Lab.  Now that you have connected the Oracle Data Visualization Desktop to your Autonomous Data Warehouse, you can find more insights to unleash the power of your data. __ 
