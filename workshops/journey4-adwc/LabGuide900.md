@@ -77,6 +77,7 @@ You want to secure your data from the desktop all the way from the client applic
 
    ![](./images/900/image011.png)
 
+
 ## Create the Data View in SQL Developer 
 
 For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
