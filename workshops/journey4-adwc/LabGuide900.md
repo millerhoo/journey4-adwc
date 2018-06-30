@@ -239,7 +239,7 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
  
 ## Create a Another Project with Multiple Canvases in Oracle Data Visualization Desktop
 
-### Create a new Data Visualization project
+### Create a New Data Visualization project
 
 ### Canvas 1 - Sales Summary
 
