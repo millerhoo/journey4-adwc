@@ -236,3 +236,35 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
    ![](./images/900/image053.png)
    
  At this point with a very few steps, you now have something that can further bring your data to life and begin to make some data-driven decisions.  And of course, as you share this with others, more and more people will want to gain access to the data.  But, don’t forget how easy, fast and elastic the Autonomous Data Warehouse is and will be able to quickly scale to meet your growing data and end users.
+ 
+## Create a Another Project with Multiple Canvas in Oracle Data Visualization Desktop
+
+### Create a new Data Visualization project
+
+### Canvas 1 - Sales Summary
+
+Questions Answered with Data:
+- ‘What are my monthly sales by dollar and quantity sold?’
+- What are my sales in each country region? And what products sell best in each country?’
+
+### Canvas 2 - Product Summary 
+
+Questions Answered with Data:
+- ‘What products are selling the best?’
+- ‘What products categories are trending?  Are there trends based upon price?  Or by regions?’
+
+### Canvas 3 - Demographics Summary 
+
+Questions Answered with Data:
+- ‘Of all my customers, which customer income level segment drives my sales?’
+- ‘Do Male or Females buy more from us? And what are the ages of our customers who purchase the most?’
+- ‘What products and product subcategories sell the best to our male or female customers?’
+
+### Switching to presentation mode - Narrate Your Data, Insights and Analytics
+
+The narrate capability is intended to provide a live presentation mode that an analyst can use to explain their findings during meetings.  Instead of screen grabbing or exporting charts and pasting them statically into a DOC or PPT, this presentation mode provides a versatile graphical mode for stepping through your storyline.  Your storyline, or narrative, is the thinking that led to your finding – your workings that justify your conclusion.  During a meeting, in presentation mode, all navigation and build interfaces are hidden to maximize the view of the visualizations.  All visualizations remain active and are drillable or you can still apply filters, just in case anyone asks questions during the meeting.  You’re not trapped in static PPT.
+
+### Exporting your DVA (project) file - Optional Step
+
+This step enables you to share your project file with colleges.
+
