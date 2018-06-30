@@ -121,9 +121,9 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 
    ![](./images/900/image012.png)
 
-## Create a New Project in Oracle Data Visualization Desktop
+## Create a Connection to ADWC from Data Visualization Desktop
 
-### Create a Connection to ADWC from Data Visualization Desktop
+### Create Connection
 
 - Start Oracle Data Visualization Desktop from the Start Windows Menu
 
@@ -204,7 +204,9 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 - Click on the SALES_HISTORY Data (highlight) and click on the ‘Add to Project’ button.
 
    ![](./images/900/image045.png)
-   
+
+## Create a New Project in Oracle Data Visualization Desktop
+
 ### Project Introduction
 
 No matter what your role is in the organization, access to timely data can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or data mart for yourself or others, Autonomous Data Warehouse Cloud is making it far simpler than ever before.  Easy, fast and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
