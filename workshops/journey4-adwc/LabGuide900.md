@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This lab will walk you through the connection of ADWCS to Data Visualization Desktop. This lab will elaborate on how you can connect your already created ADWCS instance (which has data already loaded into data warehouse) to DVD and perform beautiful visualizations in DVD.
+This lab will walk you through the connection of ADWC to Oracle Data Visualization Desktop. This lab will elaborate on how you can connect your already created ADWC instance (which has data already loaded into data warehouse) to Oracle Data Visualization Desktop and create beautiful data visualizations.
 
 At this point, you should have performed the following:
 1. You have downloaded the latest version of Data Visualization Desktop (DVD) from [here](http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html).
