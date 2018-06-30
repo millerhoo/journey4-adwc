@@ -208,7 +208,7 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 
 ## Create a New Project in Oracle Data Visualization Desktop
 
-### Introduction
+### Project Introduction
 
 No matter what your role is in the organization, access to timely data can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or data mart for yourself or others, Autonomous Data Warehouse Cloud is making it far simpler than ever before.  Easy, fast and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
 
