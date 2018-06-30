@@ -271,9 +271,10 @@ While this will provide specific instructions to replicate the intended visualiz
 ### Canvas 1 - Sales Summary
 
 Questions Answered with Data in this section:
+
 ```
-   ‘What are my monthly sales by dollar and quantity sold?’
-   'What are my sales in each country region? And what products sell best in each country?’
+‘What are my monthly sales by dollar and quantity sold?’
+‘What are my sales in each country region? And what products sell best in each country?’
 ```
 
 #### Create Sales Summary using a Combo Chart and Trend Line
@@ -331,8 +332,8 @@ We will create the __Product Summary__ using a Scatter Chart to show the Quantit
 Questions Answered with Data:
 
 ```
-   ‘What products are selling the best?’
-   ‘What products categories are trending?  Are there trends based upon price?  Or by regions?’
+‘What products are selling the best?’
+‘What products categories are trending?  Are there trends based upon price?  Or by regions?’
 ```
 
 #### Create Product Summary using a Sunburst Chart
@@ -388,9 +389,9 @@ You have created 2 of the 3 views for this project.  We will finish this exercis
 Questions Answered with Data:
 
 ```
-    ‘Of all my customers, which customer income level segment drives my sales?’
-    ‘Do Male or Females buy more from us? And what are the ages of our customers who purchase the most?’
-    ‘What products and product subcategories sell the best to our male or female customers?’
+‘Of all my customers, which customer income level segment drives my sales?’
+‘Do Male or Females buy more from us? And what are the ages of our customers who purchase the most?’
+‘What products and product subcategories sell the best to our male or female customers?’
 ```
 
 #### Create Demographics Summary using a Tree Map
