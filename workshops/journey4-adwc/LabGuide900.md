@@ -8,7 +8,7 @@ This lab will walk you through the steps to connect Oracle Data Visualization De
 
 At this point, you should have performed the following:
 
-1. Created an ADWC instance and downloaded the credentials wallet.  
+   1. Created an ADWC instance and downloaded the credentials wallet.  
 
 ## Objectives
 - Learn how to connect a desktop analytics tool to the powerful Autonomous Data Warehouse 
@@ -77,9 +77,11 @@ You want to secure your data from the desktop all the way from the client applic
 
    ![](./images/900/image011.png)
 
-## Create the data view in SQL Developer 
+## Create the Data View in SQL Developer 
 
 For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
+
+### Execute the Following Script in SQL Developer to Create a Data View 
 
 - Go back to SQL Developer as you did in the previous exercises and connect to the ‘admin’ user.   Cut and paste and execute the following script.  
 
@@ -118,7 +120,9 @@ For the sake of this test drive exercises, we are helping make it as simple as p
 
    ![](./images/900/image012.png)
 
-## Create a connection to Autonomous Data Warehouse
+## Create a Connection to ADWC from Data Visualization Desktop
+
+### Create a New Connection
 
 - Start Oracle Data Visualization Desktop from the Start Windows Menu
 
@@ -206,7 +210,7 @@ No matter what your role is in the organization, access to timely data can provi
 
 SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at an electronics reseller company.  The founder started his business by selling camera and photography equipment.  He’s already diversified his business portfolio as he already owns many 1-hour photo processing and video rental stores.  Over the last few years, his computer reselling business has grown, but he’s not convinced that the PC/server business will last.  His instincts tell him to continue to focus on growing his photography equipment and supplies business rather than PCs.  If you had access to this technology and solution, what would this data tell him?  What insights could you share?  How could this data help him focus on the right investments, grow his business and better target his existing and potential customers?
 
-### Step 1: Browse Data Tiles
+### Browse Data Tiles
 
 - We will first start by browsing the data that’s available in our Data Set. Click on the highlighted Prepare button and then click to select the menu option Data Tiles.  
 
@@ -216,7 +220,7 @@ SCENARIO:  For a moment, rewind yourself back a couple of decades.  You work at 
 
    ![](./images/900/image049.png)
    
-### Step 2: Create Your First Visualization
+### Create Your First Visualization
 
 - We will now create a very simple visualization project to finish this lab.  Multi-select (ctrl+click) the 5 Data Elements within SALES_HISTORY including PROD_NAME, AMOUNT_SOLD, CALENDAR_YEAR, PROD_CATEGORY, and QUANTITY_SOLD.  
 
