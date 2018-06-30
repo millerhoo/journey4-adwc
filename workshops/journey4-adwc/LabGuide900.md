@@ -8,7 +8,7 @@ This lab will walk you through the steps to connect Oracle Data Visualization De
 
 At this point, you should have performed the following:
 
-    1. Created an ADWC instance and downloaded the credentials wallet.  
+   1. Created an ADWC instance and downloaded the credentials wallet.  
 
 ## Objectives
 - Learn how to connect a desktop analytics tool to the powerful Autonomous Data Warehouse 
