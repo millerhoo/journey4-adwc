@@ -38,7 +38,7 @@ At this point, you should have performed the following:
 
 ### Securing Your Client Connection to Autonomous Data Warehouse
 
-- You want to secure your data from the desktop all the way from the client application to the server where your data is stored.  Password credentials for connecting to databases can now be stored in a client-side Oracle wallet, a secure software container used to store authentication and signing credentials.  This wallet usage can simplify large-scale deployments that rely on password credentials for connecting to databases. When this feature is configured, application code, batch jobs, and scripts no longer need embedded user names and passwords. Risk is reduced because such passwords are no longer exposed in the clear, and password management policies are more easily enforced without changing application code whenever user names or passwords change.
+You want to secure your data from the desktop all the way from the client application to the server where your data is stored.  Password credentials for connecting to databases can now be stored in a client-side Oracle wallet, a secure software container used to store authentication and signing credentials.  This wallet usage can simplify large-scale deployments that rely on password credentials for connecting to databases. When this feature is configured, application code, batch jobs, and scripts no longer need embedded user names and passwords. Risk is reduced because such passwords are no longer exposed in the clear, and password management policies are more easily enforced without changing application code whenever user names or passwords change.
 
 - Go to the directory that you saved your credentials wallet file from the previous lab.  Open up the .ZIP file.
 
@@ -79,7 +79,7 @@ At this point, you should have performed the following:
 
 ## Create the data view in SQL Developer 
 
-- For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
+For the sake of this test drive exercises, we are helping make it as simple as possible for you.  We don’t want the required steps of creating a data model required in any reporting, analytics or data visualization tool to overshadow the fact that Autonomous Data Warehouse is simple.  In this exercise, we are using the SH schema provided and will be creating a simple view.
 
 - Go back to SQL Developer as you did in the previous exercises and connect to the ‘admin’ user.   Cut and paste and execute the following script.  
 
@@ -145,14 +145,14 @@ At this point, you should have performed the following:
  
  
  
- | Connection Info       | Entry                                             |  
- | --------------------- | :------------------------------------------------- |
- | New Connection Name:  | Type in 'SALES_HISTORY'                             |
- | Host:                 | e.g. adwc.us-e1-1.oraclecloud.com (from above) |
- | Port:                 | 1522                                              |
- | Username:             | <your username> Insert username created in previous labs.  Same as SQL Developer credentials. |                                            
- | Password              | <your password> Insert username created in previous labs.  Same as SQL Developer credentials. | 
- | Service Name:         | e.g. tuak89quycc88vqkzengdw1high.adwc.oraclecloud.com (This information is also found in the ‘tnsnames.ora’ file. Example highlighted above.) |
+     | Connection Info       | Entry                                             |  
+     | --------------------- | :--------------------------------------------- |
+     | New Connection Name:  | Type in 'SALES_HISTORY'                             |
+     | Host:                 | e.g. adwc.us-e1-1.oraclecloud.com (from above) |
+     | Port:                 | 1522                                              |
+     | Username:             | <your username> Insert username created in previous labs.  Same as SQL Developer credentials. |                                            
+     | Password              | <your password> Insert username created in previous labs.  Same as SQL Developer credentials. | 
+     | Service Name:         | e.g. tuak89quycc88vqkzengdw1high.adwc.oraclecloud.com (This information is also found in the ‘tnsnames.ora’ file. Example highlighted above.) |
 
 - After completing the fields, click on ‘Save’ button.
 
