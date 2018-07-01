@@ -1,7 +1,7 @@
 
 ![](images/ADWC.JPG)  
 
-May 10, 2018
+July 1, 2018
     
 # ADWC Journey: Hands-On Test Drive Workshop
 This workshop walks you through all the steps to get started using the **Oracle Autonomous Data Warehouse Cloud (ADWC)**. You will provision a new ADWC database, load data from the object store and troubleshoot data loads, query external data residing on the object store, manage an ADWC instance, scale an ADWC instance, and use Oracle Machine Learning notebooks.
@@ -134,15 +134,17 @@ This workshop walks you through all the steps to get started using the **Oracle 
 - Learn how to use DBMS_PREDICTIVE_ANALYTICS routines
 - Learn how to use Oracle ML Gallery
 
-## Lab 900: Creating Visualization from ADWC
+## Lab 900: Create Data Visualizations from ADWC
 
 **Documentation**: [LabGuide900.md](LabGuide900.md)
 
 **Objectives**:
 
-- Set Up Local Environment
-- Create New Data Visualization Desktop Connection
-- Prepare Data Set and Create Visualization
+- Learn how to connect a desktop analytics tool to Autonomous Data Warehouse
+- Learn how to secure a desktop client connection to Autonomous Data Warehouse
+- Learn how to create a simple data visualization project with Oracle Data Visualization Desktop
+- Learn how to access and gain insights from data in the Autonomous Data Warehouse
+
 
 ## Lab 1000: Integrating with ADWC
 
