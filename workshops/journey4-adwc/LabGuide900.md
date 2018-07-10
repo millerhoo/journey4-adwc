@@ -1,4 +1,4 @@
-![](./images/900/title900.jpg)
+![](./images/900/title900-2.jpg)
 
 # Lab 900: Create Data Visualizations from ADWC
 
@@ -54,13 +54,14 @@ You want to secure your data from the desktop all the way from the client applic
 
    ![](./images/900/image010.png)
 
-- Type __‘CMD’__.  At the DOS prompt, navigate to the location where you extracted the files (cwallet.sso and tnsnames.ora).  I suggest that you cut the file location from an explorer window to the desktop.  It will save you typing in future steps.  The directions from here will show the steps as if you stored the wallet in the location c:\adw-wallet
+- Type __‘CMD’__.  At the DOS prompt, navigate to the location where you extracted the files (cwallet.sso and tnsnames.ora).  I suggest that you cut the file location from an explorer window to the desktop.  It will save you typing in future steps.  __NOTE:__ The directions from here will show the steps as if you stored the wallet in the location c:\wallet
 
-- In the DOS window, type the command __‘cd c:\wallet’__ and hit return to execute.  As a shortcut, type __‘cd ‘__ and then do a right click to paste the text on the clipboard.  
+- In the DOS window, type the command __‘cd c:\wallet’__ and hit return to execute.  As a shortcut, type __‘cd ‘__ and then do a right click to paste the text on the clipboard from the previous step.  
 
-- We will now copy the file cwallet.sso to the proper location for DV Desktop (__%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS__) to find.  Execute the command, 
+- We will now create the necessary directory location and copy the file cwallet.sso to the proper location for DV Desktop (__%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS__) to find.  Execute the commands (one by one).  If the directory has already been created, then skip the MKDIR command below and just COPY the wallet file.   
 
    ```
+   MKDIR C:\%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS\
    COPY cwallet.sso C:\%HOMEPATH%\AppData\Local\DVDesktop\components\OBIS\DWCS\
    ```
 
