@@ -1,6 +1,6 @@
 ![](./images/300/TITLE300.png)
 
-Updated: May 10, 2018
+Updated: August 15, 2018
 
 # ADWC Lab 300: Data Loading
 
@@ -25,6 +25,9 @@ This lab shows how to load data from Oracle Cloud Infrastructure Object Storage 
     + You will use this procedure to load tables in your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
         
 For more information about loading data, see the documentation <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud&id=CSWHU-GUID-07900054-CB65-490A-AF3C-39EF45505802">Loading Data from Files in the Cloud</a>.
+
+If you are interesting is using impdp to copy data from an existing Oracle database, there is some good example code at the ORACLE-BASE website: <a href="https://oracle-base.com/articles/vm/oracle-cloud-autonomous-data-warehouse-adw-import-data-from-object-store">https ://oracle-base.com/articles/vm/oracle-cloud-autonomous-data-warehouse-adw-import-data-from-object-store</a>.
+
 
 To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new) to go to the github oracle repository issue submission form.
 
